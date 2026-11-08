@@ -50,7 +50,7 @@
       "id": "human-and-animal",
       "name": "Human and animal",
       "description": "Figures, animals and animal tracks.",
-      "shapes": ["gazelle", "fish", "sandgrouse-foot", "doll", "darwish"]
+      "shapes": ["gazelle", "fish", "sandgrouse-foot", "doll", "darek"]
     },
     {
       "id": "compositions",

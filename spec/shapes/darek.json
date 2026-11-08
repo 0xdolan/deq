@@ -1,22 +1,22 @@
 {
   "$schema": "../schema/shape.schema.json",
-  "id": "darwish",
+  "id": "darek",
   "version": 1,
   "category": "human-and-animal",
   "names": {
-    "en": "Darwish",
+    "en": "Darek",
     "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
     "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
     "terms": [
       {
         "text": "Darek",
-        "note": "Drower's caption on the plate reads 'the Darek'. The id follows the Phase 1 catalog; a rename needs the owner's decision.",
+        "note": "Drower's caption on the plate reads 'the Darek'. Phase 1 listed this motif as 'darwish'; the owner chose 'darek' in Phase 2.",
         "sources": ["drower-1941"],
         "images": ["drower-ezidi-tattoo-designs-01"]
       }
     ]
   },
-  "aliases": [],
+  "aliases": ["darwish"],
   "tags": ["darwish", "darek", "figure"],
   "meaning": { "status": "unknown" },
   "sources": ["drower-1941"],

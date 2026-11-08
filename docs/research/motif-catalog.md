@@ -77,13 +77,13 @@ Each cell is labelled with its asset id.
 
 ## `human-and-animal`
 
-| Id                | Motif                                    | Kurmanji                           | Sorani              | Seen in                          | Named in                                    |
-| ----------------- | ---------------------------------------- | ---------------------------------- | ------------------- | -------------------------------- | ------------------------------------------- |
-| `gazelle`         | Gazelle                                  | _xezal_ [natakallam-2024]          | needs native review | `drower-ezidi-tattoo-designs-01` | dailysabah-2016, wikipedia-deq, amargi-2025 |
-| `fish`            | Fish                                     | needs native review                | needs native review | `tablo-fish-pendant-01`          | image caption (@tablo.chn)                  |
-| `sandgrouse-foot` | Sandgrouse foot                          | needs native review                | needs native review | `drower-ezidi-tattoo-designs-01` | drower-1941, wikipedia-deq                  |
-| `doll`            | Doll: a simple human figure              | _bûkoke_ (dolls) [natakallam-2024] | needs native review | `drower-ezidi-tattoo-designs-01` | drower-1941, wikipedia-deq                  |
-| `darwish`         | _Darwish_ figure, as captioned by Drower | needs native review                | needs native review | `drower-ezidi-tattoo-designs-01` | drower-1941                                 |
+| Id                | Motif                                  | Kurmanji                           | Sorani              | Seen in                          | Named in                                    |
+| ----------------- | -------------------------------------- | ---------------------------------- | ------------------- | -------------------------------- | ------------------------------------------- |
+| `gazelle`         | Gazelle                                | _xezal_ [natakallam-2024]          | needs native review | `drower-ezidi-tattoo-designs-01` | dailysabah-2016, wikipedia-deq, amargi-2025 |
+| `fish`            | Fish                                   | needs native review                | needs native review | `tablo-fish-pendant-01`          | image caption (@tablo.chn)                  |
+| `sandgrouse-foot` | Sandgrouse foot                        | needs native review                | needs native review | `drower-ezidi-tattoo-designs-01` | drower-1941, wikipedia-deq                  |
+| `doll`            | Doll: a simple human figure            | _bûkoke_ (dolls) [natakallam-2024] | needs native review | `drower-ezidi-tattoo-designs-01` | drower-1941, wikipedia-deq                  |
+| `darek`           | _Darek_ figure, as captioned by Drower | needs native review                | needs native review | `drower-ezidi-tattoo-designs-01` | drower-1941                                 |
 
 ## `compositions`
 
@@ -141,4 +141,5 @@ Made on 2026-11-08 on the owner's behalf, at their request.
 4. **Pistol and sword:** left out (see above).
 5. **Kurdish names:** still open. Every Sorani name, and every Kurmanji name not given by a source, stays marked _needs native review_ until a native speaker checks it. No name will be invented.
 6. **Phase 2 target:** 45 drawable base shapes (43 motifs and the 2 symbols), with parametric variants (ray count, dot count, nesting depth, stroke). The PRD target of at least 60 base shapes applies to v1.0, and the deferred motifs are the path to it as reference images arrive.
-7. **Phase 2 outcome (2026-11-08):** all 45 ids are drawn in `spec/shapes/`, none merged. Two of the 14 deferred motifs turned out to match existing shapes on Drower's plate, so `spec/catalog.json` records them with `drawnAs` instead of drawing them twice: `daqqayeh` is the single `dot`, and `res-daqq` (rês daqqa) is `chevron-stack`. The other 12 stay deferred. Drower captions the plate behind `darwish` "the Darek"; the id is kept, and whether to rename it is the owner's decision.
+7. **Phase 2 outcome (2026-11-08):** all 45 ids are drawn in `spec/shapes/`, none merged. Two of the 14 deferred motifs turned out to match existing shapes on Drower's plate, so `spec/catalog.json` records them with `drawnAs` instead of drawing them twice: `daqqayeh` is the single `dot`, and `res-daqq` (rês daqqa) is `chevron-stack`. The other 12 stay deferred. Drower captions this figure "the Darek", so the owner renamed `darwish` to `darek` (kept as an alias).
+8. **Logo (2026-11-08):** the owner chose concept A, the chin mark (`logo-concept-a`): a chevron with a dot below it. Concepts B to D stay in `assets/brand/concepts/` for reference.
