@@ -1,0 +1,13 @@
+# Local services. Later phases add `site`, `docs`, `fonts` and `deb` (PRD §13).
+services:
+  ci:
+    # One-shot job: runs `just ci` in a clean, pinned toolchain and exits.
+    # It is not a long-running service, so it has no healthcheck.
+    build:
+      context: .
+      dockerfile: docker/ci.Dockerfile
+    image: deq-ci:local
+    user: "1000:1000"
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
