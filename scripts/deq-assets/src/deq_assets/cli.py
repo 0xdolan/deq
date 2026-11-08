@@ -192,7 +192,7 @@ def verify(manifest: Manifest, root: Path, sources: Path) -> list[str]:
         if base.is_dir():
             for path in sorted(base.rglob("*")):
                 if path.is_file() and path not in expected:
-                    errors.append(f"unlisted file: {path.relative_to(root)}")
+                    errors.append(f"unlisted file: {path.relative_to(root).as_posix()}")
     return errors
 
 
