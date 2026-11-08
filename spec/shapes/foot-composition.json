@@ -1,0 +1,59 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "foot-composition",
+  "version": 1,
+  "category": "compositions",
+  "names": {
+    "en": "Foot composition",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["foot", "ankle", "composition"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["stem", "dots", "band"],
+  "primitives": [
+    {
+      "type": "use",
+      "shape": "ring-stem",
+      "layer": "stem",
+      "transform": { "translate": [0, -2.8], "scale": 0.6 }
+    },
+    {
+      "type": "use",
+      "shape": "dot-cluster",
+      "layer": "dots",
+      "params": { "cols": 2, "rows": 2 },
+      "transform": { "translate": [-6.5, -2.8], "scale": 0.4 }
+    },
+    {
+      "type": "use",
+      "shape": "dot-cluster",
+      "layer": "dots",
+      "params": { "cols": 2, "rows": 2 },
+      "transform": { "translate": [6.5, -2.8], "scale": 0.4 }
+    },
+    {
+      "type": "use",
+      "shape": "dot-row",
+      "layer": "band",
+      "params": { "count": 5 },
+      "transform": { "translate": [0, 8.2], "scale": 0.9 }
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A ring on a stem flanked by two 2 by 2 dot clusters, over a row of five dots at the ankle."
+  ],
+  "references": { "images": ["field-tattoo-drawings-01"], "files": [] },
+  "metrics": {
+    "bbox": [2.1, 3.8, 19.8, 17.4],
+    "visualBox": [2.1, 2.8, 19.8, 18.4],
+    "opticalCenter": [12, 10.539],
+    "strokeToSize": 0.101,
+    "primitiveCount": 15
+  }
+}

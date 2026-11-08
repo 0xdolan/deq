@@ -1,0 +1,45 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot-row",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Row of dots",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["dots", "row"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["dots"],
+  "primitives": [
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "spread": [16, 0],
+      "element": { "type": "dot", "cx": 12, "cy": 12 },
+      "layer": "dots"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "count": {
+      "type": "integer",
+      "min": 2,
+      "max": 7,
+      "default": 5,
+      "description": "Number of dots, spread evenly from x = 4 to x = 20."
+    }
+  },
+  "construction": ["Dots spread evenly along the horizontal axis from x = 4 to x = 20."],
+  "references": { "images": ["elu-dot-work-abdomen-01", "elu-thigh-pattern-01"], "files": [] },
+  "metrics": {
+    "bbox": [3, 11, 18, 2],
+    "visualBox": [3, 11, 18, 2],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.111,
+    "primitiveCount": 5
+  }
+}

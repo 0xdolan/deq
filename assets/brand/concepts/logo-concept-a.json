@@ -1,0 +1,35 @@
+{
+  "$schema": "../../../spec/schema/shape.schema.json",
+  "id": "logo-concept-a",
+  "version": 1,
+  "category": "brand",
+  "names": {
+    "en": "Chin mark",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["logo", "concept", "chevron", "dot"],
+  "meaning": { "status": "unknown", "note": "A Deq brand mark proposal, not a traditional motif." },
+  "sources": [],
+  "layers": ["mark", "dot"],
+  "primitives": [
+    { "type": "polyline", "points": [[4, 15], [12, 6], [20, 15]], "layer": "mark" },
+    { "type": "dot", "cx": 12, "cy": 18.5, "r": 2, "layer": "dot" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "The chin chevron, the most widely recognised deq, opened to 16 wide and 9 high, over a single dot (radius 2): the daqqayeh, the smallest unit of a tattoo.",
+    "Two elements so it stays legible at 16 px."
+  ],
+  "references": { "images": [], "files": [] },
+  "metrics": {
+    "bbox": [4, 6, 16, 14.5],
+    "visualBox": [3, 5, 18, 15.5],
+    "opticalCenter": [12, 12.155],
+    "strokeToSize": 0.111,
+    "primitiveCount": 2
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "spike",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Spike",
+    "ckb": {
+      "text": "لوتکە",
+      "status": "needs-native-review",
+      "sources": [],
+      "images": ["tablo-spike-pendant-01"],
+      "note": "Caption on the pendant image."
+    },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["spike", "plant"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["stem", "barbs"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 3, "x2": 12, "y2": 21, "layer": "stem" },
+    {
+      "type": "repeat",
+      "count": { "param": "barbs" },
+      "step": [0, 3],
+      "align": "start",
+      "element": { "type": "polyline", "points": [[9, 6], [12, 3], [15, 6]] },
+      "layer": "barbs"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "barbs": {
+      "type": "integer",
+      "min": 2,
+      "max": 5,
+      "default": 4,
+      "description": "Number of narrow barbs from the tip down."
+    }
+  },
+  "construction": [
+    "A tall stem from (12, 3) to (12, 21).",
+    "Narrow barbs: inverted V shapes 3 wide each side and 3 high, every 3 units from the tip, so they cover only the upper part of the stem."
+  ],
+  "references": { "images": ["tablo-spike-pendant-01"], "files": [] },
+  "metrics": {
+    "bbox": [9, 3, 6, 18],
+    "visualBox": [8, 2, 8, 20],
+    "opticalCenter": [12, 10.04],
+    "strokeToSize": 0.1,
+    "primitiveCount": 5
+  }
+}

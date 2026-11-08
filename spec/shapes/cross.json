@@ -1,0 +1,56 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "cross",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Cross",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "salib",
+        "note": "'cross'.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["cross"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Wards off the evil eye or evil spirits.",
+        "sources": ["ozgur-2021", "wikipedia-deq", "kurdistan-chronicle-2026"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["drower-1941", "ozgur-2021", "wikipedia-deq", "kurdistan-chronicle-2026"],
+  "layers": ["arms"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 3, "x2": 12, "y2": 21, "layer": "arms" },
+    { "type": "line", "x1": 3, "y1": 12, "x2": 21, "y2": 12, "layer": "arms" }
+  ],
+  "symmetry": "rotational-4",
+  "parameters": {},
+  "construction": ["Two arms of length 18 crossing at the grid centre."],
+  "references": {
+    "images": [
+      "thesis-motif-table-01",
+      "hand-drawn-motif-sheets-01",
+      "drower-ezidi-tattoo-designs-01",
+      "de-morgan-fig-27-tchomaklou"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [3, 3, 18, 18],
+    "visualBox": [2, 2, 20, 20],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 2
+  }
+}

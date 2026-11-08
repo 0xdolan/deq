@@ -1,0 +1,43 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "ring-stem",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Ring on a stem",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["ring", "stem", "circle"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["ring", "stem"],
+  "primitives": [
+    { "type": "circle", "cx": 12, "cy": 7, "r": 4, "layer": "ring" },
+    { "type": "line", "x1": 12, "y1": 11, "x2": 12, "y2": 21, "layer": "stem" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Ring: a circle of radius 4 about (12, 7). Stem: from the ring's bottom (12, 11) down to (12, 21)."
+  ],
+  "references": {
+    "images": [
+      "field-tattoo-drawings-01",
+      "field-tattoo-drawings-03",
+      "field-tattoo-drawings-04",
+      "zozane-vertical-motif-print-01",
+      "vertical-motif-stack-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [8, 3, 8, 18],
+    "visualBox": [7, 2, 10, 20],
+    "opticalCenter": [12, 9.562],
+    "strokeToSize": 0.1,
+    "primitiveCount": 2
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "wheat-arrow",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Wheat ear",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["wheat", "arrow", "plant"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["stem", "ears"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 3, "x2": 12, "y2": 21, "layer": "stem" },
+    {
+      "type": "repeat",
+      "count": { "param": "ears" },
+      "step": [0, 4],
+      "align": "start",
+      "element": { "type": "polyline", "points": [[8, 7], [12, 3], [16, 7]] },
+      "layer": "ears"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "ears": {
+      "type": "integer",
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "description": "Number of paired upward strokes from the tip down."
+    }
+  },
+  "construction": [
+    "Stem from (12, 3) to (12, 21).",
+    "Paired strokes: inverted V shapes with their vertex on the stem, 4 wide each side and 4 high, the first at the tip and then every 4 units down."
+  ],
+  "references": {
+    "images": ["deq-ttt-temporary-sheet-01", "hand-drawn-motif-sheets-01", "tablo-spike-pendant-01"],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [8, 3, 8, 18],
+    "visualBox": [7, 2, 10, 20],
+    "opticalCenter": [12, 10.04],
+    "strokeToSize": 0.1,
+    "primitiveCount": 4
+  }
+}

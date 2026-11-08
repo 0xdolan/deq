@@ -1,0 +1,41 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "sandgrouse-foot",
+  "version": 1,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Sandgrouse foot",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "rijl al-qatai",
+        "note": "'sand-grouse foot'.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["bird", "foot", "animal"],
+  "meaning": { "status": "unknown" },
+  "sources": ["drower-1941"],
+  "layers": ["toes"],
+  "primitives": [
+    { "type": "polyline", "points": [[6, 4], [12, 20], [18, 4]], "layer": "toes" },
+    { "type": "line", "x1": 12, "y1": 4, "x2": 12, "y2": 20, "layer": "toes" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Three toes, from (6, 4), (12, 4) and (18, 4), meeting at (12, 20), as on Drower's plate."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [6, 4, 12, 16],
+    "visualBox": [5, 3, 14, 18],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.111,
+    "primitiveCount": 2
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "triangle-dotted",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Triangle",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["triangle", "dots"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["outline", "dots"],
+  "primitives": [
+    {
+      "type": "polygon",
+      "points": [[12, 4.639], [20.5, 19.361], [3.5, 19.361]],
+      "layer": "outline",
+      "when": { "style": "lines" }
+    },
+    { "type": "dot", "cx": 12, "cy": 14.454, "layer": "dots", "when": { "style": "lines" } },
+    { "type": "dot", "cx": 12, "cy": 4.639, "layer": "dots", "when": { "style": "dots" } },
+    { "type": "dot", "cx": 20.5, "cy": 19.361, "layer": "dots", "when": { "style": "dots" } },
+    { "type": "dot", "cx": 3.5, "cy": 19.361, "layer": "dots", "when": { "style": "dots" } },
+    { "type": "dot", "cx": 16.25, "cy": 12, "layer": "dots", "when": { "style": "dots" } },
+    { "type": "dot", "cx": 7.75, "cy": 12, "layer": "dots", "when": { "style": "dots" } },
+    { "type": "dot", "cx": 12, "cy": 19.361, "layer": "dots", "when": { "style": "dots" } }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "style": {
+      "type": "enum",
+      "values": ["lines", "dots"],
+      "default": "lines",
+      "description": "An outline with a centre dot, or six dots at the corners and edge midpoints."
+    }
+  },
+  "construction": [
+    "An equilateral triangle with side 17 (height 14.722), centred vertically on the grid: (12, 4.639), (20.5, 19.361), (3.5, 19.361).",
+    "lines: the outline plus a dot at the centroid (12, 14.454).",
+    "dots: dots at the three corners and the three edge midpoints."
+  ],
+  "references": { "images": ["thesis-motif-table-01", "deq-motifs-animation-01"], "files": [] },
+  "metrics": {
+    "bbox": [3.5, 4.639, 17, 14.722],
+    "visualBox": [2.5, 3.639, 19, 16.722],
+    "opticalCenter": [12, 14.454],
+    "strokeToSize": 0.105,
+    "primitiveCount": 2
+  }
+}

@@ -1,0 +1,272 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://0xdolan.github.io/deq/spec/schema/flag.schema.json",
+  "title": "Kurdish flag specification",
+  "description": "Exact geometry and colors of the flag of Kurdistan, verified by `deq-spec lint` against the pinned Wikimedia Commons SVG in spec/reference/.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "version",
+    "names",
+    "source",
+    "aspectRatio",
+    "viewBox",
+    "colors",
+    "bands",
+    "sun",
+    "contrast",
+    "variants",
+    "sizes",
+    "notes"
+  ],
+  "$defs": {
+    "id": { "type": "string", "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$" },
+    "num": { "type": "number" },
+    "pair": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+    "cited": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "sources"],
+      "properties": {
+        "text": { "type": "string", "minLength": 1 },
+        "sources": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/id" } }
+      }
+    }
+  },
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": { "const": "kurdish-flag" },
+    "version": { "type": "integer", "minimum": 1 },
+    "names": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "ckb", "kmr"],
+      "properties": {
+        "en": { "type": "string" },
+        "ckb": {
+          "type": "object",
+          "required": ["text", "status", "sources"],
+          "additionalProperties": false,
+          "properties": {
+            "text": { "type": "string" },
+            "status": { "enum": ["needs-native-review", "verified"] },
+            "sources": { "type": "array", "items": { "$ref": "#/$defs/id" } }
+          }
+        },
+        "kmr": {
+          "type": "object",
+          "required": ["text", "status", "sources"],
+          "additionalProperties": false,
+          "properties": {
+            "text": { "type": "string" },
+            "status": { "enum": ["needs-native-review", "verified"] },
+            "sources": { "type": "array", "items": { "$ref": "#/$defs/id" } }
+          }
+        }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["file", "url", "sha256", "sha1", "license", "uploaded", "retrieved", "sourceId"],
+      "properties": {
+        "file": { "type": "string", "pattern": "^spec/reference/[A-Za-z0-9_.-]+\\.svg$" },
+        "url": { "type": "string", "format": "uri" },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+        "sha1": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
+        "license": { "type": "string" },
+        "uploaded": { "type": "string", "format": "date" },
+        "retrieved": { "type": "string", "format": "date" },
+        "sourceId": { "$ref": "#/$defs/id" }
+      }
+    },
+    "aspectRatio": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["height", "width"],
+      "properties": { "height": { "type": "integer" }, "width": { "type": "integer" } }
+    },
+    "viewBox": { "description": "[width, height] of the reference SVG.", "$ref": "#/$defs/pair" },
+    "colors": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "name",
+          "kurdish",
+          "hex",
+          "rgb",
+          "hsl",
+          "oklch",
+          "cmyk",
+          "pantone",
+          "meaning"
+        ],
+        "properties": {
+          "id": { "enum": ["red", "white", "green", "yellow"] },
+          "name": { "type": "string" },
+          "kurdish": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["kmr", "status"],
+            "properties": {
+              "kmr": { "type": "string" },
+              "status": { "enum": ["needs-native-review", "verified"] }
+            }
+          },
+          "hex": { "type": "string", "pattern": "^#[0-9A-F]{6}$" },
+          "rgb": {
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0, "maximum": 255 },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "hsl": {
+            "description": "[hue deg, saturation %, lightness %], 1 decimal.",
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "oklch": {
+            "description": "[L 0-1, C, hue deg], 3/3/1 decimals.",
+            "type": "array",
+            "items": { "type": "number" },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "cmyk": {
+            "description": "Naive sRGB to CMYK, percent, whole numbers. Print work needs a color-managed conversion.",
+            "type": "array",
+            "items": { "type": "integer", "minimum": 0, "maximum": 100 },
+            "minItems": 4,
+            "maxItems": 4
+          },
+          "pantone": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["value", "status"],
+            "properties": {
+              "value": { "type": ["string", "null"] },
+              "status": { "enum": ["needs-verification", "verified"] },
+              "note": { "type": "string" }
+            }
+          },
+          "meaning": { "$ref": "#/$defs/cited" }
+        }
+      }
+    },
+    "bands": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["color", "y", "height"],
+        "properties": {
+          "color": { "enum": ["red", "white", "green"] },
+          "y": { "type": "number" },
+          "height": { "type": "number" }
+        }
+      }
+    },
+    "sun": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "color",
+        "rays",
+        "rotation",
+        "center",
+        "outerRadius",
+        "innerRadius",
+        "boundingBoxHeight",
+        "heightToFlagHeight",
+        "outerDiameterToFlagHeight",
+        "innerToOuter",
+        "construction"
+      ],
+      "properties": {
+        "color": { "const": "yellow" },
+        "rays": { "const": 21 },
+        "rotation": { "type": "number" },
+        "center": { "$ref": "#/$defs/pair" },
+        "outerRadius": { "type": "number" },
+        "innerRadius": { "type": "number" },
+        "boundingBoxHeight": { "type": "number" },
+        "heightToFlagHeight": { "type": "number" },
+        "outerDiameterToFlagHeight": { "type": "number" },
+        "innerToOuter": { "type": "number" },
+        "construction": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "contrast": {
+      "description": "WCAG 2.x contrast ratio of every color pair, 2 decimals.",
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["pair", "ratio"],
+        "properties": {
+          "pair": { "type": "array", "items": { "type": "string" }, "minItems": 2, "maxItems": 2 },
+          "ratio": { "type": "number" }
+        }
+      }
+    },
+    "variants": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "description", "aspectRatio", "paint"],
+        "properties": {
+          "id": { "$ref": "#/$defs/id" },
+          "description": { "type": "string" },
+          "aspectRatio": { "type": "string", "pattern": "^[0-9]+:[0-9]+$" },
+          "paint": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["field", "bands", "dividers", "frame", "sun"],
+            "properties": {
+              "field": { "type": "string" },
+              "bands": { "type": "string", "enum": ["flag-colors", "none"] },
+              "dividers": { "type": "string" },
+              "frame": { "type": "string" },
+              "sun": { "type": "string" },
+              "sunOutline": { "type": "string" },
+              "strokeToHeight": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "sizes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["use", "width", "height", "unit", "variant"],
+        "properties": {
+          "use": { "type": "string" },
+          "width": { "type": "number", "exclusiveMinimum": 0 },
+          "height": { "type": "number", "exclusiveMinimum": 0 },
+          "unit": { "enum": ["px", "mm", "cm"] },
+          "dpi": { "type": "integer" },
+          "pixels": { "$ref": "#/$defs/pair" },
+          "variant": { "$ref": "#/$defs/id" }
+        }
+      }
+    },
+    "notes": { "type": "array", "items": { "type": "string" } }
+  }
+}

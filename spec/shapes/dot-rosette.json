@@ -1,0 +1,50 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot-rosette",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Dot rosette",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["dots", "rosette", "ring"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["ring", "center"],
+  "primitives": [
+    {
+      "type": "radial",
+      "count": { "param": "count" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 19, "cy": 12 },
+      "layer": "ring"
+    },
+    { "type": "dot", "cx": 12, "cy": 12, "layer": "center" }
+  ],
+  "symmetry": "rotational-8",
+  "parameters": {
+    "count": {
+      "type": "integer",
+      "min": 6,
+      "max": 12,
+      "default": 8,
+      "description": "Number of dots in the ring."
+    }
+  },
+  "construction": [
+    "Dots on a circle of radius 7, 360/count degrees apart from the top, around a centre dot."
+  ],
+  "references": { "images": ["elu-dot-work-ear-neck-01", "deq-motifs-animation-01"], "files": [] },
+  "metrics": {
+    "bbox": [4, 4, 16, 16],
+    "visualBox": [4, 4, 16, 16],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.125,
+    "primitiveCount": 9
+  }
+}

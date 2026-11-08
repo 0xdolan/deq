@@ -1,0 +1,41 @@
+{
+  "$schema": "../../../spec/schema/shape.schema.json",
+  "id": "logo-concept-d",
+  "version": 1,
+  "category": "brand",
+  "names": {
+    "en": "Dotted V",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["logo", "concept", "dots", "v"],
+  "meaning": { "status": "unknown", "note": "A Deq brand mark proposal, not a traditional motif." },
+  "sources": [],
+  "layers": ["dots", "dot"],
+  "primitives": [
+    { "type": "dot", "cx": 5, "cy": 5, "r": 1.5, "layer": "dots" },
+    { "type": "dot", "cx": 7.333, "cy": 9.667, "r": 1.5, "layer": "dots" },
+    { "type": "dot", "cx": 9.667, "cy": 14.333, "r": 1.5, "layer": "dots" },
+    { "type": "dot", "cx": 12, "cy": 19, "r": 1.5, "layer": "dots" },
+    { "type": "dot", "cx": 14.333, "cy": 14.333, "r": 1.5, "layer": "dots" },
+    { "type": "dot", "cx": 16.667, "cy": 9.667, "r": 1.5, "layer": "dots" },
+    { "type": "dot", "cx": 19, "cy": 5, "r": 1.5, "layer": "dots" },
+    { "type": "dot", "cx": 12, "cy": 9, "r": 1.5, "layer": "dot" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A V of seven dots, as tattooed one needle-prick at a time, cradling an eighth dot.",
+    "Dots of radius 1.5 spaced 5.2 apart along each arm, so they stay separate at 24 px."
+  ],
+  "references": { "images": [], "files": [] },
+  "metrics": {
+    "bbox": [3.5, 3.5, 17, 17],
+    "visualBox": [3.5, 3.5, 17, 17],
+    "opticalCenter": [12, 10.75],
+    "strokeToSize": 0.118,
+    "primitiveCount": 8
+  }
+}

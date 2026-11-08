@@ -1,0 +1,74 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "darwish",
+  "version": 1,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Darwish",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "Darek",
+        "note": "Drower's caption on the plate reads 'the Darek'. The id follows the Phase 1 catalog; a rename needs the owner's decision.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["darwish", "darek", "figure"],
+  "meaning": { "status": "unknown" },
+  "sources": ["drower-1941"],
+  "layers": ["bar", "column"],
+  "primitives": [
+    { "type": "arc", "cx": 6, "cy": 7, "r": 3, "start": 180, "end": 360, "layer": "bar" },
+    { "type": "line", "x1": 3, "y1": 7, "x2": 21, "y2": 7, "layer": "bar" },
+    { "type": "line", "x1": 21, "y1": 3, "x2": 21, "y2": 12, "layer": "bar" },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "spread": [6, 0],
+      "element": { "type": "line", "x1": 15, "y1": 7, "x2": 15, "y2": 10 },
+      "layer": "bar"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "steps" },
+      "step": [0, 4],
+      "align": "start",
+      "element": { "type": "polyline", "points": [[3, 13], [5, 11], [7, 13]] },
+      "layer": "column"
+    }
+  ],
+  "symmetry": "none",
+  "parameters": {
+    "teeth": {
+      "type": "integer",
+      "min": 2,
+      "max": 3,
+      "default": 3,
+      "description": "Number of short teeth under the bar (at least 3 units apart)."
+    },
+    "steps": {
+      "type": "integer",
+      "min": 1,
+      "max": 3,
+      "default": 3,
+      "description": "Number of small arches in the column under the dome."
+    }
+  },
+  "construction": [
+    "After the plate Drower captions 'the Darek': a long bar with a dome at its left end, short teeth hanging from it and a tall post at its right end.",
+    "Under the dome, a column of small arches descends every 4 units.",
+    "Centred on its visual box."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [3, 3, 18, 18],
+    "visualBox": [2, 2, 20, 20],
+    "opticalCenter": [10.921, 9.448],
+    "strokeToSize": 0.1,
+    "primitiveCount": 9
+  }
+}

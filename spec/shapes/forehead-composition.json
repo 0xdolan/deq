@@ -1,0 +1,61 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "forehead-composition",
+  "version": 1,
+  "category": "compositions",
+  "names": {
+    "en": "Forehead composition",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["forehead", "composition"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["sun", "fork", "dots"],
+  "primitives": [
+    {
+      "type": "use",
+      "shape": "roj-half-sun",
+      "layer": "sun",
+      "params": { "rays": 5 },
+      "transform": { "translate": [0, -6.15], "scale": 0.55 }
+    },
+    {
+      "type": "use",
+      "shape": "fork",
+      "layer": "fork",
+      "transform": { "translate": [0, 4.85], "scale": 0.45, "rotate": 180 }
+    },
+    { "type": "dot", "cx": 4, "cy": 10.85, "layer": "dots" },
+    { "type": "dot", "cx": 20, "cy": 10.85, "layer": "dots" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A traditional forehead layout: a half sun with five rays (scale 0.55) above an inverted fork (scale 0.45), with a dot at each side."
+  ],
+  "references": {
+    "images": [
+      "de-morgan-fig-27-tchomaklou",
+      "de-morgan-fig-28-kilakan",
+      "aljazeera-framed-elder-portrait-01",
+      "elder-forehead-chin-deq-01",
+      "viransehir-elders-group-01",
+      "elder-forehead-chin-deq-02",
+      "elder-deq-painting-01",
+      "elder-forehead-chin-deq-03",
+      "roj-sun-portrait-01",
+      "deq-portraits-slideshow-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [3, 3.1, 18, 17.8],
+    "visualBox": [3, 2.1, 18, 19.8],
+    "opticalCenter": [12, 11.239],
+    "strokeToSize": 0.101,
+    "primitiveCount": 11
+  }
+}

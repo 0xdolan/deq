@@ -1,0 +1,75 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "comb",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Comb",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "misht",
+        "note": "'comb'.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["comb", "rake"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Beauty; strength; the five-line comb as a \"second hand\".",
+        "sources": ["aljazeera-2023", "kurdistan-chronicle-2026", "amargi-2025"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["drower-1941", "aljazeera-2023", "kurdistan-chronicle-2026", "amargi-2025"],
+  "layers": ["bar", "teeth"],
+  "primitives": [
+    { "type": "line", "x1": 3, "y1": 16, "x2": 21, "y2": 16, "layer": "bar" },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "spread": [18, 0],
+      "element": { "type": "line", "x1": 12, "y1": 16, "x2": 12, "y2": 8 },
+      "layer": "teeth"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "teeth": {
+      "type": "integer",
+      "min": 3,
+      "max": 7,
+      "default": 5,
+      "description": "Number of teeth, spread evenly along the bar (7 keeps them 3 units apart)."
+    }
+  },
+  "construction": [
+    "Bar from (3, 16) to (21, 16). Teeth 8 units high, rising from the bar, the outer two at its ends."
+  ],
+  "references": {
+    "images": [
+      "deq-ttt-temporary-sheet-01",
+      "deq-ttt-gift-voucher-01",
+      "thesis-motif-table-01",
+      "drower-ezidi-tattoo-designs-01",
+      "field-tattoo-drawings-02",
+      "field-tattoo-drawings-03",
+      "field-tattoo-drawings-04"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [3, 8, 18, 8],
+    "visualBox": [2, 7, 20, 10],
+    "opticalCenter": [12, 13.241],
+    "strokeToSize": 0.1,
+    "primitiveCount": 6
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "doll",
+  "version": 1,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Doll",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": {
+      "text": "bûkoke",
+      "status": "needs-native-review",
+      "sources": ["natakallam-2024"],
+      "images": [],
+      "note": "'dolls', as given by the source."
+    },
+    "terms": [
+      {
+        "text": "lâ'ibi",
+        "note": "'doll'.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["doll", "human", "figure"],
+  "meaning": { "status": "unknown" },
+  "sources": ["natakallam-2024", "drower-1941"],
+  "layers": ["head", "body"],
+  "primitives": [
+    { "type": "dot", "cx": 12, "cy": 4.5, "layer": "head", "r": 2.5 },
+    { "type": "line", "x1": 12, "y1": 8, "x2": 12, "y2": 15, "layer": "body" },
+    { "type": "line", "x1": 5, "y1": 10, "x2": 19, "y2": 10, "layer": "body" },
+    { "type": "polyline", "points": [[7, 21], [12, 15], [17, 21]], "layer": "body" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A stick figure: a head dot of radius 2.5, a body from y = 8 to 15, level arms 14 wide and legs spread to (7, 21) and (17, 21)."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [5, 2, 14, 19],
+    "visualBox": [4, 2, 16, 20],
+    "opticalCenter": [12, 11.754],
+    "strokeToSize": 0.1,
+    "primitiveCount": 4
+  }
+}

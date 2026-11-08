@@ -42,6 +42,7 @@ test:
     pnpm test
     uv run pytest
     uv run deq-assets verify
+    uv run deq-spec lint
     cargo test --workspace --locked
 
 # Build all packages

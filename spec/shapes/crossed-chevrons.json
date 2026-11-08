@@ -1,0 +1,52 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "crossed-chevrons",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Crossed chevrons",
+    "ckb": {
+      "text": "تاج",
+      "status": "needs-native-review",
+      "sources": [],
+      "images": ["tablo-crown-pendant-01"],
+      "note": "'crown', caption on the pendant image."
+    },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["chevron", "crown"],
+  "meaning": {
+    "status": "unknown",
+    "note": "A pendant caption calls this form a crown. Amargi gives nobility as the meaning of a crown motif, but it is not clear that it is this form."
+  },
+  "sources": [],
+  "layers": ["chevrons"],
+  "primitives": [
+    { "type": "polyline", "points": [[4, 17], [10, 7], [16, 17]], "layer": "chevrons" },
+    { "type": "polyline", "points": [[8, 17], [14, 7], [20, 17]], "layer": "chevrons" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Two inverted Vs, 12 wide and 10 high, offset 4 units horizontally so that they cross: a crown-like form."
+  ],
+  "references": {
+    "images": [
+      "thesis-motif-table-01",
+      "zozane-vertical-motif-print-01",
+      "vertical-motif-stack-01",
+      "tablo-crown-pendant-01",
+      "deq-motifs-animation-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [4, 7, 16, 10],
+    "visualBox": [3, 6, 18, 12],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.111,
+    "primitiveCount": 2
+  }
+}

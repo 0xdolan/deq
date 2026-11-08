@@ -1,0 +1,57 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "chevron",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Chevron",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["chevron", "chin", "v"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "On the chin: a tribal identifier, sized to the family group; it \"lets the sweetness out\" when speaking.",
+        "sources": ["natgeo-2015", "mee-2022"],
+        "images": []
+      },
+      {
+        "text": "Some wearers did not know its meaning.",
+        "sources": ["indyturk-2020"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["natgeo-2015", "mee-2022", "indyturk-2020"],
+  "layers": ["chevron"],
+  "primitives": [{ "type": "polyline", "points": [[5, 16], [12, 8], [19, 16]], "layer": "chevron" }],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "An inverted V from (5, 16) through (12, 8) to (19, 16): 14 wide and 8 high, centred on the grid."
+  ],
+  "references": {
+    "images": [
+      "deq-ttt-temporary-sheet-01",
+      "thesis-motif-table-01",
+      "hand-drawn-motif-sheets-01",
+      "field-tattoo-drawings-03",
+      "de-morgan-fig-28-kilakan",
+      "elu-thigh-pattern-01",
+      "elu-chin-sun-fingers-01",
+      "deq-portraits-slideshow-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [5, 8, 14, 8],
+    "visualBox": [4, 7, 16, 10],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.125,
+    "primitiveCount": 1
+  }
+}

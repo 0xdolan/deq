@@ -99,6 +99,7 @@ jobs:
       - run: pnpm test
       - run: uv run pytest
       - run: uv run deq-assets verify
+      - run: uv run deq-spec lint
       - run: cargo test --workspace --locked
 
   build:

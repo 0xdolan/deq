@@ -1,0 +1,112 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "roj-sun-circle",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Sun disc",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": {
+      "text": "roj",
+      "status": "needs-native-review",
+      "sources": ["natakallam-2024"],
+      "images": [],
+      "note": "'sun', as given by the source."
+    },
+    "terms": [
+      {
+        "text": "the Sun",
+        "note": "Drower's caption for a ring with a centre dot.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["sun", "roj", "circle", "rays"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Wisdom; protection from the evil eye; \"the most important symbol for Kurdish people\"; purity and new beginnings; life, fertility and divine order; \"the source of life\".",
+        "sources": ["aljazeera-2023", "kurdistan-chronicle-2026", "amargi-2025"],
+        "images": []
+      },
+      {
+        "text": "Sun, moon, star and peacock motifs derive from Yezidi belief.",
+        "sources": ["hilton-tattooed-women", "dailysabah-2016"],
+        "images": []
+      },
+      {
+        "text": "Sun, moon and star are the most requested motifs today.",
+        "sources": ["sbs-2022"],
+        "images": []
+      },
+      {
+        "text": "A nine-dot sun disc on the right temple (men): good sense.",
+        "sources": ["ozgur-2021"],
+        "images": []
+      },
+      { "text": "Sun and moon together: eternal life.", "sources": ["ozgur-2021"], "images": [] }
+    ]
+  },
+  "sources": [
+    "natakallam-2024",
+    "drower-1941",
+    "aljazeera-2023",
+    "kurdistan-chronicle-2026",
+    "amargi-2025",
+    "hilton-tattooed-women",
+    "dailysabah-2016",
+    "sbs-2022",
+    "ozgur-2021"
+  ],
+  "layers": ["disc", "rays", "center"],
+  "primitives": [
+    { "type": "circle", "cx": 12, "cy": 12, "r": 4, "layer": "disc" },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 18.5, "y1": 12, "x2": 22, "y2": 12 },
+      "layer": "rays"
+    },
+    { "type": "dot", "cx": 12, "cy": 12, "layer": "center", "when": { "centerDot": true } }
+  ],
+  "symmetry": "rotational-8",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 0,
+      "max": 16,
+      "default": 8,
+      "description": "Number of rays; 0 gives the ring and dot of Drower's 'Sun'."
+    },
+    "centerDot": { "type": "boolean", "default": true, "description": "Draws the centre dot." }
+  },
+  "construction": [
+    "Disc: a circle of radius 4 about the grid centre.",
+    "Rays: a radial copy of the segment from radius 6.5 to 10, 360/rays degrees apart, the first pointing up.",
+    "Centre dot of radius 1; the clear gap to the ring is 2 units.",
+    "Symmetry is rotational of order `rays` (8 at the default)."
+  ],
+  "references": {
+    "images": [
+      "drower-ezidi-tattoo-designs-01",
+      "field-tattoo-drawings-02",
+      "field-tattoo-drawings-04",
+      "aljazeera-framed-elder-portrait-01",
+      "zozane-vertical-motif-print-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [2, 2, 20, 20],
+    "visualBox": [1, 1, 22, 22],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 10
+  }
+}

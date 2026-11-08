@@ -1,0 +1,118 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "roj-half-sun",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Half sun",
+    "ckb": {
+      "text": "خۆر",
+      "status": "needs-native-review",
+      "sources": [],
+      "images": ["tablo-sun-pendant-01"],
+      "note": "Caption on the pendant image."
+    },
+    "kmr": {
+      "text": "roj",
+      "status": "needs-native-review",
+      "sources": ["natakallam-2024"],
+      "images": [],
+      "note": "'sun', as given by the source."
+    },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["sun", "roj", "rays", "forehead", "chin"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Wisdom; protection from the evil eye; \"the most important symbol for Kurdish people\"; purity and new beginnings; life, fertility and divine order; \"the source of life\".",
+        "sources": ["aljazeera-2023", "kurdistan-chronicle-2026", "amargi-2025"],
+        "images": []
+      },
+      {
+        "text": "Sun, moon, star and peacock motifs derive from Yezidi belief.",
+        "sources": ["hilton-tattooed-women", "dailysabah-2016"],
+        "images": []
+      },
+      {
+        "text": "Sun, moon and star are the most requested motifs today.",
+        "sources": ["sbs-2022"],
+        "images": []
+      }
+    ]
+  },
+  "sources": [
+    "natakallam-2024",
+    "aljazeera-2023",
+    "kurdistan-chronicle-2026",
+    "amargi-2025",
+    "hilton-tattooed-women",
+    "dailysabah-2016",
+    "sbs-2022"
+  ],
+  "layers": ["disc", "rays", "center"],
+  "primitives": [
+    { "type": "arc", "cx": 12, "cy": 17, "r": 5, "start": 180, "end": 360, "layer": "disc" },
+    { "type": "line", "x1": 7, "y1": 17, "x2": 17, "y2": 17, "layer": "disc" },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 17],
+      "start": 195,
+      "sweep": 150,
+      "element": { "type": "line", "x1": 19.5, "y1": 17, "x2": 22, "y2": 17 },
+      "layer": "rays"
+    },
+    { "type": "dot", "cx": 12, "cy": 14.5, "layer": "center", "when": { "centerDot": true } }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 3,
+      "max": 11,
+      "default": 7,
+      "description": "Number of rays, spread evenly from 195 to 345 degrees."
+    },
+    "centerDot": {
+      "type": "boolean",
+      "default": false,
+      "description": "Adds a dot inside the half disc."
+    }
+  },
+  "construction": [
+    "Half disc: an arc of radius 5 about (12, 17) from 180 to 360 degrees, closed by a base line from (7, 17) to (17, 17).",
+    "Rays: a radial copy of the segment from radius 7.5 to 10 about (12, 17), first at 195 and last at 345 degrees, so no ray lies on the base line.",
+    "The ray gap (radius 5 to 7.5) leaves 0.5 units of clear space between the disc stroke and the ray caps.",
+    "The optional centre dot sits halfway between the arc's inner edge and the base line.",
+    "The whole shape is shifted vertically so that its visual box is centred on the grid."
+  ],
+  "references": {
+    "images": [
+      "deq-ttt-temporary-sheet-01",
+      "deq-ttt-gift-voucher-01",
+      "fate-temel-portrait-01",
+      "studio-wall-symbol-photos-01",
+      "natakallam-symbols-of-nature-01",
+      "zozane-vertical-motif-print-01",
+      "elu-thigh-pattern-01",
+      "elu-chin-sun-fingers-01",
+      "vertical-motif-stack-01",
+      "tablo-sun-pendant-01",
+      "roj-sun-collage-01",
+      "roj-sun-portrait-01",
+      "deq-portraits-slideshow-01",
+      "deq-motifs-animation-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [2.341, 7, 19.319, 10],
+    "visualBox": [1.341, 6, 21.319, 12],
+    "opticalCenter": [12, 13.506],
+    "strokeToSize": 0.094,
+    "primitiveCount": 9
+  }
+}

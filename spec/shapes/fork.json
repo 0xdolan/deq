@@ -1,0 +1,72 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "fork",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Fork",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "ters çatal",
+        "lang": "tr",
+        "note": "'inverted fork', the forehead form.",
+        "sources": ["indyturk-2020"],
+        "images": []
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["fork", "forehead"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "The person interviewed did not know its meaning.",
+        "sources": ["indyturk-2020"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["indyturk-2020"],
+  "layers": ["prongs", "stem"],
+  "primitives": [
+    { "type": "polyline", "points": [[5, 3], [12, 11], [19, 3]], "layer": "prongs" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 3,
+      "x2": 12,
+      "y2": 11,
+      "layer": "prongs",
+      "when": { "prongs": 3 }
+    },
+    { "type": "line", "x1": 12, "y1": 11, "x2": 12, "y2": 21, "layer": "stem" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "prongs": {
+      "type": "integer",
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "description": "Two prongs (a Y) or three (with a middle prong)."
+    }
+  },
+  "construction": [
+    "Prongs: a Y from (5, 3) and (19, 3) meeting at (12, 11); with 3 prongs a middle line rises from (12, 11) to (12, 3).",
+    "Stem from (12, 11) to (12, 21). On the forehead it is worn upside down (rotate 180 degrees)."
+  ],
+  "references": {
+    "images": ["deq-ttt-temporary-sheet-01", "thesis-motif-table-01", "hand-drawn-motif-sheets-01"],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [5, 3, 14, 18],
+    "visualBox": [4, 2, 16, 20],
+    "opticalCenter": [12, 9.879],
+    "strokeToSize": 0.1,
+    "primitiveCount": 2
+  }
+}

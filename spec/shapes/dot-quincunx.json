@@ -1,0 +1,35 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot-quincunx",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Five dots",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["dots", "five"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["dots"],
+  "primitives": [
+    { "type": "dot", "cx": 7, "cy": 7, "layer": "dots" },
+    { "type": "dot", "cx": 17, "cy": 7, "layer": "dots" },
+    { "type": "dot", "cx": 12, "cy": 12, "layer": "dots" },
+    { "type": "dot", "cx": 7, "cy": 17, "layer": "dots" },
+    { "type": "dot", "cx": 17, "cy": 17, "layer": "dots" }
+  ],
+  "symmetry": "rotational-4",
+  "parameters": {},
+  "construction": ["Dots at the four corners of a 10-unit square and at its centre, as on a die."],
+  "references": { "images": ["elu-dot-work-abdomen-01"], "files": [] },
+  "metrics": {
+    "bbox": [6, 6, 12, 12],
+    "visualBox": [6, 6, 12, 12],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.167,
+    "primitiveCount": 5
+  }
+}

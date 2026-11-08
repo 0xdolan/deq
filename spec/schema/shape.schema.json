@@ -1,0 +1,1173 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://0xdolan.github.io/deq/spec/schema/shape.schema.json",
+  "title": "Deq shape",
+  "description": "One Deq shape on the 24 x 24 grid. See docs/design/shape-spec.md. Semantic rules (bounds, decimals, references, symmetry, metrics) are checked by `uv run deq-spec lint`.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "version",
+    "category",
+    "names",
+    "aliases",
+    "tags",
+    "meaning",
+    "sources",
+    "layers",
+    "primitives",
+    "symmetry",
+    "parameters",
+    "construction",
+    "references",
+    "metrics"
+  ],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "id": {
+      "$ref": "#/$defs/id"
+    },
+    "version": {
+      "description": "Revision of this shape. Bump it whenever the geometry changes.",
+      "type": "integer",
+      "minimum": 1
+    },
+    "category": {
+      "enum": [
+        "celestial",
+        "nature",
+        "geometric",
+        "dots",
+        "lines-and-borders",
+        "human-and-animal",
+        "compositions",
+        "kurdish-symbols",
+        "brand"
+      ]
+    },
+    "names": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en", "ckb", "kmr", "terms"],
+      "properties": {
+        "en": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "ckb": {
+          "$ref": "#/$defs/kurdishName"
+        },
+        "kmr": {
+          "$ref": "#/$defs/kurdishName"
+        },
+        "terms": {
+          "description": "Names for the motif in sources, in any language or transliteration (for example Drower's captions).",
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/term"
+          }
+        }
+      }
+    },
+    "aliases": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$"
+      }
+    },
+    "meaning": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status"],
+          "properties": {
+            "status": {
+              "const": "unknown"
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["status", "statements"],
+          "properties": {
+            "status": {
+              "const": "sourced"
+            },
+            "statements": {
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "$ref": "#/$defs/citedText"
+              }
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        }
+      ]
+    },
+    "sources": {
+      "description": "Every source id cited anywhere in this file (ids in content/sources.json).",
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "layers": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "$ref": "#/$defs/id"
+      }
+    },
+    "primitives": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 64,
+      "items": {
+        "$ref": "#/$defs/primitive"
+      }
+    },
+    "symmetry": {
+      "description": "none, mirror-x (mirror across the vertical axis x = 12), mirror-y (across y = 12), or rotational-N about (12, 12).",
+      "type": "string",
+      "pattern": "^(none|mirror-x|mirror-y|mirror-xy|rotational-([2-9]|[1-3][0-9]))$"
+    },
+    "symmetryCenter": {
+      "description": "Centre for mirror axes and rotational symmetry. Defaults to [12, 12].",
+      "$ref": "#/$defs/point"
+    },
+    "parameters": {
+      "type": "object",
+      "maxProperties": 8,
+      "propertyNames": {
+        "pattern": "^[a-z][a-zA-Z0-9]*$"
+      },
+      "additionalProperties": {
+        "$ref": "#/$defs/parameter"
+      }
+    },
+    "construction": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "references": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["images", "files"],
+      "properties": {
+        "images": {
+          "description": "Asset ids in assets/source-manifest.json.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "files": {
+          "description": "Repository paths of other reference files.",
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+(/[A-Za-z0-9_.-]+)*$"
+          }
+        }
+      }
+    },
+    "metrics": {
+      "description": "Computed by `deq-spec fmt` at default parameters and stroke width 2. Do not edit by hand.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["bbox", "visualBox", "opticalCenter", "strokeToSize", "primitiveCount"],
+      "properties": {
+        "bbox": {
+          "$ref": "#/$defs/box"
+        },
+        "visualBox": {
+          "$ref": "#/$defs/box"
+        },
+        "opticalCenter": {
+          "$ref": "#/$defs/point"
+        },
+        "strokeToSize": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "primitiveCount": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    }
+  },
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "maxLength": 64
+    },
+    "coord": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 24
+    },
+    "point": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "$ref": "#/$defs/coord"
+        },
+        {
+          "$ref": "#/$defs/coord"
+        }
+      ],
+      "items": false,
+      "minItems": 2
+    },
+    "vector": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number",
+          "minimum": -24,
+          "maximum": 24
+        },
+        {
+          "type": "number",
+          "minimum": -24,
+          "maximum": 24
+        }
+      ],
+      "items": false,
+      "minItems": 2
+    },
+    "box": {
+      "description": "[x, y, width, height]",
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "type": "number",
+          "minimum": 0
+        }
+      ],
+      "items": false,
+      "minItems": 4
+    },
+    "positive": {
+      "type": "number",
+      "exclusiveMinimum": 0,
+      "maximum": 24
+    },
+    "angle": {
+      "type": "number",
+      "minimum": -360,
+      "maximum": 720
+    },
+    "count": {
+      "description": "A whole number, or a reference to an integer parameter.",
+      "oneOf": [
+        {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 64
+        },
+        {
+          "$ref": "#/$defs/paramRef"
+        }
+      ]
+    },
+    "paramRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["param"],
+      "properties": {
+        "param": {
+          "type": "string",
+          "pattern": "^[a-z][a-zA-Z0-9]*$"
+        }
+      }
+    },
+    "kurdishName": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "status", "sources", "images"],
+      "properties": {
+        "text": {
+          "type": ["string", "null"],
+          "maxLength": 80
+        },
+        "status": {
+          "enum": ["needs-native-review", "verified"]
+        },
+        "sources": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "images": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "note": {
+          "type": "string"
+        },
+        "reviewedBy": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "if": {
+        "properties": {
+          "status": {
+            "const": "verified"
+          }
+        }
+      },
+      "then": {
+        "required": ["reviewedBy"],
+        "properties": {
+          "text": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "term": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "sources", "images"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "lang": {
+          "type": "string",
+          "pattern": "^[a-z]{2,3}(-[A-Za-z]{4})?$"
+        },
+        "note": {
+          "type": "string"
+        },
+        "sources": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "images": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "properties": {
+            "sources": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "images": {
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "citedText": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["text", "sources", "images"],
+      "properties": {
+        "text": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sources": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        },
+        "images": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/id"
+          }
+        }
+      },
+      "anyOf": [
+        {
+          "properties": {
+            "sources": {
+              "minItems": 1
+            }
+          }
+        },
+        {
+          "properties": {
+            "images": {
+              "minItems": 1
+            }
+          }
+        }
+      ]
+    },
+    "parameter": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "min", "max", "default", "description"],
+          "properties": {
+            "type": {
+              "const": "integer"
+            },
+            "min": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 64
+            },
+            "max": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 64
+            },
+            "default": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 64
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "default", "description"],
+          "properties": {
+            "type": {
+              "const": "boolean"
+            },
+            "default": {
+              "type": "boolean"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["type", "values", "default", "description"],
+          "properties": {
+            "type": {
+              "const": "enum"
+            },
+            "values": {
+              "type": "array",
+              "minItems": 2,
+              "uniqueItems": true,
+              "items": {
+                "$ref": "#/$defs/id"
+              }
+            },
+            "default": {
+              "$ref": "#/$defs/id"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        }
+      ]
+    },
+    "when": {
+      "description": "Draw this primitive only when every listed parameter has the given value (or one of the listed values).",
+      "type": "object",
+      "minProperties": 1,
+      "propertyNames": {
+        "pattern": "^[a-z][a-zA-Z0-9]*$"
+      },
+      "additionalProperties": {
+        "oneOf": [
+          {
+            "type": "boolean"
+          },
+          {
+            "type": "integer"
+          },
+          {
+            "$ref": "#/$defs/id"
+          },
+          {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "$ref": "#/$defs/id"
+                }
+              ]
+            }
+          }
+        ]
+      }
+    },
+    "common": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/id"
+        },
+        "layer": {
+          "$ref": "#/$defs/id"
+        },
+        "when": {
+          "$ref": "#/$defs/when"
+        }
+      }
+    },
+    "paint": {
+      "description": "stroke (default): drawn with the stroke options. fill: a filled area with no stroke.",
+      "enum": ["stroke", "fill"]
+    },
+    "primitive": {
+      "type": "object",
+      "required": ["type"],
+      "properties": {
+        "type": {
+          "enum": [
+            "line",
+            "polyline",
+            "polygon",
+            "path",
+            "circle",
+            "dot",
+            "arc",
+            "ellipse",
+            "rect",
+            "star",
+            "radial",
+            "repeat",
+            "concentric",
+            "use"
+          ]
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "line"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/line"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "polyline"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/polyline"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "polygon"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/polygon"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "path"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/path"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "circle"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/circle"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "dot"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/dot"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "arc"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/arc"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "ellipse"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/ellipse"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "rect"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/rect"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "star"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/star"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "radial"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/radial"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "repeat"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/repeat"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "concentric"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/concentric"
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "use"
+              }
+            }
+          },
+          "then": {
+            "$ref": "#/$defs/use"
+          }
+        }
+      ]
+    },
+    "line": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "x1", "y1", "x2", "y2"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "x1": {
+          "$ref": "#/$defs/coord"
+        },
+        "y1": {
+          "$ref": "#/$defs/coord"
+        },
+        "x2": {
+          "$ref": "#/$defs/coord"
+        },
+        "y2": {
+          "$ref": "#/$defs/coord"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "polyline": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "points"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "points": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 64,
+          "items": {
+            "$ref": "#/$defs/point"
+          }
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "polygon": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "points"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "paint": {
+          "$ref": "#/$defs/paint"
+        },
+        "points": {
+          "type": "array",
+          "minItems": 3,
+          "maxItems": 64,
+          "items": {
+            "$ref": "#/$defs/point"
+          }
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "path": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "d"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "paint": {
+          "$ref": "#/$defs/paint"
+        },
+        "d": {
+          "description": "Absolute commands M L H V C Q Z only, separated by spaces.",
+          "type": "string",
+          "maxLength": 2000,
+          "pattern": "^M[ 0-9.MLHVCQZ-]*$"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "circle": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "cx", "cy", "r"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "paint": {
+          "$ref": "#/$defs/paint"
+        },
+        "cx": {
+          "$ref": "#/$defs/coord"
+        },
+        "cy": {
+          "$ref": "#/$defs/coord"
+        },
+        "r": {
+          "$ref": "#/$defs/positive"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "dot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "cx", "cy"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "cx": {
+          "$ref": "#/$defs/coord"
+        },
+        "cy": {
+          "$ref": "#/$defs/coord"
+        },
+        "r": {
+          "description": "Defaults to 1, optically equal to a 2-unit stroke. Scaled by dotScale.",
+          "$ref": "#/$defs/positive"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "arc": {
+      "description": "Circular arc from angle start to end, in degrees, clockwise from the +x axis (SVG convention, y down).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "cx", "cy", "r", "start", "end"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "cx": {
+          "$ref": "#/$defs/coord"
+        },
+        "cy": {
+          "$ref": "#/$defs/coord"
+        },
+        "r": {
+          "$ref": "#/$defs/positive"
+        },
+        "start": {
+          "$ref": "#/$defs/angle"
+        },
+        "end": {
+          "$ref": "#/$defs/angle"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "ellipse": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "cx", "cy", "rx", "ry"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "paint": {
+          "$ref": "#/$defs/paint"
+        },
+        "cx": {
+          "$ref": "#/$defs/coord"
+        },
+        "cy": {
+          "$ref": "#/$defs/coord"
+        },
+        "rx": {
+          "$ref": "#/$defs/positive"
+        },
+        "ry": {
+          "$ref": "#/$defs/positive"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "rect": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "x", "y", "width", "height"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "paint": {
+          "$ref": "#/$defs/paint"
+        },
+        "x": {
+          "$ref": "#/$defs/coord"
+        },
+        "y": {
+          "$ref": "#/$defs/coord"
+        },
+        "width": {
+          "$ref": "#/$defs/positive"
+        },
+        "height": {
+          "$ref": "#/$defs/positive"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "star": {
+      "description": "Star polygon: `points` outer vertices on outerRadius, inner vertices on innerRadius halfway between. The first outer vertex is at angle `rotation` (degrees, clockwise from +x; -90 points up).",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "cx", "cy", "points", "outerRadius", "innerRadius", "rotation"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "paint": {
+          "$ref": "#/$defs/paint"
+        },
+        "cx": {
+          "$ref": "#/$defs/coord"
+        },
+        "cy": {
+          "$ref": "#/$defs/coord"
+        },
+        "points": {
+          "$ref": "#/$defs/count"
+        },
+        "outerRadius": {
+          "$ref": "#/$defs/positive"
+        },
+        "innerRadius": {
+          "$ref": "#/$defs/positive"
+        },
+        "rotation": {
+          "$ref": "#/$defs/angle"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "radial": {
+      "description": "Copies `element` (drawn pointing at angle 0, the +x axis) rotated about `center`. If sweep is 360 the copies are 360/count apart; otherwise the first is at `start` and the last at start + sweep.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "count", "center", "start", "sweep", "element"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "count": {
+          "$ref": "#/$defs/count"
+        },
+        "center": {
+          "$ref": "#/$defs/point"
+        },
+        "start": {
+          "$ref": "#/$defs/angle"
+        },
+        "sweep": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "maximum": 360
+        },
+        "element": {
+          "$ref": "#/$defs/primitive"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "repeat": {
+      "description": "Copies `element` along a vector. `step` is the offset between copies; `spread` is the offset from the first copy to the last. With align `center` (default) the copies are centred on the element's position; with `start` the first copy sits on it.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "count", "element"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "count": {
+          "$ref": "#/$defs/count"
+        },
+        "step": {
+          "$ref": "#/$defs/vector"
+        },
+        "spread": {
+          "$ref": "#/$defs/vector"
+        },
+        "align": {
+          "enum": ["start", "center"]
+        },
+        "element": {
+          "$ref": "#/$defs/primitive"
+        }
+      },
+      "oneOf": [
+        {
+          "required": ["step"]
+        },
+        {
+          "required": ["spread"]
+        }
+      ],
+      "$ref": "#/$defs/common"
+    },
+    "concentric": {
+      "description": "Copies `element` scaled about `center` by 1 - i * scaleStep (i = 0 .. count - 1). Stroke widths and dot radii are not scaled.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "count", "center", "scaleStep", "element"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "count": {
+          "$ref": "#/$defs/count"
+        },
+        "center": {
+          "$ref": "#/$defs/point"
+        },
+        "scaleStep": {
+          "type": "number",
+          "exclusiveMinimum": 0,
+          "exclusiveMaximum": 1
+        },
+        "element": {
+          "$ref": "#/$defs/primitive"
+        }
+      },
+      "$ref": "#/$defs/common"
+    },
+    "use": {
+      "description": "Places another shape by reference: p' = R(rotate) * (scale * (p - origin)) + origin + translate. Stroke widths and dot radii are not scaled.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["type", "shape"],
+      "properties": {
+        "type": true,
+        "id": true,
+        "layer": true,
+        "when": true,
+        "shape": {
+          "$ref": "#/$defs/id"
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "type": ["integer", "boolean", "string"]
+          }
+        },
+        "transform": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "translate": {
+              "$ref": "#/$defs/vector"
+            },
+            "scale": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 4
+            },
+            "rotate": {
+              "$ref": "#/$defs/angle"
+            },
+            "origin": {
+              "$ref": "#/$defs/point"
+            }
+          }
+        }
+      },
+      "$ref": "#/$defs/common"
+    }
+  }
+}

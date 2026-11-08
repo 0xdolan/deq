@@ -1,0 +1,36 @@
+{
+  "$schema": "../../../spec/schema/shape.schema.json",
+  "id": "logo-concept-c",
+  "version": 1,
+  "category": "brand",
+  "names": {
+    "en": "Badge",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["logo", "concept", "lozenge", "chevron", "badge"],
+  "meaning": { "status": "unknown", "note": "A Deq brand mark proposal, not a traditional motif." },
+  "sources": [],
+  "layers": ["badge", "mark", "dot"],
+  "primitives": [
+    { "type": "polygon", "points": [[12, 2], [22, 12], [12, 22], [2, 12]], "layer": "badge" },
+    { "type": "polyline", "points": [[8, 13], [12, 9], [16, 13]], "layer": "mark" },
+    { "type": "dot", "cx": 12, "cy": 16, "r": 1, "layer": "dot" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A lozenge (strength) as a badge, 20 by 20, holding a small chevron and a dot.",
+    "Works as an app icon or a stamp; the inner marks are 3 units from the badge edge."
+  ],
+  "references": { "images": [], "files": [] },
+  "metrics": {
+    "bbox": [2, 2, 20, 20],
+    "visualBox": [1, 1, 22, 22],
+    "opticalCenter": [12, 11.928],
+    "strokeToSize": 0.091,
+    "primitiveCount": 3
+  }
+}

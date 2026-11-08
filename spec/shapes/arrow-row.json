@@ -1,0 +1,64 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "arrow-row",
+  "version": 1,
+  "category": "lines-and-borders",
+  "names": {
+    "en": "Row of arrowheads",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["arrow", "band", "border"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["spine", "arrows"],
+  "primitives": [
+    {
+      "type": "line",
+      "x1": 3,
+      "y1": 12,
+      "x2": 21,
+      "y2": 12,
+      "layer": "spine",
+      "when": { "spine": true }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [4, 0],
+      "element": { "type": "polyline", "points": [[13.5, 9], [10.5, 12], [13.5, 15]] },
+      "layer": "arrows"
+    }
+  ],
+  "symmetry": "mirror-y",
+  "parameters": {
+    "count": {
+      "type": "integer",
+      "min": 2,
+      "max": 5,
+      "default": 4,
+      "description": "Number of arrowheads."
+    },
+    "spine": {
+      "type": "boolean",
+      "default": false,
+      "description": "Draws a line through the arrowheads."
+    }
+  },
+  "construction": [
+    "Arrowheads 3 deep and 6 high, pointing left, every 4 units and centred. The optional spine runs from x = 3 to 21."
+  ],
+  "references": {
+    "images": ["deq-ttt-temporary-sheet-01", "elu-thigh-pattern-01", "tablo-spike-pendant-01"],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [4.5, 9, 15, 6],
+    "visualBox": [3.5, 8, 17, 8],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.118,
+    "primitiveCount": 4
+  }
+}

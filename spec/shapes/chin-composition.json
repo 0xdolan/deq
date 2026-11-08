@@ -1,0 +1,65 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "chin-composition",
+  "version": 1,
+  "category": "compositions",
+  "names": {
+    "en": "Chin composition",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["chin", "composition"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["chevron", "stem", "dots"],
+  "primitives": [
+    {
+      "type": "use",
+      "shape": "chevron",
+      "layer": "chevron",
+      "transform": { "translate": [0, -6.7], "scale": 0.6 }
+    },
+    {
+      "type": "use",
+      "shape": "dot-row",
+      "layer": "stem",
+      "params": { "count": 4 },
+      "transform": { "translate": [0, 4.3], "scale": 0.6, "rotate": 90 }
+    },
+    { "type": "dot", "cx": 6.5, "cy": 12.3, "layer": "dots" },
+    { "type": "dot", "cx": 17.5, "cy": 12.3, "layer": "dots" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A traditional chin layout built from base shapes: a small chevron (scale 0.6) at the top, a vertical row of four dots below it, and a dot to each side.",
+    "Referenced shapes keep stroke 2 and dot radius 1 when scaled."
+  ],
+  "references": {
+    "images": [
+      "de-morgan-fig-27-tchomaklou",
+      "de-morgan-fig-28-kilakan",
+      "fate-temel-portrait-01",
+      "saliha-ozsavli-portrait-01",
+      "elder-forehead-chin-deq-01",
+      "viransehir-elders-group-01",
+      "elder-forehead-chin-deq-02",
+      "elu-chin-sun-fingers-01",
+      "elder-deq-painting-01",
+      "elder-forehead-chin-deq-03",
+      "roj-sun-collage-01",
+      "kobani-woman-portrait-01",
+      "deq-portraits-slideshow-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [5.5, 2.9, 13, 19.2],
+    "visualBox": [5.5, 1.9, 13, 20.2],
+    "opticalCenter": [12, 9.407],
+    "strokeToSize": 0.099,
+    "primitiveCount": 7
+  }
+}

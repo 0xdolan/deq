@@ -1,0 +1,54 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "ladder",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Ladder",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["ladder"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      { "text": "On the hands: spiritual ascension.", "sources": ["aljazeera-2023"], "images": [] }
+    ]
+  },
+  "sources": ["aljazeera-2023"],
+  "layers": ["rails", "rungs"],
+  "primitives": [
+    { "type": "line", "x1": 8, "y1": 3, "x2": 8, "y2": 21, "layer": "rails" },
+    { "type": "line", "x1": 16, "y1": 3, "x2": 16, "y2": 21, "layer": "rails" },
+    {
+      "type": "repeat",
+      "count": { "param": "rungs" },
+      "spread": [0, 12],
+      "element": { "type": "line", "x1": 8, "y1": 12, "x2": 16, "y2": 12 },
+      "layer": "rungs"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "rungs": {
+      "type": "integer",
+      "min": 2,
+      "max": 5,
+      "default": 4,
+      "description": "Number of rungs between y = 6 and y = 18."
+    }
+  },
+  "construction": [
+    "Rails at x = 8 and x = 16 from y = 3 to 21. Rungs spread evenly from y = 6 to y = 18."
+  ],
+  "references": { "images": ["thesis-motif-table-01", "fatma-arik-ladder-hands-01"], "files": [] },
+  "metrics": {
+    "bbox": [8, 3, 8, 18],
+    "visualBox": [7, 2, 10, 20],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 6
+  }
+}

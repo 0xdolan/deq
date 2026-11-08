@@ -1,0 +1,83 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "tree-branch",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Tree of life",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": {
+      "text": "rewik",
+      "status": "needs-native-review",
+      "sources": ["natakallam-2024"],
+      "images": [],
+      "note": "'plants', as given by the source."
+    },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["tree", "plant", "branch"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Tree of life from neck to chest: Mother Goddess belief.",
+        "sources": ["ozgur-2021"],
+        "images": []
+      },
+      {
+        "text": "Vines and plant dots: fertility and strength.",
+        "sources": ["wikipedia-deq", "kurdistan-chronicle-2026"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["natakallam-2024", "ozgur-2021", "wikipedia-deq", "kurdistan-chronicle-2026"],
+  "layers": ["stem", "branches"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 3, "x2": 12, "y2": 21, "layer": "stem" },
+    {
+      "type": "repeat",
+      "count": { "param": "branches" },
+      "step": [0, 4],
+      "element": { "type": "polyline", "points": [[7, 10], [12, 14], [17, 10]] },
+      "layer": "branches"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "branches": {
+      "type": "integer",
+      "min": 1,
+      "max": 4,
+      "default": 3,
+      "description": "Number of V-shaped branch pairs."
+    }
+  },
+  "construction": [
+    "Stem: a vertical line from (12, 3) to (12, 21).",
+    "Branches: V shapes with their vertex on the stem, rising 4 units over a half-width of 5, repeated every 4 units and centred on y = 14."
+  ],
+  "references": {
+    "images": [
+      "thesis-motif-table-01",
+      "hand-drawn-motif-sheets-01",
+      "field-tattoo-drawings-01",
+      "field-tattoo-drawings-04",
+      "studio-wall-symbol-photos-01",
+      "zozane-vertical-motif-print-01",
+      "elu-thigh-pattern-01",
+      "vertical-motif-stack-01",
+      "tablo-spike-pendant-01",
+      "deq-motifs-animation-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [7, 3, 10, 18],
+    "visualBox": [6, 2, 12, 20],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 4
+  }
+}

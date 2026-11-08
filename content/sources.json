@@ -747,5 +747,67 @@
       "status": "ok",
       "notes": "Flickr photo 18573478922, taken 2015-02-05 in Suruç, uploaded 2015-06-07. Licence CC BY-NC-SA 2.0. Read via https://www.flickr.com/photo.gne?id=18573478922."
     }
+  },
+  {
+    "id": "wikipedia-flag-of-kurdistan",
+    "type": "entry-encyclopedia",
+    "title": "Flag of Kurdistan",
+    "container-title": "Wikipedia",
+    "publisher": "Wikimedia Foundation",
+    "issued": {
+      "date-parts": [[2026, 9, 7]]
+    },
+    "URL": "https://en.wikipedia.org/wiki/Flag_of_Kurdistan",
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
+    "language": "en",
+    "custom": {
+      "group": "articles",
+      "status": "ok",
+      "archiveUrl": "https://en.wikipedia.org/w/index.php?title=Flag_of_Kurdistan&oldid=1373762703",
+      "notes": "Issued date is the last edit at access time (revision 1373762703). Source of the colour meanings and the 21-ray layout used in spec/flag.json. The RGB triples in its colour table do not match its own hex codes; the spec uses the hex values of the Commons SVG."
+    }
+  },
+  {
+    "id": "wikipedia-kurdish-sun",
+    "type": "entry-encyclopedia",
+    "title": "Kurdish Sun",
+    "container-title": "Wikipedia",
+    "publisher": "Wikimedia Foundation",
+    "issued": {
+      "date-parts": [[2026, 11, 6]]
+    },
+    "URL": "https://en.wikipedia.org/wiki/Kurdish_Sun",
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
+    "language": "en",
+    "custom": {
+      "group": "articles",
+      "status": "ok",
+      "archiveUrl": "https://en.wikipedia.org/w/index.php?title=Kurdish_Sun&oldid=1384172110",
+      "notes": "Issued date is the last edit at access time (revision 1384172110). Names the sun Roj, says the 21-ray form was designed by Mehrdad Izady and that 21 is important in Yazidism, Yarsanism and Alevism."
+    }
+  },
+  {
+    "id": "wikimedia-flag-svg",
+    "type": "graphic",
+    "title": "Flag of Kurdistan.svg",
+    "container-title": "Wikimedia Commons",
+    "publisher": "Wikimedia Foundation",
+    "issued": {
+      "date-parts": [[2023, 7, 5]]
+    },
+    "URL": "https://commons.wikimedia.org/wiki/File:Flag_of_Kurdistan.svg",
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
+    "language": "en",
+    "custom": {
+      "group": "archives",
+      "status": "ok",
+      "notes": "Public domain. Commons credits the specifications to institutkurde.org. A byte-identical copy is pinned by sha256 in spec/reference/Flag_of_Kurdistan.svg and checked by deq-spec lint."
+    }
   }
 ]

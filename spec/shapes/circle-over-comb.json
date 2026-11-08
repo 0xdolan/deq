@@ -1,0 +1,45 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "circle-over-comb",
+  "version": 1,
+  "category": "compositions",
+  "names": {
+    "en": "Circle over comb",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["circle", "comb", "composition"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["circle", "comb"],
+  "primitives": [
+    {
+      "type": "use",
+      "shape": "roj-sun-circle",
+      "layer": "circle",
+      "params": { "rays": 0, "centerDot": false },
+      "transform": { "translate": [0, -4.5], "scale": 0.75 }
+    },
+    {
+      "type": "use",
+      "shape": "comb",
+      "layer": "comb",
+      "transform": { "translate": [0, 4.5], "scale": 0.75 }
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A ring (the sun disc without rays) above a five-tooth comb, both at scale 0.75."
+  ],
+  "references": { "images": ["deq-motifs-animation-01"], "files": [] },
+  "metrics": {
+    "bbox": [5.25, 4.5, 13.5, 15],
+    "visualBox": [4.25, 3.5, 15.5, 17],
+    "opticalCenter": [12, 14.429],
+    "strokeToSize": 0.118,
+    "primitiveCount": 7
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "gazelle",
+  "version": 1,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Gazelle",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": {
+      "text": "xezal",
+      "status": "needs-native-review",
+      "sources": ["natakallam-2024"],
+      "images": [],
+      "note": "'gazelle', as given by the source."
+    },
+    "terms": [
+      {
+        "text": "ghazâl",
+        "note": "Drower's caption: the 'gazelle' (ghazâl).",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["gazelle", "animal"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Luck; beauty and grace; grace and feminine wisdom.",
+        "sources": ["dailysabah-2016", "wikipedia-deq", "amargi-2025"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["natakallam-2024", "drower-1941", "dailysabah-2016", "wikipedia-deq", "amargi-2025"],
+  "layers": ["body", "dot"],
+  "primitives": [
+    { "type": "path", "d": "M 3.25 5.5 L 3.25 18.5", "layer": "body" },
+    { "type": "path", "d": "M 3.25 11.5 L 16.25 11.5 L 17.75 5.5 L 20.75 7.5", "layer": "body" },
+    { "type": "line", "x1": 15.25, "y1": 11.5, "x2": 15.25, "y2": 18.5, "layer": "body" },
+    { "type": "dot", "cx": 9.75, "cy": 7.5, "layer": "dot" }
+  ],
+  "symmetry": "none",
+  "parameters": {},
+  "construction": [
+    "After Drower's blocky 'gazelle': a raised tail and hind leg as one upright at x = 4, a level back, a front leg, and a neck rising to a head that points forward.",
+    "A dot above the back, as on the plate.",
+    "Centred on its visual box."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [3.25, 5.5, 17.5, 13],
+    "visualBox": [2.25, 4.5, 19.5, 15],
+    "opticalCenter": [10.496, 11.233],
+    "strokeToSize": 0.103,
+    "primitiveCount": 4
+  }
+}

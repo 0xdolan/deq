@@ -1,0 +1,60 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Dot",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "daqqayeh",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["dot"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Between the eyes: protection against the evil eye (nazar).",
+        "sources": ["wikipedia-deq"],
+        "images": []
+      },
+      {
+        "text": "At the temples: relief from headaches or migraines.",
+        "sources": ["aljazeera-2023", "kurdistan-chronicle-2026", "natakallam-2024"],
+        "images": []
+      }
+    ]
+  },
+  "sources": [
+    "drower-1941",
+    "wikipedia-deq",
+    "aljazeera-2023",
+    "kurdistan-chronicle-2026",
+    "natakallam-2024"
+  ],
+  "layers": ["dot"],
+  "primitives": [{ "type": "dot", "cx": 12, "cy": 12, "layer": "dot", "r": 2 }],
+  "symmetry": "mirror-xy",
+  "parameters": {},
+  "construction": [
+    "A single dot of radius 2 at the grid centre. The standalone icon uses radius 2 so it reads at small sizes; dots inside other shapes keep radius 1."
+  ],
+  "references": {
+    "images": ["drower-ezidi-tattoo-designs-01", "field-tattoo-drawings-02"],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [10, 10, 4, 4],
+    "visualBox": [10, 10, 4, 4],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.5,
+    "primitiveCount": 1
+  }
+}

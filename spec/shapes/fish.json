@@ -1,0 +1,46 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "fish",
+  "version": 1,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Fish",
+    "ckb": {
+      "text": "ماسی",
+      "status": "needs-native-review",
+      "sources": [],
+      "images": ["tablo-fish-pendant-01"],
+      "note": "Caption on the pendant image."
+    },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["fish", "animal"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [{ "text": "Luck.", "sources": [], "images": ["tablo-fish-pendant-01"] }]
+  },
+  "sources": [],
+  "layers": ["body", "tail", "eye"],
+  "primitives": [
+    { "type": "path", "d": "M 6.5 12 Q 14 5 21.5 12 Q 14 19 6.5 12 Z", "layer": "body" },
+    { "type": "polyline", "points": [[2.5, 8], [6.5, 12], [2.5, 16]], "layer": "tail" },
+    { "type": "dot", "cx": 17, "cy": 12, "layer": "eye" }
+  ],
+  "symmetry": "mirror-y",
+  "parameters": {},
+  "construction": [
+    "Body: a lens of two quadratic curves from (6, 12) to (21, 12), 7 units deep at the middle.",
+    "Tail: a V opening backwards from the body's end. Eye: a dot near the head.",
+    "Shifted horizontally so the visual box is centred."
+  ],
+  "references": { "images": ["tablo-fish-pendant-01"], "files": [] },
+  "metrics": {
+    "bbox": [2.5, 8, 19, 8],
+    "visualBox": [1.5, 7, 21, 10],
+    "opticalCenter": [11.804, 12],
+    "strokeToSize": 0.095,
+    "primitiveCount": 3
+  }
+}

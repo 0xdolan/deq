@@ -1,0 +1,83 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "sterk-star",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Star",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": {
+      "text": "stêrin",
+      "status": "needs-native-review",
+      "sources": ["natakallam-2024"],
+      "images": [],
+      "note": "Plural, 'stars', as given by the source."
+    },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["star", "rays"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Sun, moon, star and peacock motifs derive from Yezidi belief.",
+        "sources": ["hilton-tattooed-women", "dailysabah-2016"],
+        "images": []
+      },
+      {
+        "text": "Sun, moon and star are the most requested motifs today.",
+        "sources": ["sbs-2022"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["natakallam-2024", "hilton-tattooed-women", "dailysabah-2016", "sbs-2022"],
+  "layers": ["rays"],
+  "primitives": [
+    {
+      "type": "radial",
+      "count": { "param": "points" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 12, "y1": 12, "x2": 22, "y2": 12 },
+      "layer": "rays"
+    }
+  ],
+  "symmetry": "rotational-8",
+  "parameters": {
+    "points": {
+      "type": "integer",
+      "min": 4,
+      "max": 12,
+      "default": 8,
+      "description": "Number of rays."
+    }
+  },
+  "construction": [
+    "Rays from the grid centre to the circle keyline (radius 10), 360/points degrees apart, the first pointing up.",
+    "Round caps merge the rays at the centre."
+  ],
+  "references": {
+    "images": [
+      "elu-dot-work-abdomen-01",
+      "deq-ttt-temporary-sheet-01",
+      "thesis-motif-table-01",
+      "field-tattoo-drawings-03",
+      "natakallam-symbols-of-nature-01",
+      "zozane-vertical-motif-print-01",
+      "elu-thigh-pattern-01",
+      "vertical-motif-stack-01",
+      "deq-motifs-animation-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [2, 2, 20, 20],
+    "visualBox": [1, 1, 22, 22],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 8
+  }
+}

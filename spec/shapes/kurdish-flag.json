@@ -1,0 +1,71 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "kurdish-flag",
+  "version": 1,
+  "category": "kurdish-symbols",
+  "names": {
+    "en": "Flag of Kurdistan",
+    "ckb": {
+      "text": "ئاڵای کوردستان",
+      "status": "needs-native-review",
+      "sources": ["wikipedia-flag-of-kurdistan"],
+      "images": []
+    },
+    "kmr": {
+      "text": "Alaya Kurdistanê",
+      "status": "needs-native-review",
+      "sources": ["wikipedia-flag-of-kurdistan"],
+      "images": []
+    },
+    "terms": [
+      {
+        "text": "Ala Rengin",
+        "lang": "kmr",
+        "note": "'the colourful flag'.",
+        "sources": ["wikipedia-flag-of-kurdistan"],
+        "images": []
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["flag", "kurdistan", "ala"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Red: the blood of the martyrs and the continued struggle for freedom and dignity. White: peace and equality. Green: the beauty and landscapes of Kurdistan, life and vitality. Yellow: the source of life and light of the people.",
+        "sources": ["wikipedia-flag-of-kurdistan"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["wikipedia-flag-of-kurdistan"],
+  "layers": ["frame", "bands", "sun"],
+  "primitives": [
+    { "type": "rect", "x": 2, "y": 5.333, "width": 20, "height": 13.333, "layer": "frame" },
+    { "type": "line", "x1": 2, "y1": 9.778, "x2": 7.5, "y2": 9.778, "layer": "bands" },
+    { "type": "line", "x1": 16.5, "y1": 9.778, "x2": 22, "y2": 9.778, "layer": "bands" },
+    { "type": "line", "x1": 2, "y1": 14.222, "x2": 7.5, "y2": 14.222, "layer": "bands" },
+    { "type": "line", "x1": 16.5, "y1": 14.222, "x2": 22, "y2": 14.222, "layer": "bands" },
+    { "type": "use", "shape": "kurdish-sun", "layer": "sun", "transform": { "scale": 0.333 } }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Icon form of the flag in spec/flag.json: a 3:2 frame 20 wide and 13.333 high, centred on the grid.",
+    "The band edges are drawn as divider lines at one and two thirds of the height, broken around the sun.",
+    "The sun is kurdish-sun at scale 1/3 (0.333), so its height is half the flag's, as in the reference; its centre lands at y = 12.019, matching 300.842 / 600 of the flag.",
+    "This is a single-colour icon. The full-colour flag and its variants are defined in spec/flag.json."
+  ],
+  "references": {
+    "images": [],
+    "files": ["spec/flag.json", "spec/reference/Flag_of_Kurdistan.svg"]
+  },
+  "metrics": {
+    "bbox": [2, 5.333, 20, 13.333],
+    "visualBox": [1, 4.333, 22, 15.333],
+    "opticalCenter": [12, 12.001],
+    "strokeToSize": 0.091,
+    "primitiveCount": 6
+  }
+}
