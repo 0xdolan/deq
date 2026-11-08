@@ -1,0 +1,20 @@
+packages:
+  - "packages/*"
+  - "apps/*"
+
+# Supply-chain hardening
+# Only these packages may run install scripts.
+onlyBuiltDependencies:
+  - esbuild
+  - lefthook
+# Refuse package versions published less than 7 days ago (minutes).
+minimumReleaseAge: 10080
+# Save exact versions.
+savePrefix: ""
+# Fail on wrong Node version.
+engineStrict: true
+
+overrides:
+  # GHSA-g3hv-75wg-m249 (ReDoS-style DoS): ESLint 10.14 pins minimatch ^10, fix is only in 11.x.
+  # Remove when ESLint depends on a patched minimatch.
+  "minimatch@>=7.0.0 <11.0.1": "11.0.3"
