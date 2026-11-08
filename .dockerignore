@@ -1,0 +1,17 @@
+# Never send these to a Docker build context
+temp/
+PRD
+PRD-detailed.md
+.env
+.env.*
+# Rebuilt inside the container
+**/node_modules
+**/dist
+**/.turbo
+**/target
+**/.venv
+**/__pycache__
+**/.mypy_cache
+**/.ruff_cache
+**/.pytest_cache
+**/coverage

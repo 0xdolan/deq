@@ -1,0 +1,12 @@
+temp/
+PRD
+PRD-detailed.md
+LICENSE
+pnpm-lock.yaml
+uv.lock
+Cargo.lock
+**/dist/
+**/coverage/
+**/target/
+**/.venv/
+CHANGELOG.md

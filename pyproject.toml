@@ -1,0 +1,47 @@
+# uv workspace root (not a package). See python/ for members.
+[project]
+name = "deq-workspace"
+version = "0.0.0"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = ["python/*"]
+
+[tool.uv.sources]
+deq-shapes = { workspace = true }
+
+[dependency-groups]
+dev = [
+    "deq-shapes",
+    "pytest>=8",
+    "pytest-cov>=6",
+    "hypothesis>=6",
+    "mypy>=1.15",
+    "ruff>=0.11",
+    "pip-audit>=2.9",
+    "zizmor>=1.16",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["python/*/src", "python/*/tests"]
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "B", "UP", "S", "N", "C4", "SIM", "RUF", "PT", "ANN"]
+
+[tool.ruff.lint.per-file-ignores]
+"**/tests/**" = ["S101"]
+
+[tool.mypy]
+strict = true
+python_version = "3.12"
+files = ["python/deq-shapes/src", "python/deq-shapes/tests"]
+
+[tool.pytest.ini_options]
+addopts = "--strict-markers --cov=deq_shapes --cov-report=term-missing:skip-covered --cov-fail-under=95"
+testpaths = ["python"]

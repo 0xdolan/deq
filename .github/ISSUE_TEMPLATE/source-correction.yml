@@ -1,0 +1,19 @@
+name: Story or source correction
+description: Report an inaccurate fact, a missing credit or a broken source link.
+labels: ["type: content", "status: triage"]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or URL
+    validations: { required: true }
+  - type: textarea
+    id: issue
+    attributes:
+      label: What is wrong?
+    validations: { required: true }
+  - type: textarea
+    id: source
+    attributes:
+      label: Correct information and its source
+    validations: { required: true }

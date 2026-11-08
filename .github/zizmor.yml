@@ -1,0 +1,6 @@
+# zizmor configuration. See https://docs.zizmor.sh/configuration/
+rules:
+  # Keep the widely supported `./.github/actions/...` form until actionlint
+  # understands GitHub's newer self-repository (`$/...`) syntax. Revisit when upgrading actionlint.
+  self-repository:
+    disable: true

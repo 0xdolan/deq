@@ -1,0 +1,28 @@
+[project]
+name = "deq-shapes"
+version = "0.0.0"
+description = "Deq: traditional Kurdish tattoo shapes as an open, parametric design system (Python library and CLI)."
+readme = "README.md"
+requires-python = ">=3.12"
+license = "GPL-3.0-or-later"
+license-files = ["LICENSE"]
+authors = [{ name = "0xdolan", email = "0xdolan@gmail.com" }]
+keywords = ["deq", "kurdish", "icons", "svg", "shapes", "design-system"]
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "Programming Language :: Python :: 3",
+    "Typing :: Typed",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://0xdolan.github.io/deq/"
+Repository = "https://github.com/0xdolan/deq"
+Issues = "https://github.com/0xdolan/deq/issues"
+
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/deq_shapes"]

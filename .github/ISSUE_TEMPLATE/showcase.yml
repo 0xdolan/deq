@@ -1,0 +1,14 @@
+name: Showcase a project
+description: Submit a project that uses Deq.
+labels: ["type: showcase", "status: triage"]
+body:
+  - type: input
+    id: url
+    attributes:
+      label: Project URL
+    validations: { required: true }
+  - type: textarea
+    id: about
+    attributes:
+      label: Short description and which Deq shapes it uses
+    validations: { required: true }
