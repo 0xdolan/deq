@@ -11,7 +11,7 @@ description: Deq logo, color and Kurdish flag usage rules. Use when making brand
 
 - Symbol only until Phase 12: no wordmark or lockup.
 - The concepts are in `assets/brand/concepts/logo-concept-*.json`, in the shape format with category `brand`, on the 24-unit grid. They are drawn mono and in flag colours in `docs/design/logo-concepts.svg` (`uv run deq-spec sheet --set concepts --force`).
-- **Chosen mark: concept A, the chin mark** (`logo-concept-a`): a chevron (4,15) (12,6) (20,15) with a dot of radius 2 at (12,18.5). Phase 12 builds the final logo, lockup and wordmark from it. Concepts B to D are kept for reference only.
+- **Chosen mark: concept A, the chin mark** (`logo-concept-a`): a V (4,9) (12,18) (20,9), point down, with a dot of radius 2 above it at (12,5.5). Phase 12 builds the final logo, lockup and wordmark from it. Concepts B to D are kept for reference only.
 
 ## Flag of Kurdistan
 
