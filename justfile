@@ -41,6 +41,7 @@ typecheck:
 test:
     pnpm test
     uv run pytest
+    uv run deq-assets verify
     cargo test --workspace --locked
 
 # Build all packages

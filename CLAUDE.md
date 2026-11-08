@@ -1,6 +1,6 @@
 # Deq: project rules for AI agents
 
-Deq turns traditional Kurdish tattoo (deq) motifs into an open, parametric design system: shape spec, renderers in TS/Python/Rust, exporters, icon packages, fonts, a website with Studio, and a cited cultural story. The full plan is in `PRD-detailed.md` (local only, never committed). Current phase: **0 done** (foundation).
+Deq turns traditional Kurdish tattoo (deq) motifs into an open, parametric design system: shape spec, renderers in TS/Python/Rust, exporters, icon packages, fonts, a website with Studio, and a cited cultural story. The full plan is in `PRD-detailed.md` (local only, never committed). Current phase: **1 done** (research and assets; motif catalog approved, next is Phase 2).
 
 ## Hard rules
 
@@ -19,6 +19,7 @@ Deq turns traditional Kurdish tattoo (deq) motifs into an open, parametric desig
 | Full local CI (same as GitHub)   | `just ci`                                                                              |
 | Stages                           | `just lint`, `just typecheck`, `just test`, `just build`, `just audit`, `just secrets` |
 | Format                           | `just fmt`                                                                             |
+| Image assets                     | `uv run deq-assets {inventory,process,verify,variants,contact-sheet}`                  |
 | CI in Docker                     | `just docker-ci`                                                                       |
 
 ## Layout
@@ -26,6 +27,9 @@ Deq turns traditional Kurdish tattoo (deq) motifs into an open, parametric desig
 - `packages/<name>` → npm `@0xdolan/deq-<name>` (core, icons, react, vue, svelte, elements, exporters, generator, cli). TS 6.0 strict, built with `tsc`, tested with Vitest (coverage ≥ 95% lines).
 - `python/deq-shapes` → PyPI `deq-shapes`, import `deq_shapes`. uv workspace, mypy --strict, Ruff, pytest (coverage ≥ 95%).
 - `rust/deq-shapes`, `rust/deq-cli` (binary `deq`) → crates.io. Edition 2024, MSRV 1.85, toolchain pinned 1.99.1, `unsafe` forbidden, clippy pedantic, no unwrap/expect/panic.
+- `assets/`: WebP masters in `images/` and `video/`, plus `source-manifest.json` (provenance of every image). Variants go to the gitignored `assets/.generated/`.
+- `content/sources.json`: the bibliography (CSL-JSON). `docs/research/`: notes, URL status, attribution review and the motif catalog.
+- `scripts/deq-assets`: the private image tool (uv workspace, not published).
 - `spec/` (single source of truth for shapes, Phase 2+), `apps/site` (Astro site, Phase 7+), `docs/` (guides, ADRs in `docs/decisions/`).
 - `.github/actions/setup` is the shared toolchain setup for workflows.
 

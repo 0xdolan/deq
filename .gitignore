@@ -28,6 +28,7 @@ htmlcov/
 target/
 
 # --- Build artifacts (attached to releases, never committed) ---
+/assets/.generated/
 /fonts/dist/
 *.deb
 
