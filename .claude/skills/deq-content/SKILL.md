@@ -27,6 +27,7 @@ description: Rules for writing Deq story, history, shape meanings and sources, a
 - Categories: `story/{historical,ethnographic,contemporary,artists,patterns,documentary}` and `references/shapes`.
 - Every file, kept or excluded, has a record in `assets/source-manifest.json`. `uv run deq-assets verify` (in `just test` and CI) checks hashes, metadata, unlisted files and `sourceId`s.
 - `attribution`: `confirmed` (found on a cited page that credits it, so a `sourceId` is required), `inferred` (evidence but no match; say what the evidence is in `attributionNote`) or `unknown`. Never upgrade an attribution without new evidence. Never show an inferred credit as confirmed.
+- `rights`: `owner-permission` (the owner's statement) or a licence id such as `cc-by-nc-sa-2.0` when the source page states one. Add new licence ids to `RIGHTS` in `scripts/deq-assets/src/deq_assets/manifest.py`, and honour their terms (credit, non-commercial, share-alike) on the site.
 - Tag `motifs` with ids from `docs/research/motif-catalog.md`.
 - Responsive variants are built with `uv run deq-assets variants` into the gitignored `assets/.generated/`. Never commit them.
 - Captions and alt text (en, ckb, kmr) are added with the story (Phase 10).

@@ -5,9 +5,13 @@
     "title": "Deq (tattoo)",
     "container-title": "Wikipedia",
     "publisher": "Wikimedia Foundation",
-    "issued": { "date-parts": [[2026, 10, 21]] },
+    "issued": {
+      "date-parts": [[2026, 10, 21]]
+    },
     "URL": "https://en.wikipedia.org/wiki/Deq_(tattoo)",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "articles",
@@ -20,11 +24,20 @@
     "id": "dailysabah-2016",
     "type": "article-newspaper",
     "title": "Deq: A dying art among Turkey's Kurdish women",
-    "author": [{ "family": "Dark", "given": "Gülşah" }],
+    "author": [
+      {
+        "family": "Dark",
+        "given": "Gülşah"
+      }
+    ],
     "container-title": "Daily Sabah",
-    "issued": { "date-parts": [[2016, 1, 13]] },
+    "issued": {
+      "date-parts": [[2016, 1, 13]]
+    },
     "URL": "https://www.dailysabah.com/feature/2016/01/13/deq-a-dying-art-among-turkeys-kurdish-women",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "articles",
@@ -36,24 +49,45 @@
     "id": "kurdistan-chronicle-2026",
     "type": "article-magazine",
     "title": "Skin as Memory",
-    "author": [{ "family": "Riegow-Can", "given": "Janin" }],
+    "author": [
+      {
+        "family": "Riegow-Can",
+        "given": "Janin"
+      }
+    ],
     "container-title": "Kurdistan Chronicle",
-    "issued": { "date-parts": [[2026, 8, 19]] },
+    "issued": {
+      "date-parts": [[2026, 8, 19]]
+    },
     "URL": "https://kurdistanchronicle.com/babat/4852",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
-    "custom": { "group": "articles", "status": "ok" }
+    "custom": {
+      "group": "articles",
+      "status": "ok"
+    }
   },
   {
     "id": "sbs-2022",
     "type": "broadcast",
     "title": "Fatê Temel's desire to keep traditional tattooing (deq/xal) alive",
-    "author": [{ "family": "Khalil", "given": "Mayada Kordy" }],
+    "author": [
+      {
+        "family": "Khalil",
+        "given": "Mayada Kordy"
+      }
+    ],
     "container-title": "SBS Kurdish",
     "publisher": "Special Broadcasting Service",
-    "issued": { "date-parts": [[2022, 11, 30]] },
+    "issued": {
+      "date-parts": [[2022, 11, 30]]
+    },
     "URL": "https://www.sbs.com.au/language/kurdish/en/podcast-episode/fate-temels-desire-to-keep-traditional-tattooing-deq-xal-alive/n7e8v4lqw",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "video",
@@ -65,10 +99,16 @@
     "id": "instagram-deq-artstudio",
     "type": "webpage",
     "title": "Deq Art Studio (@deq.artstudio)",
-    "author": [{ "literal": "Deq Art Studio" }],
+    "author": [
+      {
+        "literal": "Deq Art Studio"
+      }
+    ],
     "container-title": "Instagram",
     "URL": "https://www.instagram.com/deq.artstudio/",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "social",
       "status": "partial",
@@ -79,11 +119,20 @@
     "id": "ausgeo-2010",
     "type": "article-magazine",
     "title": "Oppressed Kurds express culture in Australia",
-    "author": [{ "family": "Young", "given": "Emma" }],
+    "author": [
+      {
+        "family": "Young",
+        "given": "Emma"
+      }
+    ],
     "container-title": "Australian Geographic",
-    "issued": { "date-parts": [[2010, 3, 2]] },
+    "issued": {
+      "date-parts": [[2010, 3, 2]]
+    },
     "URL": "https://www.australiangeographic.com.au/news/2010/03/oppressed-kurds-express-culture-in-australia/",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "articles",
@@ -95,11 +144,20 @@
     "id": "indyturk-2020",
     "type": "article-newspaper",
     "title": "Kadim zamanların izi: Deq",
-    "author": [{ "family": "Çakırtaş", "given": "Şeyhmus" }],
+    "author": [
+      {
+        "family": "Çakırtaş",
+        "given": "Şeyhmus"
+      }
+    ],
     "container-title": "Independent Türkçe",
-    "issued": { "date-parts": [[2020, 4, 21]] },
+    "issued": {
+      "date-parts": [[2020, 4, 21]]
+    },
     "URL": "https://www.indyturk.com/node/166691/t%C3%BCrkiyeden-sesler/kadim-zamanlar%C4%B1n-izi-deq",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "tr",
     "custom": {
       "group": "archives",
@@ -112,11 +170,20 @@
     "id": "mee-2022",
     "type": "article-newspaper",
     "title": "Partridge eyes and stars: Traditional tattoos of Amazigh, Bedouin and Kurdish women",
-    "author": [{ "family": "Osman", "given": "Nadda" }],
+    "author": [
+      {
+        "family": "Osman",
+        "given": "Nadda"
+      }
+    ],
     "container-title": "Middle East Eye",
-    "issued": { "date-parts": [[2022, 3, 21]] },
+    "issued": {
+      "date-parts": [[2022, 3, 21]]
+    },
     "URL": "https://www.middleeasteye.net/discover/middle-east-face-tattoos-traditional-amazigh-bedouin-kurdish",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "articles",
@@ -128,11 +195,20 @@
     "id": "aljazeera-2023",
     "type": "article-newspaper",
     "title": "Deq: The tattooist preserving the ink of a disappearing culture",
-    "author": [{ "family": "Ashly", "given": "Jaclynn" }],
+    "author": [
+      {
+        "family": "Ashly",
+        "given": "Jaclynn"
+      }
+    ],
     "container-title": "Al Jazeera",
-    "issued": { "date-parts": [[2023, 1, 8]] },
+    "issued": {
+      "date-parts": [[2023, 1, 8]]
+    },
     "URL": "https://www.aljazeera.com/features/longform/2023/1/8/deq-the-tattooist-preserving-the-ink-of-a-disappearing-culture",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "photo-essays",
@@ -144,10 +220,16 @@
     "id": "yt-aljazeera-newsfeed",
     "type": "motion_picture",
     "title": "Keeping alive traditional Kurdish 'deq' tattoo body art | Al Jazeera Newsfeed",
-    "author": [{ "literal": "Al Jazeera English" }],
+    "author": [
+      {
+        "literal": "Al Jazeera English"
+      }
+    ],
     "container-title": "YouTube",
     "URL": "https://www.youtube.com/watch?v=yjRU3eKpGkM",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "video",
       "status": "partial",
@@ -159,10 +241,17 @@
     "id": "yt-yavuklu-kadim-izler",
     "type": "motion_picture",
     "title": "Deq ~ Kadim İzler ~ Tattoo",
-    "author": [{ "family": "Yavuklu", "given": "Ahmet" }],
+    "author": [
+      {
+        "family": "Yavuklu",
+        "given": "Ahmet"
+      }
+    ],
     "container-title": "YouTube",
     "URL": "https://www.youtube.com/watch?v=8fSC-JO1x4Y",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "tr",
     "custom": {
       "group": "video",
@@ -177,7 +266,9 @@
     "title": "Kurdish tattoos (deq)",
     "container-title": "r/kurdistan, Reddit",
     "URL": "https://www.reddit.com/r/kurdistan/comments/1bjs3mv/kurdish_tattoos_deq/",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "social",
       "status": "blocked",
@@ -188,10 +279,17 @@
     "id": "yt-yavuklu-part1",
     "type": "motion_picture",
     "title": "Part -1 Deq ~ Tattoo",
-    "author": [{ "family": "Yavuklu", "given": "Ahmet" }],
+    "author": [
+      {
+        "family": "Yavuklu",
+        "given": "Ahmet"
+      }
+    ],
     "container-title": "YouTube",
     "URL": "https://www.youtube.com/watch?v=Hk3iN5yPgLI",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "video",
       "status": "partial",
@@ -203,10 +301,17 @@
     "id": "yt-yavuklu-channel",
     "type": "webpage",
     "title": "Ahmet Yavuklu (@ahmetyavuklu_)",
-    "author": [{ "family": "Yavuklu", "given": "Ahmet" }],
+    "author": [
+      {
+        "family": "Yavuklu",
+        "given": "Ahmet"
+      }
+    ],
     "container-title": "YouTube",
     "URL": "https://www.youtube.com/@ahmetyavuklu_",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "video",
       "status": "partial",
@@ -217,10 +322,17 @@
     "id": "yt-yavuklu-last-marks",
     "type": "motion_picture",
     "title": "The Last Marks: Deq - Tattoo",
-    "author": [{ "family": "Yavuklu", "given": "Ahmet" }],
+    "author": [
+      {
+        "family": "Yavuklu",
+        "given": "Ahmet"
+      }
+    ],
     "container-title": "YouTube",
     "URL": "https://www.youtube.com/watch?v=VDlbjuFV_S8",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "video",
       "status": "partial",
@@ -232,10 +344,16 @@
     "id": "yt-great-big-story",
     "type": "motion_picture",
     "title": "Meet the Deq Tattooist Leaving Her Mark",
-    "author": [{ "literal": "Great Big Story" }],
+    "author": [
+      {
+        "literal": "Great Big Story"
+      }
+    ],
     "container-title": "YouTube",
     "URL": "https://www.youtube.com/watch?v=oVUaLRwh03I",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "video",
@@ -250,7 +368,9 @@
     "title": "Ḵālkubi",
     "container-title": "Encyclopædia Iranica",
     "URL": "https://www.iranicaonline.org/articles/kalkubi/",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "academic",
@@ -262,11 +382,20 @@
     "id": "natgeo-2015",
     "type": "article-magazine",
     "title": "The Last Tattooed Women of Kobane",
-    "author": [{ "family": "Dukehart", "given": "Coburn" }],
+    "author": [
+      {
+        "family": "Dukehart",
+        "given": "Coburn"
+      }
+    ],
     "container-title": "National Geographic",
-    "issued": { "date-parts": [[2015, 1, 21]] },
+    "issued": {
+      "date-parts": [[2015, 1, 21]]
+    },
     "URL": "https://www.nationalgeographic.com/photography/article/the-last-tattooed-women-of-kobane",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "photo-essays",
@@ -278,10 +407,17 @@
     "id": "hilton-tattooed-women",
     "type": "webpage",
     "title": "Last Tattooed Women of Kobani",
-    "author": [{ "family": "Hilton", "given": "Jodi" }],
+    "author": [
+      {
+        "family": "Hilton",
+        "given": "Jodi"
+      }
+    ],
     "container-title": "Jodi Hilton",
     "URL": "https://www.jodihilton.com/tattooed-women",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "photo-essays",
@@ -293,10 +429,16 @@
     "id": "deq-ttt-archive",
     "type": "webpage",
     "title": "DEQ Archive",
-    "author": [{ "literal": "Elu (deq-ttt)" }],
+    "author": [
+      {
+        "literal": "Elu (deq-ttt)"
+      }
+    ],
     "container-title": "deq-ttt.com",
     "URL": "https://www.deq-ttt.com/deq-archive",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "archives",
       "status": "ok",
@@ -307,10 +449,16 @@
     "id": "deq-ttt-home",
     "type": "webpage",
     "title": "deq-ttt: Home",
-    "author": [{ "literal": "Elu (deq-ttt)" }],
+    "author": [
+      {
+        "literal": "Elu (deq-ttt)"
+      }
+    ],
     "container-title": "deq-ttt.com",
     "URL": "https://www.deq-ttt.com/",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "social",
       "status": "ok",
@@ -321,10 +469,16 @@
     "id": "deq-ttt-documentary",
     "type": "webpage",
     "title": "DEQ Documentary",
-    "author": [{ "literal": "Elu (deq-ttt)" }],
+    "author": [
+      {
+        "literal": "Elu (deq-ttt)"
+      }
+    ],
     "container-title": "deq-ttt.com",
     "URL": "https://www.deq-ttt.com/deq-documentary",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "video",
       "status": "ok",
@@ -335,10 +489,16 @@
     "id": "instagram-deq-ttt",
     "type": "webpage",
     "title": "ELU (@deq.ttt)",
-    "author": [{ "literal": "Elu (deq-ttt)" }],
+    "author": [
+      {
+        "literal": "Elu (deq-ttt)"
+      }
+    ],
     "container-title": "Instagram",
     "URL": "https://www.instagram.com/deq.ttt",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "social",
       "status": "partial",
@@ -349,23 +509,44 @@
     "id": "amargi-2025",
     "type": "article-magazine",
     "title": "Deq: A Mesopotamian Tattoo Tradition Revived in Istanbul",
-    "author": [{ "family": "Bingöl", "given": "Şilan" }],
+    "author": [
+      {
+        "family": "Bingöl",
+        "given": "Şilan"
+      }
+    ],
     "container-title": "The Amargi",
-    "issued": { "date-parts": [[2025, 12, 20]] },
+    "issued": {
+      "date-parts": [[2025, 12, 20]]
+    },
     "URL": "https://theamargi.com/posts/deq-a-mesopotamian-tattoo-tradition-revived-in-istanbul",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
-    "custom": { "group": "articles", "status": "ok" }
+    "custom": {
+      "group": "articles",
+      "status": "ok"
+    }
   },
   {
     "id": "natakallam-2024",
     "type": "post-weblog",
     "title": "Deq: The Art of Kurdish Tattooing",
-    "author": [{ "family": "Mushtaq", "given": "Suhara" }],
+    "author": [
+      {
+        "family": "Mushtaq",
+        "given": "Suhara"
+      }
+    ],
     "container-title": "NaTakallam Blog",
-    "issued": { "date-parts": [[2024, 2, 5]] },
+    "issued": {
+      "date-parts": [[2024, 2, 5]]
+    },
     "URL": "https://natakallam.com/blog/deq-kurdish-tattooing/",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "articles",
@@ -379,7 +560,9 @@
     "title": "خاڵ كوتان له‌ كورده‌واریدا",
     "container-title": "Diplomatic Magazine",
     "URL": "http://diplomaticmagazine.net/culture/1728",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "ckb",
     "custom": {
       "group": "archives",
@@ -392,11 +575,20 @@
     "id": "ozgur-2021",
     "type": "article-newspaper",
     "title": "Antik Çağ'dan günümüze ulaşan bir gelenek: Deq",
-    "author": [{ "family": "Kaya", "given": "Yılmaz" }],
+    "author": [
+      {
+        "family": "Kaya",
+        "given": "Yılmaz"
+      }
+    ],
     "container-title": "Yeni Özgür Politika",
-    "issued": { "date-parts": [[2021, 4, 28]] },
+    "issued": {
+      "date-parts": [[2021, 4, 28]]
+    },
     "URL": "https://www.ozgurpolitika.com/haberi-antik-cagdan-gunumuze-ulasan-bir-gelenekdeq-149128",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "tr",
     "custom": {
       "group": "archives",
@@ -411,7 +603,9 @@
     "title": "Tattooed Women of Kobani (editorial images)",
     "container-title": "Getty Images",
     "URL": "https://www.gettyimages.ca/editorial-images/news/event/tattooed-women-of-kobani/775145598",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "photo-essays",
       "status": "blocked",
@@ -423,9 +617,13 @@
     "type": "article-newspaper",
     "title": "Untitled article, The National (UAE), 9 November 2014",
     "container-title": "The National",
-    "issued": { "date-parts": [[2014, 11, 9]] },
+    "issued": {
+      "date-parts": [[2014, 11, 9]]
+    },
     "URL": "https://www.pressreader.com/uae/the-national-news/20141109/281676843196541",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "custom": {
       "group": "articles",
       "status": "blocked",
@@ -436,11 +634,20 @@
     "id": "surprisinglives-2015",
     "type": "post-weblog",
     "title": "The Women of Kobane And Their Unique Facial Tattooing",
-    "author": [{ "family": "Ricks", "given": "Amanda" }],
+    "author": [
+      {
+        "family": "Ricks",
+        "given": "Amanda"
+      }
+    ],
     "container-title": "Surprising Lives",
-    "issued": { "date-parts": [[2015, 2]] },
+    "issued": {
+      "date-parts": [[2015, 2]]
+    },
     "URL": "https://surprisinglives.net/women-koban-facial-tattooing/",
-    "accessed": { "date-parts": [[2026, 11, 8]] },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
     "language": "en",
     "custom": {
       "group": "articles",
@@ -452,10 +659,17 @@
     "id": "drower-1941",
     "type": "book",
     "title": "Peacock Angel: Being Some Account of Votaries of a Secret Cult and Their Sanctuaries",
-    "author": [{ "family": "Drower", "given": "E. S." }],
+    "author": [
+      {
+        "family": "Drower",
+        "given": "E. S."
+      }
+    ],
     "publisher": "John Murray",
     "publisher-place": "London",
-    "issued": { "date-parts": [[1941]] },
+    "issued": {
+      "date-parts": [[1941]]
+    },
     "language": "en",
     "custom": {
       "group": "academic",
@@ -467,12 +681,19 @@
     "id": "field-1958",
     "type": "article-journal",
     "title": "Body-Marking in Southwestern Asia",
-    "author": [{ "family": "Field", "given": "Henry" }],
+    "author": [
+      {
+        "family": "Field",
+        "given": "Henry"
+      }
+    ],
     "container-title": "Papers of the Peabody Museum of Archaeology and Ethnology",
     "publisher": "Harvard University",
     "volume": "45",
     "issue": "1",
-    "issued": { "date-parts": [[1958]] },
+    "issued": {
+      "date-parts": [[1958]]
+    },
     "language": "en",
     "custom": {
       "group": "academic",
@@ -484,15 +705,47 @@
     "id": "de-morgan-mission",
     "type": "book",
     "title": "Mission scientifique en Perse",
-    "author": [{ "family": "de Morgan", "given": "Jacques" }],
+    "author": [
+      {
+        "family": "de Morgan",
+        "given": "Jacques"
+      }
+    ],
     "publisher": "Ernest Leroux",
     "publisher-place": "Paris",
-    "issued": { "date-parts": [[1894]] },
+    "issued": {
+      "date-parts": [[1894]]
+    },
     "language": "fr",
     "custom": {
       "group": "academic",
       "status": "to-verify",
       "notes": "Not in the owner's link list. The three figures (de-morgan-fig-27..29) carry printed captions 'Tatouages des femmes kurdes de Tchômaklou / Kilakân / Kilakân et Kialhours'; the volume, page and year of those figures are not yet confirmed."
+    }
+  },
+  {
+    "id": "flickr-turgutoglu-2015",
+    "type": "graphic",
+    "title": "Suruc - Victory-17",
+    "author": [
+      {
+        "family": "Turgutoglu",
+        "given": "Alan"
+      }
+    ],
+    "container-title": "Flickr",
+    "URL": "https://www.flickr.com/photos/seeyouinaflash/18573478922/",
+    "issued": {
+      "date-parts": [[2015, 2, 5]]
+    },
+    "accessed": {
+      "date-parts": [[2026, 11, 8]]
+    },
+    "language": "en",
+    "custom": {
+      "group": "photo-essays",
+      "status": "ok",
+      "notes": "Flickr photo 18573478922, taken 2015-02-05 in Suruç, uploaded 2015-06-07. Licence CC BY-NC-SA 2.0. Read via https://www.flickr.com/photo.gne?id=18573478922."
     }
   }
 ]

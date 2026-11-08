@@ -25,7 +25,7 @@ CATEGORIES = (
 )
 Attribution = Literal["confirmed", "inferred", "unknown"]
 ATTRIBUTIONS: tuple[Attribution, ...] = ("confirmed", "inferred", "unknown")
-RIGHTS = ("owner-permission",)
+RIGHTS = ("owner-permission", "cc-by-nc-sa-2.0")
 
 _ID = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+)*$")
 _SHA = re.compile(r"^[0-9a-f]{64}$")

@@ -1,6 +1,6 @@
-# Draft motif catalog
+# Motif catalog
 
-> **Status: draft, awaiting owner approval** (PRD §8.2). Nothing is drawn until the owner approves this list.
+> **Status: approved for Phase 2** on 2026-11-08. The owner delegated the review to the maintainer agent (PRD §8.2); see [Decisions](#decisions). The owner can reverse any decision before or during Phase 2.
 
 The motifs below were tagged on every image in [`assets/source-manifest.json`](../../assets/source-manifest.json) (the `motifs` field), then grouped into the categories proposed in PRD §8.2.
 
@@ -106,7 +106,7 @@ Each cell is labelled with its asset id.
 
 ## Named in sources but not seen in any image
 
-These motifs need a reference image, from the owner or a source, before they can be drawn.
+**Deferred:** these motifs stay on the list but are not drawn until there is a reference image (from the owner or a cited source). Drawing them from a written name alone would invent a form that no source shows.
 
 | Id                  | Kurmanji                              | Named in                                                         |
 | ------------------- | ------------------------------------- | ---------------------------------------------------------------- |
@@ -125,15 +125,19 @@ These motifs need a reference image, from the owner or a source, before they can
 | `daqqayeh`          | needs native review                   | drower-1941, wikipedia-deq (on the Drower plate, not yet tagged) |
 | `res-daqq`          | needs native review                   | drower-1941, wikipedia-deq (on the Drower plate, not yet tagged) |
 
-Özgür Politika also names a pistol and a sword among men's tattoos [ozgur-2021]. They are left out of this draft. **Owner decision:** should they be included?
+Özgür Politika also names a pistol and a sword among men's tattoos [ozgur-2021]. They are not in the catalog: only one source names them, and no image shows them. They stay in the research notes.
 
 ## Count and the Phase 2 target
 
 This draft has 43 motifs tagged on images (7 of them compositions), 2 Kurdish symbols from PRD §8.3, and 14 motifs named only in sources. That is 59 candidates in all. PRD §8.2 targets at least 60 base shapes in v1.0, plus parametric variants (for example ray count, dot count and stroke). The Phase 2 spec will turn the approved list into shapes, with variants such as dot counts or nesting depth, and with compositions built by reference from base shapes.
 
-## Questions for the owner
+## Decisions
 
-1. Approve, rename, merge or drop motifs in the tables above.
-2. Are the eight categories right?
-3. Should the source-only motifs be drawn without a reference image, or wait for one?
-4. Who can review the Kurdish names in Sorani and Kurmanji?
+Made on 2026-11-08 on the owner's behalf, at their request.
+
+1. **Motifs:** all 43 tagged motifs and the 2 Kurdish symbols are approved as listed, with no renames or merges. Phase 2 can still merge two motifs if their geometry turns out to be the same shape with a different parameter (for example `chevron` and `chevron-stack`).
+2. **Categories:** the eight categories proposed in PRD §8.2 are kept.
+3. **Source-only motifs:** the 14 are deferred until a reference image exists. They are not drawn from their names alone.
+4. **Pistol and sword:** left out (see above).
+5. **Kurdish names:** still open. Every Sorani name, and every Kurmanji name not given by a source, stays marked _needs native review_ until a native speaker checks it. No name will be invented.
+6. **Phase 2 target:** 45 drawable base shapes (43 motifs and the 2 symbols), with parametric variants (ray count, dot count, nesting depth, stroke). The PRD target of at least 60 base shapes applies to v1.0, and the deferred motifs are the path to it as reference images arrive.

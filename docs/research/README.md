@@ -2,13 +2,13 @@
 
 Phase 1 organises and credits the source knowledge and images that Deq builds on (PRD §15).
 
-| File                                                               | Contents                                                                                   |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
-| [`content/sources.json`](../../content/sources.json)               | Bibliography (CSL-JSON): 30 sources from the owner's list and 3 referenced works to verify |
-| [notes.md](notes.md)                                               | Key facts per story chapter, with citations and disagreements                              |
-| [`assets/source-manifest.json`](../../assets/source-manifest.json) | Every image and animation, with provenance, credit and rights                              |
-| [image-attribution.md](image-attribution.md)                       | Attribution review list for the owner (confirmed, inferred, unknown)                       |
-| [motif-catalog.md](motif-catalog.md)                               | Draft motif catalog and contact sheets, **for owner approval**                             |
+| File                                                               | Contents                                                                                                            |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------- |
+| [`content/sources.json`](../../content/sources.json)               | Bibliography (CSL-JSON): 30 sources from the owner's list, 3 referenced works to verify and 1 image source (Flickr) |
+| [notes.md](notes.md)                                               | Key facts per story chapter, with citations and disagreements                                                       |
+| [`assets/source-manifest.json`](../../assets/source-manifest.json) | Every image and animation, with provenance, credit and rights                                                       |
+| [image-attribution.md](image-attribution.md)                       | Attribution review list for the owner (confirmed, inferred, unknown)                                                |
+| [motif-catalog.md](motif-catalog.md)                               | Motif catalog and contact sheets (approved for Phase 2)                                                             |
 
 ## Method
 
