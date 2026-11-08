@@ -70,11 +70,15 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: zizmorcore/zizmor-action@53290badfa369cb0bf7ad16342cb62c2fa47ac7b # v0.8.0
+      # zizmor comes from uv.lock (hash-pinned, same version as `just lint`).
+      - uses: astral-sh/setup-uv@07a047e608db84b3d8c06cd9a7c7dcc9c355c18e # v10.3.2
         with:
-          advanced-security: "false"
-          annotations: "true"
-          version: "1.32.0"
+          version: "0.13.5"
+          enable-cache: false
+      - name: Run zizmor (online audits)
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: uv run --frozen --only-group dev zizmor --format github .github
 
   test:
     name: Typecheck and test (${{ matrix.os }})
