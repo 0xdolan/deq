@@ -66,6 +66,11 @@ def shape_files(directory: Path) -> list[Path]:
     return files
 
 
+def _rel(path: Path, root: Path) -> str:
+    """``path`` relative to ``root`` with forward slashes, so messages match on every OS."""
+    return path.relative_to(root).as_posix()
+
+
 def load_registry(repo: Repo, report: Report | None = None) -> Registry:
     """All shapes (spec/shapes and the brand concepts) keyed by id."""
     reg = Registry()
@@ -74,11 +79,12 @@ def load_registry(repo: Repo, report: Report | None = None) -> Registry:
         sid = data.get("id") if isinstance(data, dict) else None
         if not isinstance(sid, str):
             if report is not None:
-                report.add(str(path), "no string `id`")
+                report.add(_rel(path, repo.root), "no string `id`")
             continue
         if sid in reg.shapes:
             if report is not None:
-                report.add(str(path), f"duplicate id {sid!r} (also {reg.paths[sid]})")
+                also = _rel(reg.paths[sid], repo.root)
+                report.add(_rel(path, repo.root), f"duplicate id {sid!r} (also {also})")
             continue
         reg.shapes[sid] = data
         reg.paths[sid] = path
@@ -140,7 +146,7 @@ def lint_shape(
     ctx: dict[str, Any],
     report: Report,
 ) -> None:
-    where = str(path.relative_to(repo.root))
+    where = _rel(path, repo.root)
     errs = list(_schema_errors(ctx["shape_schema"], data))
     if errs:
         for e in errs:
@@ -247,9 +253,7 @@ def lint(root: Path) -> Report:
     _lint_catalog(repo, reg, report)
     for path in (repo.spec / "grid.json", repo.spec / "catalog.json", repo.spec / "flag.json"):
         if path.is_file() and path.read_text(encoding="utf-8") != jsonfmt.dumps(read_json(path)):
-            report.add(
-                str(path.relative_to(root)), "not canonically formatted: run `uv run deq-spec fmt`"
-            )
+            report.add(_rel(path, root), "not canonically formatted: run `uv run deq-spec fmt`")
 
     flag_path = repo.spec / "flag.json"
     if not flag_path.is_file():

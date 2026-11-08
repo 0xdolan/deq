@@ -22,7 +22,7 @@ def _write(path: Path, text: str, *, force: bool) -> None:
     if path.exists() and not force:
         raise SpecError(f"{path} exists; pass --force to overwrite")
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(text, encoding="utf-8")
+    path.write_text(text, encoding="utf-8", newline="\n")
 
 
 def build_sheet(root: Path, which: str) -> str:
@@ -57,7 +57,7 @@ def _format(path: Path, data: object, *, check: bool) -> list[Path]:
     if path.read_text(encoding="utf-8") == text:
         return []
     if not check:
-        path.write_text(text, encoding="utf-8")
+        path.write_text(text, encoding="utf-8", newline="\n")
     return [path]
 
 
@@ -118,7 +118,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         if args.command == "fmt":
             changed = format_files(root, check=args.check)
             for path in changed:
-                print(path.relative_to(root))
+                print(path.relative_to(root).as_posix())
             return 1 if args.check and changed else 0
         if args.command == "render":
             repo = lint.Repo(root)
