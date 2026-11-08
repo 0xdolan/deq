@@ -1,0 +1,19 @@
+name: New Deq shape
+description: Propose a traditional Deq motif for the catalog.
+labels: ["type: shape", "status: triage"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Name (English, and Kurdish if known)
+    validations: { required: true }
+  - type: textarea
+    id: reference
+    attributes:
+      label: Reference
+      description: Link to a photo, archive record or publication showing the motif. Only share images you have the right to share.
+    validations: { required: true }
+  - type: textarea
+    id: meaning
+    attributes:
+      label: Known meaning, region or community (with a source)
