@@ -7,16 +7,20 @@ license = "GPL-3.0-or-later"
 
 [tool.uv]
 package = false
+# Supply-chain age gate, same as pnpm minimumReleaseAge.
+exclude-newer = "7 days"
 
 [tool.uv.workspace]
-members = ["python/*"]
+members = ["python/*", "scripts/deq-assets"]
 
 [tool.uv.sources]
 deq-shapes = { workspace = true }
+deq-assets = { workspace = true }
 
 [dependency-groups]
 dev = [
     "deq-shapes",
+    "deq-assets",
     "pytest>=8",
     "pytest-cov>=6",
     "hypothesis>=6",
@@ -29,7 +33,7 @@ dev = [
 [tool.ruff]
 line-length = 100
 target-version = "py312"
-src = ["python/*/src", "python/*/tests"]
+src = ["python/*/src", "python/*/tests", "scripts/*/src", "scripts/*/tests"]
 
 [tool.ruff.lint]
 select = ["E", "W", "F", "I", "B", "UP", "S", "N", "C4", "SIM", "RUF", "PT", "ANN"]
@@ -40,8 +44,13 @@ select = ["E", "W", "F", "I", "B", "UP", "S", "N", "C4", "SIM", "RUF", "PT", "AN
 [tool.mypy]
 strict = true
 python_version = "3.12"
-files = ["python/deq-shapes/src", "python/deq-shapes/tests"]
+files = [
+    "python/deq-shapes/src",
+    "python/deq-shapes/tests",
+    "scripts/deq-assets/src",
+    "scripts/deq-assets/tests",
+]
 
 [tool.pytest.ini_options]
-addopts = "--strict-markers --cov=deq_shapes --cov-report=term-missing:skip-covered --cov-fail-under=95"
-testpaths = ["python"]
+addopts = "--strict-markers --cov=deq_shapes --cov=deq_assets --cov-report=term-missing:skip-covered --cov-fail-under=95"
+testpaths = ["python", "scripts/deq-assets/tests"]

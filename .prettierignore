@@ -10,3 +10,5 @@ Cargo.lock
 **/target/
 **/.venv/
 CHANGELOG.md
+# Written by scripts/deq-assets
+assets/source-manifest.json
