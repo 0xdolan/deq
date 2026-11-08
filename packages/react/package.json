@@ -1,0 +1,37 @@
+{
+  "name": "@0xdolan/deq-react",
+  "version": "0.0.0",
+  "description": "Deq shapes as typed React components.",
+  "license": "GPL-3.0-or-later",
+  "author": "0xdolan <0xdolan@gmail.com>",
+  "homepage": "https://0xdolan.github.io/deq/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xdolan/deq.git",
+    "directory": "packages/react"
+  },
+  "bugs": "https://github.com/0xdolan/deq/issues",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --coverage"
+  },
+  "publishConfig": {
+    "access": "public",
+    "provenance": true
+  }
+}
