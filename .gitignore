@@ -1,0 +1,50 @@
+# --- Never commit (owner rule) ---
+/temp/
+/PRD
+/PRD-detailed.md
+
+# --- Node / TypeScript ---
+node_modules/
+dist/
+*.tsbuildinfo
+.turbo/
+coverage/
+.eslintcache
+.astro/
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+.venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+*.egg-info/
+
+# --- Rust ---
+target/
+
+# --- Build artifacts (attached to releases, never committed) ---
+/fonts/dist/
+*.deb
+
+# --- Secrets and local env ---
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# --- Editors / OS ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp
+
+# --- Claude Code local state ---
+.claude/settings.local.json
