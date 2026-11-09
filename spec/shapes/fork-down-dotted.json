@@ -1,0 +1,45 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "fork-down-dotted",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Inverted fork with dots",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["fork", "y", "dots"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["prongs", "stem", "dots"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 14, "x2": 6, "y2": 20, "id": "prong-left", "layer": "prongs" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 14,
+      "x2": 18,
+      "y2": 20,
+      "id": "prong-right",
+      "layer": "prongs"
+    },
+    { "type": "line", "x1": 12, "y1": 14, "x2": 12, "y2": 4, "id": "stem", "layer": "stem" },
+    { "type": "dot", "cx": 8.5, "cy": 10, "id": "dot-left", "layer": "dots" },
+    { "type": "dot", "cx": 15.5, "cy": 10, "id": "dot-right", "layer": "dots" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "The inverted fork with a small dot each side of the stem, 3.5 out, 4 above the joint."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [6, 4, 12, 16],
+    "visualBox": [5, 3, 14, 18],
+    "opticalCenter": [12, 13.613],
+    "strokeToSize": 0.111,
+    "primitiveCount": 5
+  }
+}

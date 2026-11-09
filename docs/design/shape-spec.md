@@ -21,6 +21,18 @@
 - Keylines: the circle of radius 10, the 18 × 18 square, and 20 × 16 and 16 × 20 rectangles.
 - Keep at least 3 units between parallel centre lines (1 unit of clear space between strokes).
 
+## Modules
+
+Every shape is built from the same few parts, listed under `modules` in `spec/grid.json`, so a circle or a V looks identical wherever it appears and parts can be swapped between shapes.
+
+- Circles: r 5 (the sun circle), r 3 (the ring) and r 2 (the bead). Dots: r 1 (small) and r 2 (large). `deq-spec lint` rejects any other circle or dot radius outside brand concepts.
+- Rays start 2.5 beyond the circle's centre line and are 2.5 long (r 7.5 to 10 on the sun circle).
+- A V is always two separate `line` strokes at 45 degrees from a shared apex, never a polyline: the small V reaches 3 across and 3 along, the large V 6 and 6.
+- Parallel 45-degree strokes repeat at a pitch of 4.5, which keeps them 3 apart square to the stroke. Teeth and ticks are 3 long at a pitch of 3.
+- One layer per part, and every top-level primitive has an `id`, so editors can show, hide and recolour each part.
+- Compositions place other shapes with `use` at full size. Scaling a shape would change its module sizes, so compositions do not scale.
+- A shape is auto-centred: its visual box is centred on 12, 12 along every axis its symmetry leaves free, rounded to 0.5.
+
 ## A shape file
 
 Keys, in canonical order:

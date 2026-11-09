@@ -1,0 +1,52 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "crossed-chevrons-wide",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Wide crossed chevrons",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["chevron", "crossed"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["chevrons"],
+  "primitives": [
+    { "type": "line", "x1": 2, "y1": 11, "x2": 6, "y2": 9, "id": "left-short", "layer": "chevrons" },
+    { "type": "line", "x1": 6, "y1": 9, "x2": 18, "y2": 15, "id": "left-long", "layer": "chevrons" },
+    {
+      "type": "line",
+      "x1": 22,
+      "y1": 11,
+      "x2": 18,
+      "y2": 9,
+      "id": "right-short",
+      "layer": "chevrons"
+    },
+    {
+      "type": "line",
+      "x1": 18,
+      "y1": 9,
+      "x2": 6,
+      "y2": 15,
+      "id": "right-long",
+      "layer": "chevrons"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Two flat chevrons at slope 1:2 with apexes at (6, 9) and (18, 9); their long legs cross at (12, 12)."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 9, 20, 6],
+    "visualBox": [1, 8, 22, 8],
+    "opticalCenter": [12, 11.5],
+    "strokeToSize": 0.091,
+    "primitiveCount": 4
+  }
+}

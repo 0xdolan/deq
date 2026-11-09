@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "chin-composition",
-  "version": 1,
+  "version": 2,
   "category": "compositions",
   "names": {
     "en": "Chin composition",
@@ -16,26 +16,40 @@
   "layers": ["chevron", "stem", "dots"],
   "primitives": [
     {
-      "type": "use",
-      "shape": "chevron",
-      "layer": "chevron",
-      "transform": { "translate": [0, -6.7], "scale": 0.6 }
+      "id": "chevron-left",
+      "type": "line",
+      "x1": 12,
+      "y1": 3.5,
+      "x2": 9,
+      "y2": 6.5,
+      "layer": "chevron"
     },
     {
-      "type": "use",
-      "shape": "dot-row",
-      "layer": "stem",
-      "params": { "count": 4 },
-      "transform": { "translate": [0, 4.3], "scale": 0.6, "rotate": 90 }
+      "id": "chevron-right",
+      "type": "line",
+      "x1": 12,
+      "y1": 3.5,
+      "x2": 15,
+      "y2": 6.5,
+      "layer": "chevron"
     },
-    { "type": "dot", "cx": 6.5, "cy": 12.3, "layer": "dots" },
-    { "type": "dot", "cx": 17.5, "cy": 12.3, "layer": "dots" }
+    {
+      "id": "stem",
+      "type": "repeat",
+      "count": 4,
+      "step": [0, 3.5],
+      "align": "start",
+      "layer": "stem",
+      "element": { "type": "dot", "cx": 12, "cy": 10 }
+    },
+    { "id": "dot-left", "type": "dot", "cx": 6.5, "cy": 13.5, "layer": "dots" },
+    { "id": "dot-right", "type": "dot", "cx": 17.5, "cy": 13.5, "layer": "dots" }
   ],
   "symmetry": "mirror-x",
   "parameters": {},
   "construction": [
-    "A traditional chin layout built from base shapes: a small chevron (scale 0.6) at the top, a vertical row of four dots below it, and a dot to each side.",
-    "Referenced shapes keep stroke 2 and dot radius 1 when scaled."
+    "A traditional chin layout: the small V (3 by 3) pointing up at the top, a column of four small dots 3.5 apart below it, and a small dot each side level with the second dot.",
+    "Everything is drawn at module size (no scaling), centred on the grid."
   ],
   "references": {
     "images": [
@@ -56,10 +70,10 @@
     "files": []
   },
   "metrics": {
-    "bbox": [5.5, 2.9, 13, 19.2],
-    "visualBox": [5.5, 1.9, 13, 20.2],
-    "opticalCenter": [12, 9.407],
-    "strokeToSize": 0.099,
-    "primitiveCount": 7
+    "bbox": [5.5, 3.5, 13, 18],
+    "visualBox": [5.5, 2.5, 13, 19],
+    "opticalCenter": [12, 10.087],
+    "strokeToSize": 0.105,
+    "primitiveCount": 8
   }
 }

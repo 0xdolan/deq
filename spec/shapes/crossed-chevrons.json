@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "crossed-chevrons",
-  "version": 1,
+  "version": 2,
   "category": "geometric",
   "names": {
     "en": "Crossed chevrons",
@@ -22,15 +22,52 @@
     "note": "A pendant caption calls this form a crown. Amargi gives nobility as the meaning of a crown motif, but it is not clear that it is this form."
   },
   "sources": [],
-  "layers": ["chevrons"],
+  "layers": ["legs", "ticks", "feet", "dots"],
   "primitives": [
-    { "type": "polyline", "points": [[4, 17], [10, 7], [16, 17]], "layer": "chevrons" },
-    { "type": "polyline", "points": [[8, 17], [14, 7], [20, 17]], "layer": "chevrons" }
+    { "type": "line", "x1": 13.5, "y1": 7.5, "x2": 4, "y2": 17, "id": "leg-left", "layer": "legs" },
+    {
+      "type": "line",
+      "x1": 10.5,
+      "y1": 7.5,
+      "x2": 20,
+      "y2": 17,
+      "id": "leg-right",
+      "layer": "legs"
+    },
+    { "type": "line", "x1": 8, "y1": 13, "x2": 6, "y2": 11, "id": "tick-left", "layer": "ticks" },
+    { "type": "line", "x1": 16, "y1": 13, "x2": 18, "y2": 11, "id": "tick-right", "layer": "ticks" },
+    { "type": "line", "x1": 4, "y1": 17, "x2": 2, "y2": 15, "id": "foot-left", "layer": "feet" },
+    { "type": "line", "x1": 20, "y1": 17, "x2": 22, "y2": 15, "id": "foot-right", "layer": "feet" },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 14,
+      "id": "dot-inside",
+      "layer": "dots",
+      "when": { "dots": ["inside", "both"] }
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 5,
+      "id": "dot-top",
+      "layer": "dots",
+      "when": { "dots": ["top", "both"] }
+    }
   ],
   "symmetry": "mirror-x",
-  "parameters": {},
+  "parameters": {
+    "dots": {
+      "type": "enum",
+      "values": ["inside", "both", "top", "none"],
+      "default": "inside",
+      "description": "Dot under the crossing (tablo), above it too (thesis A26), only above, or none."
+    }
+  },
   "construction": [
-    "Two inverted Vs, 12 wide and 10 high, offset 4 units horizontally so that they cross: a crown-like form."
+    "Tablo's crown: two 45-degree legs cross at (12, 7) and run on 1.5 beyond it, making a small X at the top.",
+    "Each leg has a tick halfway down and a foot at its end, both 2 by 2 and square to the leg, pointing up and out.",
+    "The inside dot sits 5 under the crossing, 1.5 clear of both legs."
   ],
   "references": {
     "images": [
@@ -43,10 +80,10 @@
     "files": []
   },
   "metrics": {
-    "bbox": [4, 7, 16, 10],
-    "visualBox": [3, 6, 18, 12],
-    "opticalCenter": [12, 12],
-    "strokeToSize": 0.111,
-    "primitiveCount": 2
+    "bbox": [2, 7.5, 20, 9.5],
+    "visualBox": [1, 6.5, 22, 11.5],
+    "opticalCenter": [12, 12.817],
+    "strokeToSize": 0.091,
+    "primitiveCount": 7
   }
 }

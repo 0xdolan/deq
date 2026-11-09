@@ -1,0 +1,62 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "sun-arch-dotted",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Arch with rays and dot",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["sun", "arch", "rays", "dot"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["arc", "rays", "dot"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 17,
+      "r": 5,
+      "start": 180,
+      "end": 360,
+      "id": "arc",
+      "layer": "arc"
+    },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 17],
+      "start": 180,
+      "sweep": 180,
+      "element": { "type": "line", "x1": 19.5, "y1": 17, "x2": 22, "y2": 17 },
+      "id": "rays",
+      "layer": "rays"
+    },
+    { "type": "dot", "cx": 12, "cy": 8, "id": "top-dot", "layer": "dot" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "description": "Rays from end to end. Even counts leave the top free for the dot."
+    }
+  },
+  "construction": [
+    "Upper half of the sun circle (r 5) with rays r 7.5 to 10; 6 rays sit 36 degrees apart, so none points straight up.",
+    "A small dot at r 9 straight above the centre, between the two top rays (0.8 clear of each)."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 7, 20, 10],
+    "visualBox": [1, 6.489, 22, 11.511],
+    "opticalCenter": [12, 12.927],
+    "strokeToSize": 0.091,
+    "primitiveCount": 8
+  }
+}

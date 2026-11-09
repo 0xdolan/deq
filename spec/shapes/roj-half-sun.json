@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "roj-half-sun",
-  "version": 1,
+  "version": 2,
   "category": "celestial",
   "names": {
     "en": "Half sun",
@@ -52,20 +52,37 @@
     "dailysabah-2016",
     "sbs-2022"
   ],
-  "layers": ["disc", "rays", "center"],
+  "layers": ["arc", "rays", "center"],
   "primitives": [
-    { "type": "arc", "cx": 12, "cy": 17, "r": 5, "start": 180, "end": 360, "layer": "disc" },
-    { "type": "line", "x1": 7, "y1": 17, "x2": 17, "y2": 17, "layer": "disc" },
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 16.5,
+      "r": 5,
+      "start": 180,
+      "end": 360,
+      "id": "arc",
+      "layer": "arc"
+    },
     {
       "type": "radial",
       "count": { "param": "rays" },
-      "center": [12, 17],
-      "start": 195,
-      "sweep": 150,
-      "element": { "type": "line", "x1": 19.5, "y1": 17, "x2": 22, "y2": 17 },
+      "center": [12, 16.5],
+      "start": 180,
+      "sweep": 180,
+      "element": { "type": "line", "x1": 19.5, "y1": 16.5, "x2": 22, "y2": 16.5 },
+      "id": "rays",
       "layer": "rays"
     },
-    { "type": "dot", "cx": 12, "cy": 14.5, "layer": "center", "when": { "centerDot": true } }
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 16.5,
+      "r": 2,
+      "id": "center-dot",
+      "layer": "center",
+      "when": { "centerDot": true }
+    }
   ],
   "symmetry": "mirror-x",
   "parameters": {
@@ -74,20 +91,19 @@
       "min": 3,
       "max": 11,
       "default": 7,
-      "description": "Number of rays, spread evenly from 195 to 345 degrees."
+      "description": "Number of rays, spread from one end of the arc to the other."
     },
     "centerDot": {
       "type": "boolean",
-      "default": false,
-      "description": "Adds a dot inside the half disc."
+      "default": true,
+      "description": "The large dot on the base line at the arc's centre."
     }
   },
   "construction": [
-    "Half disc: an arc of radius 5 about (12, 17) from 180 to 360 degrees, closed by a base line from (7, 17) to (17, 17).",
-    "Rays: a radial copy of the segment from radius 7.5 to 10 about (12, 17), first at 195 and last at 345 degrees, so no ray lies on the base line.",
-    "The ray gap (radius 5 to 7.5) leaves 0.5 units of clear space between the disc stroke and the ray caps.",
-    "The optional centre dot sits halfway between the arc's inner edge and the base line.",
-    "The whole shape is shifted vertically so that its visual box is centred on the grid."
+    "Upper half of the sun circle (r 5, 180 to 360 degrees). There is no base line: the ends stay open.",
+    "Rays run from r 7.5 to r 10 (2.5 clear of the arc, 2.5 long). With 7 rays they sit 30 degrees apart; the first and last lie on the base line.",
+    "The large dot (r 2) sits on the base line at the arc's centre.",
+    "Centred vertically: the ink runs from 11 above the base line to 2 below it."
   ],
   "references": {
     "images": [
@@ -109,10 +125,10 @@
     "files": []
   },
   "metrics": {
-    "bbox": [2.341, 7, 19.319, 10],
-    "visualBox": [1.341, 6, 21.319, 12],
-    "opticalCenter": [12, 13.506],
-    "strokeToSize": 0.094,
+    "bbox": [2, 6.5, 20, 12],
+    "visualBox": [1, 5.5, 22, 13],
+    "opticalCenter": [12, 13.167],
+    "strokeToSize": 0.091,
     "primitiveCount": 9
   }
 }

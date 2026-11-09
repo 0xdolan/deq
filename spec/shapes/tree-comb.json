@@ -1,0 +1,142 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "tree-comb",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Comb tree",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["tree", "comb"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["stem", "combs", "root"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 3, "x2": 12, "y2": 18, "id": "stem", "layer": "stem" },
+    { "type": "line", "x1": 9, "y1": 3, "x2": 15, "y2": 3, "id": "bar-1", "layer": "combs" },
+    {
+      "type": "repeat",
+      "count": 1,
+      "step": [-3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 9, "y1": 3, "x2": 9, "y2": 4.5 },
+      "id": "teeth-1-left",
+      "layer": "combs"
+    },
+    {
+      "type": "repeat",
+      "count": 1,
+      "step": [3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 15, "y1": 3, "x2": 15, "y2": 4.5 },
+      "id": "teeth-1-right",
+      "layer": "combs"
+    },
+    { "type": "line", "x1": 6, "y1": 7.5, "x2": 18, "y2": 7.5, "id": "bar-2", "layer": "combs" },
+    {
+      "type": "repeat",
+      "count": 2,
+      "step": [-3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 9, "y1": 7.5, "x2": 9, "y2": 9 },
+      "id": "teeth-2-left",
+      "layer": "combs"
+    },
+    {
+      "type": "repeat",
+      "count": 2,
+      "step": [3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 15, "y1": 7.5, "x2": 15, "y2": 9 },
+      "id": "teeth-2-right",
+      "layer": "combs"
+    },
+    {
+      "type": "line",
+      "x1": 3,
+      "y1": 12,
+      "x2": 21,
+      "y2": 12,
+      "id": "bar-3",
+      "layer": "combs",
+      "when": { "tiers": [3, 4] }
+    },
+    {
+      "type": "repeat",
+      "count": 3,
+      "step": [-3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 9, "y1": 12, "x2": 9, "y2": 13.5 },
+      "id": "teeth-3-left",
+      "layer": "combs",
+      "when": { "tiers": [3, 4] }
+    },
+    {
+      "type": "repeat",
+      "count": 3,
+      "step": [3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 15, "y1": 12, "x2": 15, "y2": 13.5 },
+      "id": "teeth-3-right",
+      "layer": "combs",
+      "when": { "tiers": [3, 4] }
+    },
+    {
+      "type": "line",
+      "x1": 6,
+      "y1": 16.5,
+      "x2": 18,
+      "y2": 16.5,
+      "id": "bar-4",
+      "layer": "combs",
+      "when": { "tiers": [4] }
+    },
+    {
+      "type": "repeat",
+      "count": 2,
+      "step": [-3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 9, "y1": 16.5, "x2": 9, "y2": 18 },
+      "id": "teeth-4-left",
+      "layer": "combs",
+      "when": { "tiers": [4] }
+    },
+    {
+      "type": "repeat",
+      "count": 2,
+      "step": [3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 15, "y1": 16.5, "x2": 15, "y2": 18 },
+      "id": "teeth-4-right",
+      "layer": "combs",
+      "when": { "tiers": [4] }
+    },
+    { "type": "line", "x1": 12, "y1": 18, "x2": 9, "y2": 21, "id": "root-left", "layer": "root" },
+    { "type": "line", "x1": 12, "y1": 18, "x2": 15, "y2": 21, "id": "root-right", "layer": "root" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "tiers": {
+      "type": "integer",
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "description": "Number of combs from the top."
+    }
+  },
+  "construction": [
+    "Combs 4.5 apart with teeth 1.5 long hanging every 3 units (3 clear to the next comb).",
+    "Half-widths 3, 6, 9 and 6, so the tree is widest in the third tier. A small inverted V is the root."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [3, 3, 18, 18],
+    "visualBox": [2, 2, 20, 20],
+    "opticalCenter": [12, 11.771],
+    "strokeToSize": 0.1,
+    "primitiveCount": 23
+  }
+}

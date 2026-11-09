@@ -1,0 +1,57 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "x-chain",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "X chain",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["x", "line", "border"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["line", "marks"],
+  "primitives": [
+    { "type": "line", "x1": 2, "y1": 12, "x2": 22, "y2": 12, "id": "line", "layer": "line" },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [7, 0],
+      "element": { "type": "line", "x1": 10, "y1": 10, "x2": 14, "y2": 14 },
+      "id": "marks-diagonal-a",
+      "layer": "marks"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [7, 0],
+      "element": { "type": "line", "x1": 14, "y1": 10, "x2": 10, "y2": 14 },
+      "id": "marks-diagonal-b",
+      "layer": "marks"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "count": {
+      "type": "integer",
+      "min": 1,
+      "max": 3,
+      "default": 3,
+      "description": "Xs on the line, 7 apart."
+    }
+  },
+  "construction": [
+    "Line 20 long with Xs of half-size 2 every 7 units (3 clear between neighbouring tips)."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 10, 20, 4],
+    "visualBox": [1, 9, 22, 6],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 7
+  }
+}

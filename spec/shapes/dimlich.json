@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "dimlich",
-  "version": 1,
+  "version": 2,
   "category": "geometric",
   "names": {
     "en": "Dimlich",
@@ -21,25 +21,28 @@
   "sources": ["drower-1941"],
   "layers": ["handle", "body"],
   "primitives": [
-    { "type": "polyline", "points": [[9, 11], [9, 4], [15, 4], [15, 11]], "layer": "handle" },
+    { "type": "line", "x1": 8, "y1": 10, "x2": 8, "y2": 4, "id": "post-left", "layer": "handle" },
+    { "type": "line", "x1": 16, "y1": 10, "x2": 16, "y2": 4, "id": "post-right", "layer": "handle" },
+    { "type": "line", "x1": 8, "y1": 10, "x2": 16, "y2": 10, "id": "bar", "layer": "handle" },
     {
       "type": "path",
-      "d": "M 8 11 L 16 11 L 19 16 Q 20 20 16 20 L 8 20 Q 4 20 5 16 Z",
+      "d": "M 8 10 L 6.5 17 Q 6 20 9 20 L 15 20 Q 18 20 17.5 17 L 16 10",
+      "id": "body",
       "layer": "body"
     }
   ],
   "symmetry": "mirror-x",
   "parameters": {},
   "construction": [
-    "Handle: an open rectangle from (9, 11) up to y = 4 and back down to (15, 11).",
-    "Body: a bell from the 8-unit top edge at y = 11, widening to 14 at y = 16, with quadratic corners to a flat base at y = 20."
+    "Body: a trapezoid from the bar (x 8 to 16) widening to x 6.5 and 17.5, with rounded lower corners.",
+    "Handle: two posts 6 high on the ends of the top bar. No top bar on the posts (Drower)."
   ],
   "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
   "metrics": {
-    "bbox": [4.8, 4, 14.4, 16],
-    "visualBox": [3.8, 3, 16.4, 18],
-    "opticalCenter": [12, 12.728],
+    "bbox": [6.429, 4, 11.143, 16],
+    "visualBox": [5.429, 3, 13.143, 18],
+    "opticalCenter": [12, 13.181],
     "strokeToSize": 0.111,
-    "primitiveCount": 2
+    "primitiveCount": 4
   }
 }

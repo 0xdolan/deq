@@ -1,0 +1,41 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "moon-dome",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Moon (dome)",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["moon", "dome", "arc"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["arc", "base"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 14.5,
+      "r": 5,
+      "start": 180,
+      "end": 360,
+      "id": "dome",
+      "layer": "arc"
+    },
+    { "type": "line", "x1": 7, "y1": 14.5, "x2": 17, "y2": 14.5, "id": "base", "layer": "base" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": ["Upper half of the sun circle (r 5) closed by its diameter."],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [7, 9.5, 10, 5],
+    "visualBox": [6, 8.5, 12, 7],
+    "opticalCenter": [12, 12.555],
+    "strokeToSize": 0.167,
+    "primitiveCount": 2
+  }
+}

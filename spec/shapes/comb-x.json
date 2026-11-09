@@ -1,0 +1,52 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "comb-x",
+  "version": 1,
+  "category": "lines-and-borders",
+  "names": {
+    "en": "Comb ending in an X",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["comb", "x", "border"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["bar", "teeth", "x"],
+  "primitives": [
+    { "type": "line", "x1": 2.5, "y1": 14, "x2": 17.5, "y2": 14, "id": "bar", "layer": "bar" },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "step": [3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 2.5, "y1": 14, "x2": 2.5, "y2": 11 },
+      "id": "teeth",
+      "layer": "teeth"
+    },
+    { "type": "line", "x1": 17.5, "y1": 10, "x2": 21.5, "y2": 14, "id": "x-a", "layer": "x" },
+    { "type": "line", "x1": 21.5, "y1": 10, "x2": 17.5, "y2": 14, "id": "x-b", "layer": "x" }
+  ],
+  "symmetry": "none",
+  "parameters": {
+    "teeth": {
+      "type": "integer",
+      "min": 3,
+      "max": 5,
+      "default": 5,
+      "description": "Teeth from the start of the bar, 3 apart."
+    }
+  },
+  "construction": [
+    "Bar with teeth 3 high every 3 units, ending in an X (4 by 4) whose lower-left arm meets the bar."
+  ],
+  "references": { "images": ["field-tattoo-drawings-04"], "files": [] },
+  "metrics": {
+    "bbox": [2.5, 10, 19, 4],
+    "visualBox": [1.5, 9, 21, 6],
+    "opticalCenter": [12.057, 12.908],
+    "strokeToSize": 0.095,
+    "primitiveCount": 8
+  }
+}

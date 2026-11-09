@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "chevron",
-  "version": 1,
+  "version": 2,
   "category": "geometric",
   "names": {
     "en": "Chevron",
@@ -28,12 +28,29 @@
   },
   "sources": ["natgeo-2015", "mee-2022", "indyturk-2020"],
   "layers": ["chevron"],
-  "primitives": [{ "type": "polyline", "points": [[5, 16], [12, 8], [19, 16]], "layer": "chevron" }],
+  "primitives": [
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 8.5,
+      "x2": 5,
+      "y2": 15.5,
+      "id": "arm-left",
+      "layer": "chevron"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 8.5,
+      "x2": 19,
+      "y2": 15.5,
+      "id": "arm-right",
+      "layer": "chevron"
+    }
+  ],
   "symmetry": "mirror-x",
   "parameters": {},
-  "construction": [
-    "An inverted V from (5, 16) through (12, 8) to (19, 16): 14 wide and 8 high, centred on the grid."
-  ],
+  "construction": ["Two strokes from the apex (12, 9), 7 across and 7 down (45 degrees)."],
   "references": {
     "images": [
       "deq-ttt-temporary-sheet-01",
@@ -48,10 +65,10 @@
     "files": []
   },
   "metrics": {
-    "bbox": [5, 8, 14, 8],
-    "visualBox": [4, 7, 16, 10],
+    "bbox": [5, 8.5, 14, 7],
+    "visualBox": [4, 7.5, 16, 9],
     "opticalCenter": [12, 12],
     "strokeToSize": 0.125,
-    "primitiveCount": 1
+    "primitiveCount": 2
   }
 }

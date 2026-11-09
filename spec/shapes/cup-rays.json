@@ -1,0 +1,117 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "cup-rays",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Cup with rays",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["cup", "rays", "sun"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["cup", "rays", "inner"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 10.5,
+      "r": 5,
+      "start": 0,
+      "end": 180,
+      "id": "bowl",
+      "layer": "cup"
+    },
+    { "type": "line", "x1": 7, "y1": 10.5, "x2": 7, "y2": 3.5, "id": "side-left", "layer": "cup" },
+    {
+      "type": "line",
+      "x1": 17,
+      "y1": 10.5,
+      "x2": 17,
+      "y2": 3.5,
+      "id": "side-right",
+      "layer": "cup"
+    },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 10.5],
+      "start": 0,
+      "sweep": 180,
+      "element": { "type": "line", "x1": 19.5, "y1": 10.5, "x2": 22, "y2": 10.5 },
+      "id": "rays-bowl",
+      "layer": "rays"
+    },
+    { "type": "line", "x1": 4.5, "y1": 7, "x2": 2, "y2": 7, "id": "ray-side-left", "layer": "rays" },
+    {
+      "type": "line",
+      "x1": 19.5,
+      "y1": 7,
+      "x2": 22,
+      "y2": 7,
+      "id": "ray-side-right",
+      "layer": "rays"
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 7,
+      "r": 2,
+      "id": "inner-dot",
+      "layer": "inner",
+      "when": { "inner": "dot" }
+    },
+    {
+      "type": "line",
+      "x1": 9.5,
+      "y1": 4.5,
+      "x2": 14.5,
+      "y2": 9.5,
+      "id": "inner-x-a",
+      "layer": "inner",
+      "when": { "inner": "x" }
+    },
+    {
+      "type": "line",
+      "x1": 14.5,
+      "y1": 4.5,
+      "x2": 9.5,
+      "y2": 9.5,
+      "id": "inner-x-b",
+      "layer": "inner",
+      "when": { "inner": "x" }
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 3,
+      "max": 7,
+      "default": 5,
+      "description": "Rays round the bowl, from one side to the other."
+    },
+    "inner": {
+      "type": "enum",
+      "values": ["dot", "x", "none"],
+      "default": "dot",
+      "description": "What sits in the cup: the large dot (eye), an X, or nothing."
+    }
+  },
+  "construction": [
+    "Bowl: the lower half of the sun circle (r 5), with straight sides from y 12 up to y 5.",
+    "Rays r 7.5 to 10 round the bowl (45 degrees apart with 5), plus one horizontal ray on each side at y 8.5, 3.5 above the base rays.",
+    "Inside: the large dot r 2, or an X with half-size 2.5."
+  ],
+  "references": { "images": ["field-tattoo-drawings-02", "field-tattoo-drawings-03"], "files": [] },
+  "metrics": {
+    "bbox": [2, 3.5, 20, 17],
+    "visualBox": [1, 2.5, 22, 19],
+    "opticalCenter": [12, 10.768],
+    "strokeToSize": 0.091,
+    "primitiveCount": 11
+  }
+}

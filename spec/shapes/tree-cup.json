@@ -1,0 +1,65 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "tree-cup",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Tree in a cup",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["tree", "fork", "dot"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["cup", "branches", "tree", "dot"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 15.5, "x2": 4, "y2": 7.5, "id": "cup-left", "layer": "cup" },
+    { "type": "line", "x1": 12, "y1": 15.5, "x2": 20, "y2": 7.5, "id": "cup-right", "layer": "cup" },
+    {
+      "type": "line",
+      "x1": 6,
+      "y1": 9.5,
+      "x2": 6,
+      "y2": 6,
+      "id": "branch-left",
+      "layer": "branches"
+    },
+    {
+      "type": "line",
+      "x1": 18,
+      "y1": 9.5,
+      "x2": 18,
+      "y2": 6,
+      "id": "branch-right",
+      "layer": "branches"
+    },
+    { "type": "line", "x1": 12, "y1": 15.5, "x2": 12, "y2": 8.5, "id": "stem", "layer": "tree" },
+    { "type": "line", "x1": 12, "y1": 8.5, "x2": 9, "y2": 5.5, "id": "fork-left", "layer": "tree" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 8.5,
+      "x2": 15,
+      "y2": 5.5,
+      "id": "fork-right",
+      "layer": "tree"
+    },
+    { "type": "dot", "cx": 12, "cy": 18.5, "id": "dot", "layer": "dot" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A wide V (8 by 8) with a branch rising 3.5 from each arm, 6 from the apex along it.",
+    "In the middle a stem with the small V on top; a small dot 3 below the apex."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [4, 5.5, 16, 14],
+    "visualBox": [3, 4.5, 18, 15],
+    "opticalCenter": [12, 10.43],
+    "strokeToSize": 0.111,
+    "primitiveCount": 8
+  }
+}

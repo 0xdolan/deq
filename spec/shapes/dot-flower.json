@@ -1,0 +1,49 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot-flower",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Dot flower",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["dots", "flower"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["center", "petals"],
+  "primitives": [
+    { "type": "dot", "cx": 12, "cy": 12, "r": 2, "id": "center", "layer": "center" },
+    {
+      "type": "radial",
+      "count": { "param": "petals" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 17.5, "cy": 12, "r": 2 },
+      "id": "petals",
+      "layer": "petals"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "petals": {
+      "type": "integer",
+      "min": 5,
+      "max": 8,
+      "default": 6,
+      "description": "Dots round the centre."
+    }
+  },
+  "construction": ["A large dot with six large dots at r 5.5 round it (1.5 clear of each other)."],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [5.237, 4.5, 13.526, 15],
+    "visualBox": [5.237, 4.5, 13.526, 15],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.133,
+    "primitiveCount": 7
+  }
+}

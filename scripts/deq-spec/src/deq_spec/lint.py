@@ -170,6 +170,15 @@ def lint_shape(
     for layer in sorted(set(data["layers"]) - used):
         report.add(where, f"layer {layer!r} is declared but not used")
 
+    # Modules: the same circle and dot sizes everywhere (brand concepts are free).
+    if data["category"] != "brand":
+        mods = ctx["grid"]["modules"]
+        for p in prims:
+            allowed = {"circle": mods["circleRadii"], "dot": mods["dotRadii"]}.get(p["type"])
+            r = p.get("r", 1)
+            if allowed is not None and r not in allowed:
+                report.add(where, f"{p['type']} r {r} is not a module radius {allowed}")
+
     # Grid precision.
     for loc, v in _numbers(data["primitives"], "primitives"):
         if abs(v * 1000 - round(v * 1000)) > EPS:

@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "sandgrouse-foot",
-  "version": 1,
+  "version": 2,
   "category": "human-and-animal",
   "names": {
     "en": "Sandgrouse foot",
@@ -22,20 +22,29 @@
   "sources": ["drower-1941"],
   "layers": ["toes"],
   "primitives": [
-    { "type": "polyline", "points": [[6, 4], [12, 20], [18, 4]], "layer": "toes" },
-    { "type": "line", "x1": 12, "y1": 4, "x2": 12, "y2": 20, "layer": "toes" }
+    { "type": "line", "x1": 12, "y1": 19, "x2": 12, "y2": 5, "id": "toe-middle", "layer": "toes" },
+    { "type": "line", "x1": 12, "y1": 19, "x2": 5, "y2": 6.876, "id": "toe-left", "layer": "toes" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 19,
+      "x2": 19,
+      "y2": 6.876,
+      "id": "toe-right",
+      "layer": "toes"
+    }
   ],
   "symmetry": "mirror-x",
   "parameters": {},
   "construction": [
-    "Three toes, from (6, 4), (12, 4) and (18, 4), meeting at (12, 20), as on Drower's plate."
+    "Three toes 14 long meeting at (12, 20); the side toes lean 30 degrees out (7 across, 12.124 up)."
   ],
   "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
   "metrics": {
-    "bbox": [6, 4, 12, 16],
-    "visualBox": [5, 3, 14, 18],
-    "opticalCenter": [12, 12],
-    "strokeToSize": 0.111,
-    "primitiveCount": 2
+    "bbox": [5, 5, 14, 14],
+    "visualBox": [4, 4, 16, 16],
+    "opticalCenter": [12, 12.625],
+    "strokeToSize": 0.125,
+    "primitiveCount": 3
   }
 }

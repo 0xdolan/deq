@@ -1,0 +1,76 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "sun-double-ring",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Sun with inner ring",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["sun", "rays", "ring"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["ring", "inner", "rays"],
+  "primitives": [
+    { "type": "circle", "cx": 12, "cy": 12, "r": 5, "id": "ring", "layer": "ring" },
+    {
+      "type": "circle",
+      "cx": 12,
+      "cy": 12,
+      "r": 2,
+      "id": "inner-ring",
+      "layer": "inner",
+      "when": { "inner": "ring" }
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 12,
+      "r": 2,
+      "id": "inner-dot",
+      "layer": "inner",
+      "when": { "inner": "dot" }
+    },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 19.5, "y1": 12, "x2": 22, "y2": 12 },
+      "id": "rays",
+      "layer": "rays"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 6,
+      "max": 12,
+      "default": 10,
+      "description": "Number of rays, the first pointing up."
+    },
+    "inner": {
+      "type": "enum",
+      "values": ["ring", "dot", "none"],
+      "default": "ring",
+      "description": "What sits inside: the bead ring (r 2), the large dot, or nothing."
+    }
+  },
+  "construction": [
+    "Sun circle r 5 with the bead ring r 2 inside (or the large dot, as on Field's hand).",
+    "Rays r 7.5 to 10, the first pointing up; 10 rays sit 36 degrees apart."
+  ],
+  "references": { "images": ["field-tattoo-drawings-02"], "files": [] },
+  "metrics": {
+    "bbox": [2.489, 2, 19.021, 20],
+    "visualBox": [1.489, 1, 21.021, 22],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 12
+  }
+}

@@ -13,6 +13,9 @@ The format reference is `docs/design/shape-spec.md`, and the decision record is 
 - Stroke 2, round caps and joins. Centre lines stay within 2 to 22.
 - Dots are filled, radius 1; the standalone `dot` shape uses radius 2.
 - At least 3 units between parallel centre lines. For edges at an angle, measure square to the edge, not along an axis (nested lozenges need a scale step of 0.5, not 0.333).
+- Build from the modules in `spec/grid.json` (see `docs/design/shape-spec.md`): circles r 5, 3, 2; dots r 1, 2; rays 2.5 out and 2.5 long; small V 3 × 3 and large V 6 × 6, each drawn as two `line`s; 45-degree pitch 4.5; teeth 3 long at pitch 3. Lint enforces the radii.
+- One layer per part and an `id` on every top-level primitive. One shape per design: split images that show several designs, and only merge references that are exactly the same design.
+- Compositions `use` other shapes at full size; never scale a used shape.
 - Centre the visual box on the grid. Asymmetric shapes are shifted as a whole, and `symmetryCenter` is set when the centre is deliberately off 12, 12 (as on `kurdish-sun`).
 
 ## Workflow

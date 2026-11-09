@@ -1,0 +1,32 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "t-mark",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "T",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["t", "bar"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["stem", "bar"],
+  "primitives": [
+    { "type": "line", "x1": 6, "y1": 12, "x2": 18, "y2": 12, "id": "stem", "layer": "stem" },
+    { "type": "line", "x1": 18, "y1": 6, "x2": 18, "y2": 18, "id": "bar", "layer": "bar" }
+  ],
+  "symmetry": "mirror-y",
+  "parameters": {},
+  "construction": ["A T on its side: stem 12 long, bar 12 long."],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [6, 6, 12, 12],
+    "visualBox": [5, 5, 14, 14],
+    "opticalCenter": [15, 12],
+    "strokeToSize": 0.143,
+    "primitiveCount": 2
+  }
+}

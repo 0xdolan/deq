@@ -1,0 +1,63 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "ring-stem-double",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Double ring stem",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["ring", "stem", "fork"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["stem", "rings", "forks"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 6, "x2": 12, "y2": 18, "id": "stem", "layer": "stem" },
+    { "type": "circle", "cx": 12, "cy": 9, "r": 3, "id": "ring-top", "layer": "rings" },
+    { "type": "circle", "cx": 12, "cy": 15, "r": 3, "id": "ring-bottom", "layer": "rings" },
+    { "type": "line", "x1": 12, "y1": 6, "x2": 9, "y2": 3, "id": "fork-top-left", "layer": "forks" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 6,
+      "x2": 15,
+      "y2": 3,
+      "id": "fork-top-right",
+      "layer": "forks"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 18,
+      "x2": 9,
+      "y2": 21,
+      "id": "fork-bottom-left",
+      "layer": "forks"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 18,
+      "x2": 15,
+      "y2": 21,
+      "id": "fork-bottom-right",
+      "layer": "forks"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {},
+  "construction": [
+    "Two rings r 3 touching at the centre on one stem; the small V opens from the top of the upper ring and the inverted V from the bottom of the lower."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [9, 3, 6, 18],
+    "visualBox": [8, 2, 8, 20],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 7
+  }
+}

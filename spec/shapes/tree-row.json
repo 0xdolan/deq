@@ -1,0 +1,118 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "tree-row",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Branch row",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["fork", "line", "border"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["shaft", "posts", "ends"],
+  "primitives": [
+    { "type": "line", "x1": 3.5, "y1": 12, "x2": 20.5, "y2": 12, "id": "shaft", "layer": "shaft" },
+    {
+      "type": "repeat",
+      "count": { "param": "posts" },
+      "step": [6, 0],
+      "element": { "type": "line", "x1": 12, "y1": 7, "x2": 12, "y2": 17 },
+      "id": "posts",
+      "layer": "posts"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "posts" },
+      "step": [6, 0],
+      "element": { "type": "line", "x1": 12, "y1": 9, "x2": 10.5, "y2": 7.5 },
+      "id": "forks-top-left",
+      "layer": "posts"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "posts" },
+      "step": [6, 0],
+      "element": { "type": "line", "x1": 12, "y1": 9, "x2": 13.5, "y2": 7.5 },
+      "id": "forks-top-right",
+      "layer": "posts"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "posts" },
+      "step": [6, 0],
+      "element": { "type": "line", "x1": 12, "y1": 15, "x2": 10.5, "y2": 16.5 },
+      "id": "forks-bottom-left",
+      "layer": "posts"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "posts" },
+      "step": [6, 0],
+      "element": { "type": "line", "x1": 12, "y1": 15, "x2": 13.5, "y2": 16.5 },
+      "id": "forks-bottom-right",
+      "layer": "posts"
+    },
+    {
+      "type": "line",
+      "x1": 3.5,
+      "y1": 12,
+      "x2": 2,
+      "y2": 10.5,
+      "id": "end-left-upper",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 3.5,
+      "y1": 12,
+      "x2": 2,
+      "y2": 13.5,
+      "id": "end-left-lower",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 20.5,
+      "y1": 12,
+      "x2": 22,
+      "y2": 10.5,
+      "id": "end-right-upper",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 20.5,
+      "y1": 12,
+      "x2": 22,
+      "y2": 13.5,
+      "id": "end-right-lower",
+      "layer": "ends"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "posts": {
+      "type": "integer",
+      "min": 1,
+      "max": 3,
+      "default": 3,
+      "description": "Double-forked posts, 6 apart."
+    }
+  },
+  "construction": [
+    "Shaft with forks (1.5 by 1.5) opening outward at both ends.",
+    "Posts 10 high every 6 units; each ends in a fork with a middle prong at both ends (forks 1.5 by 1.5, so neighbouring tips stay 3 apart)."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 7, 20, 10],
+    "visualBox": [1, 6, 22, 12],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 20
+  }
+}

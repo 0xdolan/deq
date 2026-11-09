@@ -1,0 +1,43 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "crow-foot",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Three-toed foot",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["fork", "foot"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["toes", "stem"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 13.5, "x2": 6, "y2": 19.5, "id": "toe-left", "layer": "toes" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 13.5,
+      "x2": 18,
+      "y2": 19.5,
+      "id": "toe-right",
+      "layer": "toes"
+    },
+    { "type": "line", "x1": 12, "y1": 4.5, "x2": 12, "y2": 19.5, "id": "stem", "layer": "stem" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Stem from y 4 to 19; the large V opens downward from (12, 13) so its toes end level with the stem."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [6, 4.5, 12, 15],
+    "visualBox": [5, 3.5, 14, 17],
+    "opticalCenter": [12, 14.389],
+    "strokeToSize": 0.118,
+    "primitiveCount": 3
+  }
+}

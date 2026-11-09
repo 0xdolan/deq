@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "comb",
-  "version": 1,
+  "version": 2,
   "category": "geometric",
   "names": {
     "en": "Comb",
@@ -31,12 +31,13 @@
   "sources": ["drower-1941", "aljazeera-2023", "kurdistan-chronicle-2026", "amargi-2025"],
   "layers": ["bar", "teeth"],
   "primitives": [
-    { "type": "line", "x1": 3, "y1": 16, "x2": 21, "y2": 16, "layer": "bar" },
+    { "type": "line", "x1": 2, "y1": 13.5, "x2": 22, "y2": 13.5, "id": "bar", "layer": "bar" },
     {
       "type": "repeat",
       "count": { "param": "teeth" },
-      "spread": [18, 0],
-      "element": { "type": "line", "x1": 12, "y1": 16, "x2": 12, "y2": 8 },
+      "step": [3, 0],
+      "element": { "type": "line", "x1": 12, "y1": 13.5, "x2": 12, "y2": 10.5 },
+      "id": "teeth",
       "layer": "teeth"
     }
   ],
@@ -46,12 +47,12 @@
       "type": "integer",
       "min": 3,
       "max": 7,
-      "default": 5,
-      "description": "Number of teeth, spread evenly along the bar (7 keeps them 3 units apart)."
+      "default": 7,
+      "description": "Teeth, 3 apart."
     }
   },
   "construction": [
-    "Bar from (3, 16) to (21, 16). Teeth 8 units high, rising from the bar, the outer two at its ends."
+    "Bar 20 long with teeth 3 high every 3 units; the bar runs on past the end teeth (Drower)."
   ],
   "references": {
     "images": [
@@ -66,10 +67,10 @@
     "files": []
   },
   "metrics": {
-    "bbox": [3, 8, 18, 8],
-    "visualBox": [2, 7, 20, 10],
-    "opticalCenter": [12, 13.241],
-    "strokeToSize": 0.1,
-    "primitiveCount": 6
+    "bbox": [2, 10.5, 20, 3],
+    "visualBox": [1, 9.5, 22, 5],
+    "opticalCenter": [12, 12.732],
+    "strokeToSize": 0.091,
+    "primitiveCount": 8
   }
 }

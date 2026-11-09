@@ -1,0 +1,57 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "arch-dot-column",
+  "version": 1,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Arch and dot column",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["arch", "dots", "column"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["arches", "dots"],
+  "primitives": [
+    {
+      "type": "repeat",
+      "count": { "param": "arches" },
+      "step": [0, 6],
+      "element": { "type": "arc", "cx": 12, "cy": 13.5, "r": 3, "start": 180, "end": 360 },
+      "id": "arches",
+      "layer": "arches"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "arches" },
+      "step": [0, 6],
+      "element": { "type": "dot", "cx": 12, "cy": 13.5 },
+      "id": "dots",
+      "layer": "dots"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "arches": {
+      "type": "integer",
+      "min": 1,
+      "max": 3,
+      "default": 3,
+      "description": "Arches in the column, 6 apart. Drower draws 6; stack two copies for that."
+    }
+  },
+  "construction": [
+    "Small arches (half of the ring circle, r 3) with a small dot at each arch's centre, 1 clear of the stroke.",
+    "6 apart so each dot stays 1 clear of the next arch."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [9, 4.5, 6, 16],
+    "visualBox": [8, 3.5, 8, 17],
+    "opticalCenter": [12, 11.863],
+    "strokeToSize": 0.118,
+    "primitiveCount": 6
+  }
+}

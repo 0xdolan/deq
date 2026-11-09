@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "forehead-composition",
-  "version": 1,
+  "version": 2,
   "category": "compositions",
   "names": {
     "en": "Forehead composition",
@@ -15,26 +15,19 @@
   "sources": [],
   "layers": ["sun", "fork", "dots"],
   "primitives": [
-    {
-      "type": "use",
-      "shape": "roj-half-sun",
-      "layer": "sun",
-      "params": { "rays": 5 },
-      "transform": { "translate": [0, -6.15], "scale": 0.55 }
-    },
-    {
-      "type": "use",
-      "shape": "fork",
-      "layer": "fork",
-      "transform": { "translate": [0, 4.85], "scale": 0.45, "rotate": 180 }
-    },
-    { "type": "dot", "cx": 4, "cy": 10.85, "layer": "dots" },
-    { "type": "dot", "cx": 20, "cy": 10.85, "layer": "dots" }
+    { "id": "sun", "type": "use", "shape": "roj-half-sun", "layer": "sun", "params": { "rays": 5 } },
+    { "id": "stem", "type": "line", "x1": 12, "y1": 16, "x2": 12, "y2": 18, "layer": "fork" },
+    { "id": "fork-left", "type": "line", "x1": 12, "y1": 18, "x2": 9, "y2": 21, "layer": "fork" },
+    { "id": "fork-right", "type": "line", "x1": 12, "y1": 18, "x2": 15, "y2": 21, "layer": "fork" },
+    { "id": "dot-left", "type": "dot", "cx": 4, "cy": 16, "layer": "dots" },
+    { "id": "dot-right", "type": "dot", "cx": 20, "cy": 16, "layer": "dots" }
   ],
   "symmetry": "mirror-x",
   "parameters": {},
   "construction": [
-    "A traditional forehead layout: a half sun with five rays (scale 0.55) above an inverted fork (scale 0.45), with a dot at each side."
+    "A traditional forehead layout: roj-half-sun with five rays at full size, its base on y 12.",
+    "Below it a small inverted fork (the small V, 3 by 3) on a short stem, 1 clear of the sun's centre dot, and a small dot each side under the ends of the base rays.",
+    "Nothing is scaled, so every stroke, dot and V keeps its module size."
   ],
   "references": {
     "images": [
@@ -52,10 +45,10 @@
     "files": []
   },
   "metrics": {
-    "bbox": [3, 3.1, 18, 17.8],
-    "visualBox": [3, 2.1, 18, 19.8],
-    "opticalCenter": [12, 11.239],
-    "strokeToSize": 0.101,
-    "primitiveCount": 11
+    "bbox": [2, 6.5, 20, 14.5],
+    "visualBox": [1, 5.5, 22, 16.5],
+    "opticalCenter": [12, 14.881],
+    "strokeToSize": 0.091,
+    "primitiveCount": 12
   }
 }

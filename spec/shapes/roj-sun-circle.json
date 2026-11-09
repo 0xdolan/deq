@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "roj-sun-circle",
-  "version": 1,
+  "version": 2,
   "category": "celestial",
   "names": {
     "en": "Sun disc",
@@ -61,36 +61,30 @@
     "sbs-2022",
     "ozgur-2021"
   ],
-  "layers": ["disc", "rays", "center"],
+  "layers": ["ring", "center"],
   "primitives": [
-    { "type": "circle", "cx": 12, "cy": 12, "r": 4, "layer": "disc" },
+    { "type": "circle", "cx": 12, "cy": 12, "r": 5, "id": "ring", "layer": "ring" },
     {
-      "type": "radial",
-      "count": { "param": "rays" },
-      "center": [12, 12],
-      "start": -90,
-      "sweep": 360,
-      "element": { "type": "line", "x1": 18.5, "y1": 12, "x2": 22, "y2": 12 },
-      "layer": "rays"
-    },
-    { "type": "dot", "cx": 12, "cy": 12, "layer": "center", "when": { "centerDot": true } }
+      "type": "dot",
+      "cx": 12,
+      "cy": 12,
+      "r": 2,
+      "id": "center-dot",
+      "layer": "center",
+      "when": { "centerDot": true }
+    }
   ],
-  "symmetry": "rotational-8",
+  "symmetry": "mirror-xy",
   "parameters": {
-    "rays": {
-      "type": "integer",
-      "min": 0,
-      "max": 16,
-      "default": 8,
-      "description": "Number of rays; 0 gives the ring and dot of Drower's 'Sun'."
-    },
-    "centerDot": { "type": "boolean", "default": true, "description": "Draws the centre dot." }
+    "centerDot": {
+      "type": "boolean",
+      "default": true,
+      "description": "The large dot at the centre."
+    }
   },
   "construction": [
-    "Disc: a circle of radius 4 about the grid centre.",
-    "Rays: a radial copy of the segment from radius 6.5 to 10, 360/rays degrees apart, the first pointing up.",
-    "Centre dot of radius 1; the clear gap to the ring is 2 units.",
-    "Symmetry is rotational of order `rays` (8 at the default)."
+    "Sun circle r 5 with the large centre dot (r 2). Drower's sun has no rays.",
+    "The rayed suns in other sources are separate shapes: sun-rays and sun-double-ring."
   ],
   "references": {
     "images": [
@@ -103,10 +97,10 @@
     "files": []
   },
   "metrics": {
-    "bbox": [2, 2, 20, 20],
-    "visualBox": [1, 1, 22, 22],
+    "bbox": [7, 7, 10, 10],
+    "visualBox": [6, 6, 12, 12],
     "opticalCenter": [12, 12],
-    "strokeToSize": 0.091,
-    "primitiveCount": 10
+    "strokeToSize": 0.167,
+    "primitiveCount": 2
   }
 }

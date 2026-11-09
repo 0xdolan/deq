@@ -1,0 +1,43 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "fork-down",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Inverted fork",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["fork", "y"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["prongs", "stem"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 14, "x2": 6, "y2": 20, "id": "prong-left", "layer": "prongs" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 14,
+      "x2": 18,
+      "y2": 20,
+      "id": "prong-right",
+      "layer": "prongs"
+    },
+    { "type": "line", "x1": 12, "y1": 14, "x2": 12, "y2": 4, "id": "stem", "layer": "stem" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "The fork upside down: the large V opens downward from (12, 14), the stem runs 10 up."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [6, 4, 12, 16],
+    "visualBox": [5, 3, 14, 18],
+    "opticalCenter": [12, 14.034],
+    "strokeToSize": 0.111,
+    "primitiveCount": 3
+  }
+}

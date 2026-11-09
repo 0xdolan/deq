@@ -15,7 +15,7 @@ def run(repo: Path, *args: str) -> int:
 
 def test_lint_ok_and_stale_sheet(repo: Path, capsys: pytest.CaptureFixture[str]) -> None:
     assert run(repo, "lint") == 0
-    assert "49 shapes OK" in capsys.readouterr().out
+    assert "97 shapes OK" in capsys.readouterr().out
     (repo / "docs/design/logo-concepts.svg").write_text("x", encoding="utf-8")
     assert run(repo, "lint") == 1
     assert "stale or missing" in capsys.readouterr().err

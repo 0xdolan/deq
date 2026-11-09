@@ -20,14 +20,14 @@ def errors(root: Path) -> list[str]:
 def test_repository_is_clean(repo: Path) -> None:
     report = lint.lint(repo)
     assert report.errors == []
-    assert report.checked == 49
+    assert report.checked == 97
 
 
 def test_shape_rules(repo: Path, edit: Editor) -> None:
     def mutate(d: dict[str, Any]) -> None:
         d["aliases"] = ["cross"]
         d["layers"] = ["chevron", "unused"]
-        d["primitives"][0]["points"][0] = [5.0001, 16]
+        d["primitives"][0]["x2"] = 5.0001
         d["sources"] = ["natgeo-2015", "nope"]
         d["references"]["images"] = ["no-such-image"]
         d["references"]["files"] = ["../outside.txt"]
@@ -84,12 +84,12 @@ def test_parameter_defaults_and_expansion(repo: Path, edit: Editor) -> None:
 
     edit("spec/shapes/chevron-stack.json", mutate)
     edit(
-        "spec/shapes/triangle-dotted.json",
-        lambda d: d["parameters"]["style"].update(default="nope") or None,
+        "spec/shapes/ring-stem.json",
+        lambda d: d["parameters"]["top"].update(default="nope") or None,
     )
     errs = "\n".join(errors(repo))
     assert "parameter count: default outside min..max" in errs
-    assert "parameter style: default is not one of its values" in errs
+    assert "parameter top: default is not one of its values" in errs
 
 
 def test_empty_and_broken_expansion(repo: Path, edit: Editor) -> None:
@@ -102,7 +102,8 @@ def test_empty_and_broken_expansion(repo: Path, edit: Editor) -> None:
 
     def nothing(d: dict[str, Any]) -> None:
         d["parameters"] = {"on": {"type": "boolean", "default": True, "description": "x"}}
-        d["primitives"][0]["when"] = {"on": True}
+        for prim in d["primitives"]:
+            prim["when"] = {"on": True}
 
     edit(CHIN, nothing)
     assert any("expands to nothing" in e for e in errors(repo))
@@ -172,3 +173,14 @@ def test_no_shapes(repo: Path) -> None:
 def test_sun_ratio(repo: Path, edit: Editor) -> None:
     edit("spec/shapes/kurdish-sun.json", lambda d: d["primitives"][0].update(innerRadius=4) or None)
     assert any("flag innerToOuter" in e for e in errors(repo))
+
+
+def test_module_radii(repo: Path, edit: Editor) -> None:
+    def mutate(d: dict[str, Any]) -> None:
+        d["primitives"].append({"type": "circle", "cx": 12, "cy": 12, "r": 4, "layer": "dots"})
+        d["primitives"].append({"type": "dot", "cx": 12, "cy": 12, "r": 1.5, "layer": "dots"})
+
+    edit(CHIN, mutate)
+    errs = "\n".join(errors(repo))
+    assert "circle r 4 is not a module radius [2, 3, 5]" in errs
+    assert "dot r 1.5 is not a module radius [1, 2]" in errs

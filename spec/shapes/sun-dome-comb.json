@@ -1,0 +1,70 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "sun-dome-comb",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Rayed dome",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["sun", "dome", "comb", "rays"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["dome", "rays", "teeth"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 17,
+      "r": 6,
+      "start": 180,
+      "end": 360,
+      "id": "arch",
+      "layer": "dome"
+    },
+    { "type": "line", "x1": 6, "y1": 17, "x2": 18, "y2": 17, "id": "base", "layer": "dome" },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 17],
+      "start": 180,
+      "sweep": 180,
+      "element": { "type": "line", "x1": 20, "y1": 17, "x2": 22, "y2": 17 },
+      "id": "rays",
+      "layer": "rays"
+    },
+    {
+      "type": "repeat",
+      "count": 3,
+      "step": [3, 0],
+      "element": { "type": "line", "x1": 12, "y1": 17, "x2": 12, "y2": 14.5 },
+      "id": "teeth",
+      "layer": "teeth"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 5,
+      "max": 9,
+      "default": 7,
+      "description": "Rays from end to end of the dome."
+    }
+  },
+  "construction": [
+    "Half circle r 6 on its base. Rays r 8 to 10 (2 clear, 2 long, so they stay inside r 11).",
+    "Three teeth 2.5 high, 3 apart, rise from the base. The small star of the source does not fit inside at this size: compose with sterk-star."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 7, 20, 10],
+    "visualBox": [1, 6, 22, 12],
+    "opticalCenter": [12, 14.162],
+    "strokeToSize": 0.091,
+    "primitiveCount": 12
+  }
+}

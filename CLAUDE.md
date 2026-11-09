@@ -1,6 +1,6 @@
 # Deq: project rules for AI agents
 
-Deq turns traditional Kurdish tattoo (deq) motifs into an open, parametric design system: shape spec, renderers in TS/Python/Rust, exporters, icon packages, fonts, a website with Studio, and a cited cultural story. The full plan is in `PRD-detailed.md` (local only, never committed). Current phase: **2 done** (shape spec, flag and logo concepts; awaiting owner approval of the contact sheet and a logo pick, next is Phase 3).
+Deq turns traditional Kurdish tattoo (deq) motifs into an open, parametric design system: shape spec, renderers in TS/Python/Rust, exporters, icon packages, fonts, a website with Studio, and a cited cultural story. The full plan is in `PRD-detailed.md` (local only, never committed). Current phase: **2 done** (shape spec, flag and logo concept A chosen; 93 shapes redesigned from shared modules in `spec/grid.json`, awaiting owner approval of the redesign; next is Phase 3).
 
 ## Hard rules
 

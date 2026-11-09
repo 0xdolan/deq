@@ -1,0 +1,77 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dome-comb",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Dome with comb",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["dome", "comb"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["dome", "teeth"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 12.5,
+      "r": 7.5,
+      "start": 180,
+      "end": 360,
+      "id": "arch",
+      "layer": "dome"
+    },
+    {
+      "type": "line",
+      "x1": 4.5,
+      "y1": 12.5,
+      "x2": 4.5,
+      "y2": 18.5,
+      "id": "side-left",
+      "layer": "dome"
+    },
+    {
+      "type": "line",
+      "x1": 19.5,
+      "y1": 12.5,
+      "x2": 19.5,
+      "y2": 18.5,
+      "id": "side-right",
+      "layer": "dome"
+    },
+    { "type": "line", "x1": 4.5, "y1": 18.5, "x2": 19.5, "y2": 18.5, "id": "base", "layer": "dome" },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "step": [3, 0],
+      "element": { "type": "line", "x1": 12, "y1": 18.5, "x2": 12, "y2": 15.5 },
+      "id": "teeth",
+      "layer": "teeth"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "teeth": {
+      "type": "integer",
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "description": "Teeth rising from the base, 3 apart."
+    }
+  },
+  "construction": [
+    "Half circle r 7.5 on sides 6 high, closed by the base. Teeth 3 long every 3, at least 3 from the sides."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [4.5, 5, 15, 13.5],
+    "visualBox": [3.5, 4, 17, 15.5],
+    "opticalCenter": [12, 13.579],
+    "strokeToSize": 0.118,
+    "primitiveCount": 8
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "arch-dot",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Shrine",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["arch", "dot"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["arch", "rays", "dot"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 14,
+      "r": 5,
+      "start": 180,
+      "end": 360,
+      "id": "arch",
+      "layer": "arch"
+    },
+    { "type": "line", "x1": 7, "y1": 14, "x2": 7, "y2": 18, "id": "leg-left", "layer": "arch" },
+    { "type": "line", "x1": 17, "y1": 14, "x2": 17, "y2": 18, "id": "leg-right", "layer": "arch" },
+    { "type": "line", "x1": 7, "y1": 18, "x2": 3, "y2": 18, "id": "foot-left", "layer": "arch" },
+    { "type": "line", "x1": 17, "y1": 18, "x2": 21, "y2": 18, "id": "foot-right", "layer": "arch" },
+    {
+      "type": "radial",
+      "count": 3,
+      "center": [12, 14],
+      "start": 225,
+      "sweep": 90,
+      "element": { "type": "line", "x1": 17, "y1": 14, "x2": 19.5, "y2": 14 },
+      "id": "rays",
+      "layer": "rays"
+    },
+    { "type": "dot", "cx": 12, "cy": 15, "id": "dot", "layer": "dot" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Arch: upper half of the sun circle (r 5) on legs 4 long with feet 4 out.",
+    "Three rays touching the arch (r 5 to 7.5) at 225, 270 and 315 degrees; a small dot inside."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [3, 6.5, 18, 11.5],
+    "visualBox": [2, 5.5, 20, 13.5],
+    "opticalCenter": [12, 13.065],
+    "strokeToSize": 0.1,
+    "primitiveCount": 9
+  }
+}

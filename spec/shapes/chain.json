@@ -1,0 +1,48 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "chain",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Chain",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["ring", "chain", "border"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["links"],
+  "primitives": [
+    {
+      "type": "repeat",
+      "count": { "param": "links" },
+      "step": [3.5, 0],
+      "element": { "type": "circle", "cx": 12, "cy": 12, "r": 2 },
+      "id": "links",
+      "layer": "links"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "links": {
+      "type": "integer",
+      "min": 2,
+      "max": 5,
+      "default": 5,
+      "description": "Linked bead rings, 3.5 apart so they overlap."
+    }
+  },
+  "construction": [
+    "Bead rings (r 2) 3.5 apart, so each overlaps the next by 0.5. The end curl of the source is left to composition."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [3, 10, 18, 4],
+    "visualBox": [2, 9, 20, 6],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 5
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "tent-cross",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "X on feet",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["x", "tent"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["legs", "feet", "post", "dot"],
+  "primitives": [
+    { "type": "line", "x1": 15, "y1": 7.5, "x2": 6, "y2": 16.5, "id": "leg-left", "layer": "legs" },
+    { "type": "line", "x1": 9, "y1": 7.5, "x2": 18, "y2": 16.5, "id": "leg-right", "layer": "legs" },
+    {
+      "type": "line",
+      "x1": 6,
+      "y1": 16.5,
+      "x2": 2,
+      "y2": 16.5,
+      "id": "foot-left",
+      "layer": "feet",
+      "when": { "feet": "flat" }
+    },
+    {
+      "type": "line",
+      "x1": 18,
+      "y1": 16.5,
+      "x2": 22,
+      "y2": 16.5,
+      "id": "foot-right",
+      "layer": "feet",
+      "when": { "feet": "flat" }
+    },
+    {
+      "type": "line",
+      "x1": 6,
+      "y1": 16.5,
+      "x2": 3,
+      "y2": 13.5,
+      "id": "hook-left",
+      "layer": "feet",
+      "when": { "feet": "hooked" }
+    },
+    {
+      "type": "line",
+      "x1": 18,
+      "y1": 16.5,
+      "x2": 21,
+      "y2": 13.5,
+      "id": "hook-right",
+      "layer": "feet",
+      "when": { "feet": "hooked" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 7.5,
+      "x2": 12,
+      "y2": 16.5,
+      "id": "post",
+      "layer": "post",
+      "when": { "post": true }
+    },
+    { "type": "dot", "cx": 12, "cy": 15.5, "id": "dot", "layer": "dot", "when": { "dot": true } }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "feet": {
+      "type": "enum",
+      "values": ["flat", "hooked"],
+      "default": "flat",
+      "description": "Flat feet (thesis A15, A34) or feet turned up (A16)."
+    },
+    "post": {
+      "type": "boolean",
+      "default": false,
+      "description": "A vertical post through the crossing (thesis A34)."
+    },
+    "dot": {
+      "type": "boolean",
+      "default": false,
+      "description": "A dot under the crossing (thesis A16)."
+    }
+  },
+  "construction": [
+    "Two 45-degree legs cross at (12, 8), 3 below their tops. Feet run 4 out (flat) or 3 by 3 up (hooked)."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 7.5, 20, 9],
+    "visualBox": [1, 6.5, 22, 11],
+    "opticalCenter": [12, 13.076],
+    "strokeToSize": 0.091,
+    "primitiveCount": 4
+  }
+}

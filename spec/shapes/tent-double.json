@@ -1,0 +1,105 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "tent-double",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Double tent",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["triangle", "tent", "x", "border"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["tents", "bases", "marks"],
+  "primitives": [
+    {
+      "type": "line",
+      "x1": 7,
+      "y1": 6.5,
+      "x2": 2,
+      "y2": 11.5,
+      "id": "tent-left-left",
+      "layer": "tents"
+    },
+    {
+      "type": "line",
+      "x1": 7,
+      "y1": 6.5,
+      "x2": 12,
+      "y2": 11.5,
+      "id": "tent-left-right",
+      "layer": "tents"
+    },
+    {
+      "type": "line",
+      "x1": 17,
+      "y1": 6.5,
+      "x2": 12,
+      "y2": 11.5,
+      "id": "tent-right-left",
+      "layer": "tents"
+    },
+    {
+      "type": "line",
+      "x1": 17,
+      "y1": 6.5,
+      "x2": 22,
+      "y2": 11.5,
+      "id": "tent-right-right",
+      "layer": "tents"
+    },
+    { "type": "line", "x1": 7, "y1": 4, "x2": 7, "y2": 6.5, "id": "star-left", "layer": "tents" },
+    { "type": "line", "x1": 17, "y1": 4, "x2": 17, "y2": 6.5, "id": "star-right", "layer": "tents" },
+    {
+      "type": "line",
+      "x1": 2,
+      "y1": 11.5,
+      "x2": 22,
+      "y2": 11.5,
+      "id": "base-top",
+      "layer": "bases"
+    },
+    {
+      "type": "line",
+      "x1": 2,
+      "y1": 14.5,
+      "x2": 22,
+      "y2": 14.5,
+      "id": "base-bottom",
+      "layer": "bases"
+    },
+    {
+      "type": "repeat",
+      "count": 4,
+      "step": [4.5, 0],
+      "element": { "type": "line", "x1": 10.5, "y1": 17, "x2": 13.5, "y2": 20 },
+      "id": "xs-a",
+      "layer": "marks"
+    },
+    {
+      "type": "repeat",
+      "count": 4,
+      "step": [4.5, 0],
+      "element": { "type": "line", "x1": 13.5, "y1": 17, "x2": 10.5, "y2": 20 },
+      "id": "xs-b",
+      "layer": "marks"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Two 45-degree tents (5 by 5) on a double base line 3 apart, each with a short post at the apex.",
+    "Four Xs (3 by 3) below, 4.5 apart."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 4, 20, 16],
+    "visualBox": [1, 3, 22, 18],
+    "opticalCenter": [12, 13.324],
+    "strokeToSize": 0.091,
+    "primitiveCount": 16
+  }
+}

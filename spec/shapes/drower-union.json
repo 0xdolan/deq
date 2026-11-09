@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "drower-union",
-  "version": 1,
+  "version": 2,
   "category": "compositions",
   "names": {
     "en": "Union of symbols",
@@ -20,32 +20,34 @@
   "tags": ["drower", "composition", "union"],
   "meaning": { "status": "unknown" },
   "sources": ["drower-1941"],
-  "layers": ["moon", "comb", "dot", "cross"],
+  "layers": ["ring", "line", "teeth", "post", "dot"],
   "primitives": [
-    { "type": "circle", "cx": 5.5, "cy": 11, "r": 2.5, "layer": "moon" },
-    { "type": "line", "x1": 8, "y1": 11, "x2": 21, "y2": 11, "layer": "comb" },
+    { "type": "circle", "cx": 4, "cy": 11, "r": 2, "id": "ring", "layer": "ring" },
+    { "type": "line", "x1": 6, "y1": 11, "x2": 22, "y2": 11, "id": "line", "layer": "line" },
     {
       "type": "repeat",
-      "count": 3,
-      "spread": [6, 0],
-      "element": { "type": "line", "x1": 13.5, "y1": 11, "x2": 13.5, "y2": 7 },
-      "layer": "comb"
+      "count": 5,
+      "step": [3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 8.5, "y1": 11, "x2": 8.5, "y2": 8 },
+      "id": "teeth",
+      "layer": "teeth"
     },
-    { "type": "line", "x1": 19, "y1": 7, "x2": 19, "y2": 17, "layer": "cross" },
-    { "type": "dot", "cx": 12, "cy": 15, "layer": "dot" }
+    { "type": "line", "x1": 20.5, "y1": 8, "x2": 20.5, "y2": 14, "id": "post", "layer": "post" },
+    { "type": "dot", "cx": 13, "cy": 15, "r": 2, "id": "dot", "layer": "dot" }
   ],
   "symmetry": "none",
   "parameters": {},
   "construction": [
-    "After Drower's 'common union of symbols': the moon drawn as a ring (1), a comb whose bar runs on to the right (2), a dot below it (3), and a cross formed by a vertical line through the bar (4).",
-    "Centred on its visual box."
+    "Drower's common union, built from its four numbered parts: (1) a bead ring (r 2) at the left end of a line,",
+    "(2) five teeth 3 high every 3 units, (3) a large dot 4 under the line, (4) a post 6 high near the right end."
   ],
   "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
   "metrics": {
-    "bbox": [3, 7, 18, 10],
-    "visualBox": [2, 6, 20, 12],
-    "opticalCenter": [12.352, 10.852],
-    "strokeToSize": 0.1,
-    "primitiveCount": 7
+    "bbox": [2, 8, 20, 9],
+    "visualBox": [1, 7, 22, 10],
+    "opticalCenter": [12.47, 11.047],
+    "strokeToSize": 0.091,
+    "primitiveCount": 9
   }
 }

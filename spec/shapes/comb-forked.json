@@ -1,0 +1,102 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "comb-forked",
+  "version": 1,
+  "category": "lines-and-borders",
+  "names": {
+    "en": "Forked comb",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["comb", "fork"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["shaft", "ends", "ticks", "dots"],
+  "primitives": [
+    { "type": "line", "x1": 5, "y1": 12, "x2": 19, "y2": 12, "id": "shaft", "layer": "shaft" },
+    { "type": "line", "x1": 5, "y1": 12, "x2": 2, "y2": 9, "id": "end-left-upper", "layer": "ends" },
+    {
+      "type": "line",
+      "x1": 5,
+      "y1": 12,
+      "x2": 2,
+      "y2": 15,
+      "id": "end-left-lower",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 19,
+      "y1": 12,
+      "x2": 22,
+      "y2": 9,
+      "id": "end-right-upper",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 19,
+      "y1": 12,
+      "x2": 22,
+      "y2": 15,
+      "id": "end-right-lower",
+      "layer": "ends"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "ticks" },
+      "step": [3, 0],
+      "element": { "type": "line", "x1": 12, "y1": 10.5, "x2": 12, "y2": 13.5 },
+      "id": "ticks-crossing",
+      "layer": "ticks",
+      "when": { "marks": "ticks" }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "ticks" },
+      "step": [3, 0],
+      "element": { "type": "line", "x1": 12, "y1": 12, "x2": 12, "y2": 9.5 },
+      "id": "ticks-up",
+      "layer": "ticks",
+      "when": { "marks": "ticks-dots" }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "ticks" },
+      "step": [3, 0],
+      "element": { "type": "dot", "cx": 12, "cy": 15 },
+      "id": "dots",
+      "layer": "dots",
+      "when": { "marks": "ticks-dots" }
+    }
+  ],
+  "symmetry": "mirror-y",
+  "parameters": {
+    "ticks": {
+      "type": "integer",
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "description": "Ticks on the shaft, 3 apart."
+    },
+    "marks": {
+      "type": "enum",
+      "values": ["ticks", "ticks-dots"],
+      "default": "ticks",
+      "description": "Ticks crossing the shaft (thesis A50), or ticks above with dots below (A54, tablo)."
+    }
+  },
+  "construction": [
+    "Shaft 14 long with the small V (3 by 3) opening outward at each end, ticks 3 apart between them."
+  ],
+  "references": { "images": ["thesis-motif-table-01", "tablo-spike-pendant-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 9, 20, 6],
+    "visualBox": [1, 8, 22, 8],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 9
+  }
+}

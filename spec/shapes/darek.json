@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "darek",
-  "version": 1,
+  "version": 2,
   "category": "human-and-animal",
   "names": {
     "en": "Darek",
@@ -20,55 +20,51 @@
   "tags": ["darwish", "darek", "figure"],
   "meaning": { "status": "unknown" },
   "sources": ["drower-1941"],
-  "layers": ["bar", "column"],
+  "layers": ["bar", "dome", "teeth", "post"],
   "primitives": [
-    { "type": "arc", "cx": 6, "cy": 7, "r": 3, "start": 180, "end": 360, "layer": "bar" },
-    { "type": "line", "x1": 3, "y1": 7, "x2": 21, "y2": 7, "layer": "bar" },
-    { "type": "line", "x1": 21, "y1": 3, "x2": 21, "y2": 12, "layer": "bar" },
+    { "type": "line", "x1": 2, "y1": 12, "x2": 21.5, "y2": 12, "id": "bar", "layer": "bar" },
     {
-      "type": "repeat",
-      "count": { "param": "teeth" },
-      "spread": [6, 0],
-      "element": { "type": "line", "x1": 15, "y1": 7, "x2": 15, "y2": 10 },
-      "layer": "bar"
+      "type": "arc",
+      "cx": 5,
+      "cy": 12,
+      "r": 3,
+      "start": 180,
+      "end": 360,
+      "id": "dome",
+      "layer": "dome"
     },
     {
       "type": "repeat",
-      "count": { "param": "steps" },
-      "step": [0, 4],
+      "count": { "param": "teeth" },
+      "step": [3, 0],
       "align": "start",
-      "element": { "type": "polyline", "points": [[3, 13], [5, 11], [7, 13]] },
-      "layer": "column"
-    }
+      "element": { "type": "line", "x1": 9.5, "y1": 12, "x2": 9.5, "y2": 15 },
+      "id": "teeth",
+      "layer": "teeth"
+    },
+    { "type": "line", "x1": 21.5, "y1": 9, "x2": 21.5, "y2": 15, "id": "post", "layer": "post" }
   ],
   "symmetry": "none",
   "parameters": {
     "teeth": {
       "type": "integer",
       "min": 2,
-      "max": 3,
-      "default": 3,
-      "description": "Number of short teeth under the bar (at least 3 units apart)."
-    },
-    "steps": {
-      "type": "integer",
-      "min": 1,
-      "max": 3,
-      "default": 3,
-      "description": "Number of small arches in the column under the dome."
+      "max": 4,
+      "default": 4,
+      "description": "Teeth hanging from the bar, 3 apart."
     }
   },
   "construction": [
-    "After the plate Drower captions 'the Darek': a long bar with a dome at its left end, short teeth hanging from it and a tall post at its right end.",
-    "Under the dome, a column of small arches descends every 4 units.",
-    "Centred on its visual box."
+    "Drower's darek (top part only): a bar with a dome (half of the ring circle, r 3) on its left end.",
+    "Teeth 3 long hang every 3 units, and a post 6 high crosses the bar at its right end.",
+    "The column of small arches with dots below it in Drower's plate is a separate shape: arch-dot-column."
   ],
   "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
   "metrics": {
-    "bbox": [3, 3, 18, 18],
-    "visualBox": [2, 2, 20, 20],
-    "opticalCenter": [10.921, 9.448],
-    "strokeToSize": 0.1,
-    "primitiveCount": 9
+    "bbox": [2, 9, 19.5, 6],
+    "visualBox": [1, 8, 21.5, 8],
+    "opticalCenter": [12.216, 12],
+    "strokeToSize": 0.093,
+    "primitiveCount": 7
   }
 }

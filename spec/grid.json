@@ -38,5 +38,16 @@
       "description": "Nothing drawn, stroke edges included, leaves the 22 x 22 live area.",
       "shape": { "type": "rect", "x": 1, "y": 1, "width": 22, "height": 22 }
     }
-  ]
+  ],
+  "modules": {
+    "description": "Reusable sizes every shape (except brand concepts) is built from, so the same circle, dot and V look identical everywhere. Lint checks circle and dot radii.",
+    "circleRadii": [2, 3, 5],
+    "dotRadii": [1, 2],
+    "rayGap": 2.5,
+    "rayLength": 2.5,
+    "vOffsets": [3, 6],
+    "pitch45": 4.5,
+    "toothLength": 3,
+    "toothPitch": 3
+  }
 }

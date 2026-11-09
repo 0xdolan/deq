@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "kurdish-flag",
-  "version": 1,
+  "version": 2,
   "category": "kurdish-symbols",
   "names": {
     "en": "Flag of Kurdistan",
@@ -40,21 +40,102 @@
     ]
   },
   "sources": ["wikipedia-flag-of-kurdistan"],
-  "layers": ["frame", "bands", "sun"],
+  "layers": ["top", "bottom", "sun", "frame"],
   "primitives": [
-    { "type": "rect", "x": 2, "y": 5.333, "width": 20, "height": 13.333, "layer": "frame" },
-    { "type": "line", "x1": 2, "y1": 9.778, "x2": 7.5, "y2": 9.778, "layer": "bands" },
-    { "type": "line", "x1": 16.5, "y1": 9.778, "x2": 22, "y2": 9.778, "layer": "bands" },
-    { "type": "line", "x1": 2, "y1": 14.222, "x2": 7.5, "y2": 14.222, "layer": "bands" },
-    { "type": "line", "x1": 16.5, "y1": 14.222, "x2": 22, "y2": 14.222, "layer": "bands" },
-    { "type": "use", "shape": "kurdish-sun", "layer": "sun", "transform": { "scale": 0.333 } }
+    {
+      "id": "frame",
+      "type": "rect",
+      "x": 2,
+      "y": 5.333,
+      "width": 20,
+      "height": 13.333,
+      "layer": "frame"
+    },
+    {
+      "id": "divider-top-left",
+      "type": "line",
+      "x1": 2,
+      "y1": 9.778,
+      "x2": 7,
+      "y2": 9.778,
+      "layer": "top",
+      "when": { "style": "outline" }
+    },
+    {
+      "id": "divider-top-right",
+      "type": "line",
+      "x1": 17,
+      "y1": 9.778,
+      "x2": 22,
+      "y2": 9.778,
+      "layer": "top",
+      "when": { "style": "outline" }
+    },
+    {
+      "id": "divider-bottom-left",
+      "type": "line",
+      "x1": 2,
+      "y1": 14.222,
+      "x2": 7,
+      "y2": 14.222,
+      "layer": "bottom",
+      "when": { "style": "outline" }
+    },
+    {
+      "id": "divider-bottom-right",
+      "type": "line",
+      "x1": 17,
+      "y1": 14.222,
+      "x2": 22,
+      "y2": 14.222,
+      "layer": "bottom",
+      "when": { "style": "outline" }
+    },
+    {
+      "id": "band-top",
+      "type": "rect",
+      "x": 2,
+      "y": 5.333,
+      "width": 20,
+      "height": 4.445,
+      "layer": "top",
+      "paint": "fill",
+      "when": { "style": "bands" }
+    },
+    {
+      "id": "band-bottom",
+      "type": "rect",
+      "x": 2,
+      "y": 14.222,
+      "width": 20,
+      "height": 4.444,
+      "layer": "bottom",
+      "paint": "fill",
+      "when": { "style": "bands" }
+    },
+    {
+      "id": "sun",
+      "type": "use",
+      "shape": "kurdish-sun",
+      "layer": "sun",
+      "transform": { "scale": 0.333 }
+    }
   ],
   "symmetry": "mirror-x",
-  "parameters": {},
+  "parameters": {
+    "style": {
+      "type": "enum",
+      "values": ["outline", "bands"],
+      "default": "outline",
+      "description": "Divider lines broken round the sun, or filled top and bottom bands."
+    }
+  },
   "construction": [
     "Icon form of the flag in spec/flag.json: a 3:2 frame 20 wide and 13.333 high, centred on the grid.",
-    "The band edges are drawn as divider lines at one and two thirds of the height, broken around the sun.",
+    "Outline style: divider lines at one and two thirds of the height, broken symmetrically round the sun. Each line stops 5 from the centre, so its round cap clears the sun's ray tips (r 3.349) by 1 unit, the same clearance on all four ends.",
+    "Bands style: the top and bottom thirds are filled; the middle third stays open inside the frame.",
     "The sun is kurdish-sun at scale 1/3 (0.333), so its height is half the flag's, as in the reference; its centre lands at y = 12.019, matching 300.842 / 600 of the flag.",
+    "Layers run top, bottom, sun, frame, so a three-colour treatment gives red, green and yellow in flag order.",
     "This is a single-colour icon. The full-colour flag and its variants are defined in spec/flag.json."
   ],
   "references": {

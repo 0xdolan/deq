@@ -1,7 +1,7 @@
 {
   "$schema": "../schema/shape.schema.json",
   "id": "tree-branch",
-  "version": 1,
+  "version": 2,
   "category": "nature",
   "names": {
     "en": "Tree of life",
@@ -33,30 +33,53 @@
     ]
   },
   "sources": ["natakallam-2024", "ozgur-2021", "wikipedia-deq", "kurdistan-chronicle-2026"],
-  "layers": ["stem", "branches"],
+  "layers": ["top", "chevrons", "stem"],
   "primitives": [
-    { "type": "line", "x1": 12, "y1": 3, "x2": 12, "y2": 21, "layer": "stem" },
+    { "type": "line", "x1": 12, "y1": 5.5, "x2": 9, "y2": 2.5, "id": "fork-left", "layer": "top" },
+    { "type": "line", "x1": 12, "y1": 5.5, "x2": 15, "y2": 2.5, "id": "fork-right", "layer": "top" },
+    { "type": "line", "x1": 9, "y1": 2.5, "x2": 7, "y2": 4.5, "id": "hook-left", "layer": "top" },
+    { "type": "line", "x1": 15, "y1": 2.5, "x2": 17, "y2": 4.5, "id": "hook-right", "layer": "top" },
     {
       "type": "repeat",
-      "count": { "param": "branches" },
-      "step": [0, 4],
-      "element": { "type": "polyline", "points": [[7, 10], [12, 14], [17, 10]] },
-      "layer": "branches"
+      "count": { "param": "chevrons" },
+      "step": [0, 4.5],
+      "align": "start",
+      "element": { "type": "line", "x1": 12, "y1": 5.5, "x2": 12, "y2": 10 },
+      "id": "stem",
+      "layer": "stem"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "chevrons" },
+      "step": [0, 4.5],
+      "align": "start",
+      "element": { "type": "line", "x1": 12, "y1": 10, "x2": 9, "y2": 13 },
+      "id": "chevrons-left",
+      "layer": "chevrons"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "chevrons" },
+      "step": [0, 4.5],
+      "align": "start",
+      "element": { "type": "line", "x1": 12, "y1": 10, "x2": 15, "y2": 13 },
+      "id": "chevrons-right",
+      "layer": "chevrons"
     }
   ],
   "symmetry": "mirror-x",
   "parameters": {
-    "branches": {
+    "chevrons": {
       "type": "integer",
       "min": 1,
-      "max": 4,
+      "max": 3,
       "default": 3,
-      "description": "Number of V-shaped branch pairs."
+      "description": "Chevrons along the stem; the last sits at the stem's end."
     }
   },
   "construction": [
-    "Stem: a vertical line from (12, 3) to (12, 21).",
-    "Branches: V shapes with their vertex on the stem, rising 4 units over a half-width of 5, repeated every 4 units and centred on y = 14."
+    "Top: the small V (3 across, 3 up) with a hook turning down and out at each tip (2 by 2).",
+    "The stem is built from segments 4.5 long, each ending in a small inverted V (3 by 3): 4.5 is the pitch at which 45-degree strokes stay 3 apart."
   ],
   "references": {
     "images": [
@@ -74,10 +97,10 @@
     "files": []
   },
   "metrics": {
-    "bbox": [7, 3, 10, 18],
-    "visualBox": [6, 2, 12, 20],
-    "opticalCenter": [12, 12],
-    "strokeToSize": 0.1,
-    "primitiveCount": 4
+    "bbox": [7, 2.5, 10, 19.5],
+    "visualBox": [6, 1.5, 12, 21.5],
+    "opticalCenter": [12, 11.797],
+    "strokeToSize": 0.093,
+    "primitiveCount": 13
   }
 }

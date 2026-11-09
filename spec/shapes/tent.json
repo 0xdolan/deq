@@ -1,0 +1,103 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "tent",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Tent",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["triangle", "tent", "x"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["triangle", "teeth", "marks"],
+  "primitives": [
+    {
+      "type": "line",
+      "x1": 2,
+      "y1": 18.5,
+      "x2": 13.5,
+      "y2": 7,
+      "id": "side-left",
+      "layer": "triangle"
+    },
+    {
+      "type": "line",
+      "x1": 22,
+      "y1": 18.5,
+      "x2": 10.5,
+      "y2": 7,
+      "id": "side-right",
+      "layer": "triangle"
+    },
+    { "type": "line", "x1": 2, "y1": 18.5, "x2": 22, "y2": 18.5, "id": "base", "layer": "triangle" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 5.5,
+      "x2": 12,
+      "y2": 10,
+      "id": "apex-star",
+      "layer": "triangle"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "step": [-2.25, 2.25],
+      "align": "start",
+      "element": { "type": "line", "x1": 9.75, "y1": 10.75, "x2": 8.25, "y2": 9.25 },
+      "id": "teeth-left",
+      "layer": "teeth"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "step": [2.25, 2.25],
+      "align": "start",
+      "element": { "type": "line", "x1": 14.25, "y1": 10.75, "x2": 15.75, "y2": 9.25 },
+      "id": "teeth-right",
+      "layer": "teeth"
+    },
+    {
+      "type": "repeat",
+      "count": 3,
+      "step": [4, 0],
+      "element": { "type": "line", "x1": 10.5, "y1": 15.5, "x2": 13.5, "y2": 18.5 },
+      "id": "xs-a",
+      "layer": "marks"
+    },
+    {
+      "type": "repeat",
+      "count": 3,
+      "step": [4, 0],
+      "element": { "type": "line", "x1": 13.5, "y1": 15.5, "x2": 10.5, "y2": 18.5 },
+      "id": "xs-b",
+      "layer": "marks"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "teeth": {
+      "type": "integer",
+      "min": 1,
+      "max": 3,
+      "default": 3,
+      "description": "Teeth on each side."
+    }
+  },
+  "construction": [
+    "Triangle with 45-degree sides from (2, 16) and (22, 16); the sides run 1.5 past the apex and a vertical stroke crosses there, making a star.",
+    "Teeth 2.1 long, square to the sides, every 3.18 along them. Three Xs (3 by 3) stand on the base, 4 apart."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 5.5, 20, 13],
+    "visualBox": [1, 4.5, 22, 15],
+    "opticalCenter": [12, 14.791],
+    "strokeToSize": 0.091,
+    "primitiveCount": 16
+  }
+}

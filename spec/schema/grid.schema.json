@@ -4,9 +4,50 @@
   "title": "Deq design grid",
   "type": "object",
   "additionalProperties": false,
-  "required": ["canvas", "padding", "liveArea", "decimals", "defaults", "keylines"],
+  "required": ["canvas", "padding", "liveArea", "decimals", "defaults", "keylines", "modules"],
   "properties": {
     "$schema": { "type": "string" },
+    "modules": {
+      "description": "Reusable module sizes. circleRadii and dotRadii are enforced by lint for every non-brand shape.",
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "circleRadii",
+        "dotRadii",
+        "rayGap",
+        "rayLength",
+        "vOffsets",
+        "pitch45",
+        "toothLength",
+        "toothPitch"
+      ],
+      "properties": {
+        "description": { "type": "string" },
+        "circleRadii": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "number", "exclusiveMinimum": 0 }
+        },
+        "dotRadii": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "number", "exclusiveMinimum": 0 }
+        },
+        "rayGap": { "type": "number", "exclusiveMinimum": 0 },
+        "rayLength": { "type": "number", "exclusiveMinimum": 0 },
+        "vOffsets": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": { "type": "number", "exclusiveMinimum": 0 }
+        },
+        "pitch45": { "type": "number", "exclusiveMinimum": 0 },
+        "toothLength": { "type": "number", "exclusiveMinimum": 0 },
+        "toothPitch": { "type": "number", "exclusiveMinimum": 0 }
+      }
+    },
     "canvas": {
       "type": "object",
       "additionalProperties": false,

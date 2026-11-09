@@ -87,15 +87,14 @@ Each cell is labelled with its asset id.
 
 ## `compositions`
 
-| Id                     | Motif                                                  | Kurmanji            | Sorani              | Seen in                                                                                                   | Named in                                 |
-| ---------------------- | ------------------------------------------------------ | ------------------- | ------------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------- |
-| `chin-composition`     | Traditional chin layout (chevron, dots, vertical stem) | needs native review | needs native review | `de-morgan-fig-27-tchomaklou`, `de-morgan-fig-28-kilakan`, `fate-temel-portrait-01` (+10 more)            | natgeo-2015, mee-2022                    |
-| `forehead-composition` | Traditional forehead layout (sun, fork, dots)          | needs native review | needs native review | `de-morgan-fig-27-tchomaklou`, `de-morgan-fig-28-kilakan`, `aljazeera-framed-elder-portrait-01` (+7 more) | indyturk-2020                            |
-| `hand-composition`     | Back-of-hand and finger layout                         | needs native review | needs native review | `elder-man-tattooed-hands-01`, `field-tattoo-drawings-02`, `field-tattoo-drawings-03` (+10 more)          | —                                        |
-| `foot-composition`     | Foot and ankle layout                                  | needs native review | needs native review | `field-tattoo-drawings-01`                                                                                | —                                        |
-| `vertical-stack`       | A vertical stack of motifs (neck to chest, or a print) | needs native review | needs native review | `natakallam-symbols-of-nature-01`, `zozane-vertical-motif-print-01`, `vertical-motif-stack-01`            | ozgur-2021 (tree of life, neck to chest) |
-| `circle-over-comb`     | A circle above a comb                                  | needs native review | needs native review | `deq-motifs-animation-01`                                                                                 | —                                        |
-| `drower-union`         | The 'common union of symbols' on Drower's plate        | needs native review | needs native review | `drower-ezidi-tattoo-designs-01`                                                                          | drower-1941                              |
+| Id                     | Motif                                                  | Kurmanji            | Sorani              | Seen in                                                                                                   | Named in              |
+| ---------------------- | ------------------------------------------------------ | ------------------- | ------------------- | --------------------------------------------------------------------------------------------------------- | --------------------- |
+| `chin-composition`     | Traditional chin layout (chevron, dots, vertical stem) | needs native review | needs native review | `de-morgan-fig-27-tchomaklou`, `de-morgan-fig-28-kilakan`, `fate-temel-portrait-01` (+10 more)            | natgeo-2015, mee-2022 |
+| `forehead-composition` | Traditional forehead layout (sun, fork, dots)          | needs native review | needs native review | `de-morgan-fig-27-tchomaklou`, `de-morgan-fig-28-kilakan`, `aljazeera-framed-elder-portrait-01` (+7 more) | indyturk-2020         |
+| `circle-over-comb`     | A circle above a comb                                  | needs native review | needs native review | `deq-motifs-animation-01`                                                                                 | —                     |
+| `drower-union`         | The 'common union of symbols' on Drower's plate        | needs native review | needs native review | `drower-ezidi-tattoo-designs-01`                                                                          | drower-1941           |
+
+The phase 2 redesign removed `hand-composition`, `foot-composition` and `vertical-stack`: each mixed several designs, and those designs are now separate shapes. `spec/catalog.json` holds the current list.
 
 ## `kurdish-symbols`
 

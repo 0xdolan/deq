@@ -1,0 +1,85 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "ring-chain-shaft",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Rings on a shaft",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["ring", "line", "fork"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["shaft", "rings", "ends"],
+  "primitives": [
+    { "type": "line", "x1": 3.5, "y1": 12, "x2": 20.5, "y2": 12, "id": "shaft", "layer": "shaft" },
+    {
+      "type": "repeat",
+      "count": { "param": "rings" },
+      "step": [4, 0],
+      "element": { "type": "circle", "cx": 12, "cy": 12, "r": 2 },
+      "id": "rings",
+      "layer": "rings"
+    },
+    {
+      "type": "line",
+      "x1": 3.5,
+      "y1": 12,
+      "x2": 2,
+      "y2": 10.5,
+      "id": "end-left-upper",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 3.5,
+      "y1": 12,
+      "x2": 2,
+      "y2": 13.5,
+      "id": "end-left-lower",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 20.5,
+      "y1": 12,
+      "x2": 22,
+      "y2": 10.5,
+      "id": "end-right-upper",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 20.5,
+      "y1": 12,
+      "x2": 22,
+      "y2": 13.5,
+      "id": "end-right-lower",
+      "layer": "ends"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "rings": {
+      "type": "integer",
+      "min": 1,
+      "max": 3,
+      "default": 3,
+      "description": "Bead rings on the shaft, 4 apart (touching)."
+    }
+  },
+  "construction": [
+    "Shaft with bead rings (r 2) strung every 4 and a fork (1.5 by 1.5) opening outward at each end."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 10, 20, 4],
+    "visualBox": [1, 9, 22, 6],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 8
+  }
+}

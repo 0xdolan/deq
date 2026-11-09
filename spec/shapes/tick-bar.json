@@ -1,0 +1,47 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "tick-bar",
+  "version": 1,
+  "category": "lines-and-borders",
+  "names": {
+    "en": "Tick bar",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["bar", "ticks"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["bar", "ticks"],
+  "primitives": [
+    { "type": "line", "x1": 4, "y1": 12, "x2": 20, "y2": 12, "id": "bar", "layer": "bar" },
+    {
+      "type": "repeat",
+      "count": { "param": "ticks" },
+      "spread": [16, 0],
+      "element": { "type": "line", "x1": 12, "y1": 9, "x2": 12, "y2": 15 },
+      "id": "ticks",
+      "layer": "ticks"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "ticks": {
+      "type": "integer",
+      "min": 3,
+      "max": 6,
+      "default": 5,
+      "description": "Ticks spread evenly from end to end (at least 3.2 apart)."
+    }
+  },
+  "construction": ["Bar 16 long crossed by ticks 6 high, the outer ticks on its ends."],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [4, 9, 16, 6],
+    "visualBox": [3, 8, 18, 8],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.111,
+    "primitiveCount": 6
+  }
+}

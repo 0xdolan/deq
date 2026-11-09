@@ -1,0 +1,86 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "arrow-herringbone",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Herringbone arrow",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["arrow", "chevron"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["shaft", "chevrons", "tail"],
+  "primitives": [
+    { "type": "line", "x1": 2, "y1": 12, "x2": 22, "y2": 12, "id": "shaft", "layer": "shaft" },
+    {
+      "type": "repeat",
+      "count": { "param": "chevrons" },
+      "step": [4.5, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 2, "y1": 12, "x2": 5, "y2": 9 },
+      "id": "chevrons-upper",
+      "layer": "chevrons"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "chevrons" },
+      "step": [4.5, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 2, "y1": 12, "x2": 5, "y2": 15 },
+      "id": "chevrons-lower",
+      "layer": "chevrons"
+    },
+    {
+      "type": "line",
+      "x1": 19,
+      "y1": 12,
+      "x2": 22,
+      "y2": 9,
+      "id": "tail-upper",
+      "layer": "tail",
+      "when": { "tail": "fork" }
+    },
+    {
+      "type": "line",
+      "x1": 19,
+      "y1": 12,
+      "x2": 22,
+      "y2": 15,
+      "id": "tail-lower",
+      "layer": "tail",
+      "when": { "tail": "fork" }
+    }
+  ],
+  "symmetry": "mirror-y",
+  "parameters": {
+    "chevrons": {
+      "type": "integer",
+      "min": 1,
+      "max": 4,
+      "default": 4,
+      "description": "Chevrons from the tip, 4.5 apart."
+    },
+    "tail": {
+      "type": "enum",
+      "values": ["none", "fork"],
+      "default": "none",
+      "description": "A small V opening at the far end (thesis B20)."
+    }
+  },
+  "construction": [
+    "Shaft 20 long. Chevrons are small sideways Vs (3 by 3) every 4.5, the first at the tip.",
+    "The tail fork opens from 3 before the end."
+  ],
+  "references": { "images": ["thesis-motif-table-01", "tablo-spike-pendant-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 9, 20, 6],
+    "visualBox": [1, 8, 22, 8],
+    "opticalCenter": [10.899, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 9
+  }
+}
