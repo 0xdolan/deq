@@ -1,0 +1,182 @@
+{
+  "$schema": "schema/catalog.schema.json",
+  "version": 1,
+  "categories": [
+    {
+      "id": "celestial",
+      "name": "Celestial",
+      "description": "Sun, moon and star motifs.",
+      "shapes": [
+        "roj-half-sun",
+        "roj-sun-circle",
+        "heyv-crescent",
+        "sterk-star",
+        "cup-rays",
+        "moon-dome",
+        "star-dense",
+        "star-flower",
+        "sun-arch-dotted",
+        "sun-bar",
+        "sun-dome-comb",
+        "sun-double-ring",
+        "sun-forked-rays",
+        "sun-rays",
+        "sun-spiral"
+      ]
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "description": "Plants, branches, ears of wheat and stems.",
+      "shapes": [
+        "tree-branch",
+        "wheat-arrow",
+        "fork",
+        "spike",
+        "ring-stem",
+        "arrow-down",
+        "arrow-herringbone",
+        "arrow-line",
+        "crow-foot",
+        "cup",
+        "dome-stem",
+        "fork-cross",
+        "fork-down-dotted",
+        "fork-down",
+        "root",
+        "tree-comb",
+        "tree-cup",
+        "trefoil"
+      ]
+    },
+    {
+      "id": "geometric",
+      "name": "Geometric",
+      "description": "Crosses, lozenges, chevrons, combs and other line figures.",
+      "shapes": [
+        "cross",
+        "cross-dotted",
+        "x-mark",
+        "lozenge",
+        "lozenge-nested",
+        "triangle-dotted",
+        "chevron",
+        "chevron-stack",
+        "crossed-chevrons",
+        "comb",
+        "ladder",
+        "spindle",
+        "dimlich",
+        "arch-dot",
+        "cross-forked-dotted",
+        "cross-forked",
+        "crossed-chevrons-wide",
+        "dome-comb",
+        "star-chain",
+        "t-mark",
+        "tent-cross",
+        "tent-double",
+        "tent",
+        "tree-row",
+        "x-chain",
+        "x-comb"
+      ]
+    },
+    {
+      "id": "dots",
+      "name": "Dots",
+      "description": "Single dots and dot arrangements.",
+      "shapes": [
+        "dot",
+        "dot-trio",
+        "dot-row",
+        "dot-quincunx",
+        "dot-rosette",
+        "dot-cluster",
+        "chain",
+        "dot-diamond",
+        "dot-flower",
+        "ring-chain-shaft",
+        "ring-stem-double",
+        "ring"
+      ]
+    },
+    {
+      "id": "lines-and-borders",
+      "name": "Lines and borders",
+      "description": "Linear motifs used as bands and borders.",
+      "shapes": [
+        "zigzag",
+        "arrow-row",
+        "band-border",
+        "comb-dotted",
+        "comb-forked",
+        "comb-x",
+        "fork-pair",
+        "tick-bar"
+      ]
+    },
+    {
+      "id": "human-and-animal",
+      "name": "Human and animal",
+      "description": "Figures, animals and animal tracks.",
+      "shapes": [
+        "gazelle",
+        "fish",
+        "sandgrouse-foot",
+        "doll",
+        "darek",
+        "arch-dot-column",
+        "bird",
+        "dancer"
+      ]
+    },
+    {
+      "id": "compositions",
+      "name": "Compositions",
+      "description": "Traditional layouts built by reference from base shapes.",
+      "shapes": ["chin-composition", "forehead-composition", "circle-over-comb", "drower-union"]
+    },
+    {
+      "id": "kurdish-symbols",
+      "name": "Kurdish symbols",
+      "description": "The Kurdish Sun and the flag of Kurdistan.",
+      "shapes": ["kurdish-sun", "kurdish-flag"]
+    }
+  ],
+  "deferred": [
+    {
+      "id": "snake",
+      "reason": "Named in sources (natakallam-2024, diplomatic-xal, ozgur-2021); no reference image yet."
+    },
+    {
+      "id": "peacock",
+      "reason": "Named in sources (hilton-tattooed-women, dailysabah-2016, diplomatic-xal); no reference image yet."
+    },
+    { "id": "scorpion", "reason": "Named in one source (ozgur-2021); no reference image yet." },
+    { "id": "scissors", "reason": "Named in one source (natakallam-2024); no reference image yet." },
+    {
+      "id": "millipede",
+      "reason": "Named in one source (dailysabah-2016); no reference image yet."
+    },
+    { "id": "mirror", "reason": "Named in one source (amargi-2025); no reference image yet." },
+    { "id": "rebab", "reason": "Named in one source (amargi-2025); no reference image yet." },
+    { "id": "eye", "reason": "Named in one source (dailysabah-2016); no reference image yet." },
+    { "id": "octagon", "reason": "Named in one source (ozgur-2021); no reference image yet." },
+    { "id": "square", "reason": "Named in one source (ozgur-2021); no reference image yet." },
+    {
+      "id": "divided-rectangle",
+      "reason": "Named in one source (ozgur-2021); no reference image yet."
+    },
+    {
+      "id": "daqqayeh",
+      "reason": "Drower's plate shows it as a single dot, so it is drawn as an existing shape.",
+      "drawnAs": "dot"
+    },
+    {
+      "id": "res-daqq",
+      "reason": "Drower's plate shows it as a column of small chevrons (rês daqqa), so it is drawn as an existing shape.",
+      "drawnAs": "chevron-stack"
+    }
+  ]
+}

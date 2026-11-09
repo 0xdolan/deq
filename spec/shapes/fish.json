@@ -1,0 +1,126 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "fish",
+  "version": 2,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Fish",
+    "ckb": {
+      "text": "ماسی",
+      "status": "needs-native-review",
+      "sources": [],
+      "images": ["tablo-fish-pendant-01"],
+      "note": "Caption on the pendant image."
+    },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["fish", "animal"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [{ "text": "Luck.", "sources": [], "images": ["tablo-fish-pendant-01"] }]
+  },
+  "sources": [],
+  "layers": ["shaft", "tail", "head", "marks"],
+  "primitives": [
+    {
+      "type": "line",
+      "x1": 5.5,
+      "y1": 12,
+      "x2": 18.5,
+      "y2": 12,
+      "id": "shaft",
+      "layer": "shaft",
+      "when": { "style": "end-dots" }
+    },
+    {
+      "type": "line",
+      "x1": 5.5,
+      "y1": 12,
+      "x2": 21.5,
+      "y2": 12,
+      "id": "shaft-long",
+      "layer": "shaft",
+      "when": { "style": "ticks" }
+    },
+    { "type": "line", "x1": 5.5, "y1": 12, "x2": 2.5, "y2": 9, "id": "tail-upper", "layer": "tail" },
+    {
+      "type": "line",
+      "x1": 5.5,
+      "y1": 12,
+      "x2": 2.5,
+      "y2": 15,
+      "id": "tail-lower",
+      "layer": "tail"
+    },
+    {
+      "type": "line",
+      "x1": 18.5,
+      "y1": 12,
+      "x2": 21.5,
+      "y2": 9,
+      "id": "head-upper",
+      "layer": "head",
+      "when": { "style": "end-dots" }
+    },
+    {
+      "type": "line",
+      "x1": 18.5,
+      "y1": 12,
+      "x2": 21.5,
+      "y2": 15,
+      "id": "head-lower",
+      "layer": "head",
+      "when": { "style": "end-dots" }
+    },
+    {
+      "type": "dot",
+      "cx": 2,
+      "cy": 12,
+      "id": "dot-tail",
+      "layer": "marks",
+      "when": { "style": "end-dots" }
+    },
+    {
+      "type": "dot",
+      "cx": 22,
+      "cy": 12,
+      "id": "dot-head",
+      "layer": "marks",
+      "when": { "style": "end-dots" }
+    },
+    {
+      "type": "repeat",
+      "count": 3,
+      "step": [2.5, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 8.5, "y1": 10.5, "x2": 8.5, "y2": 13.5 },
+      "id": "ticks",
+      "layer": "marks",
+      "when": { "style": "ticks" }
+    }
+  ],
+  "symmetry": "none",
+  "parameters": {
+    "style": {
+      "type": "enum",
+      "values": ["end-dots", "ticks"],
+      "default": "end-dots",
+      "description": "Forks at both ends with a dot in each (tablo's first fish), or a tail with three ticks (tablo's second). The third tablo fish is fork-pair."
+    }
+  },
+  "construction": [
+    "Tablo's fish is a sign, not a picture: a shaft 13 long with the small V (3 by 3) opening outward at each end and a dot in each mouth.",
+    "The dots sit 3.5 from the fork's apex, 0.5 clear of the arms.",
+    "The ticks style keeps the tail fork, crosses the shaft with three ticks 3 high near the tail, and leaves the far end plain."
+  ],
+  "references": { "images": ["tablo-fish-pendant-01"], "files": [] },
+  "metrics": {
+    "bbox": [1, 9, 22, 6],
+    "visualBox": [1, 8, 22, 8],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 7
+  }
+}

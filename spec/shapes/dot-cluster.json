@@ -1,0 +1,61 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot-cluster",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Dot cluster",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["dots", "grid"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["dots"],
+  "primitives": [
+    {
+      "type": "repeat",
+      "count": { "param": "rows" },
+      "spread": [0, 12],
+      "element": {
+        "type": "repeat",
+        "count": { "param": "cols" },
+        "spread": [12, 0],
+        "element": { "type": "dot", "cx": 12, "cy": 12 }
+      },
+      "layer": "dots"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "cols": { "type": "integer", "min": 2, "max": 5, "default": 3, "description": "Dots per row." },
+    "rows": {
+      "type": "integer",
+      "min": 2,
+      "max": 5,
+      "default": 3,
+      "description": "Number of rows."
+    }
+  },
+  "construction": ["A grid of dots spread over the square from (6, 6) to (18, 18)."],
+  "references": {
+    "images": [
+      "elu-dot-work-ear-neck-01",
+      "field-tattoo-drawings-01",
+      "de-morgan-fig-28-kilakan",
+      "de-morgan-fig-29-kilakan-kialhours",
+      "zozane-vertical-motif-print-01",
+      "vertical-motif-stack-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [5, 5, 14, 14],
+    "visualBox": [5, 5, 14, 14],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.143,
+    "primitiveCount": 9
+  }
+}

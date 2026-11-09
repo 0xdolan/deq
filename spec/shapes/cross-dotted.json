@@ -1,0 +1,121 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "cross-dotted",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Dotted cross",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "salib",
+        "note": "'cross'; Drower captions both the plain and the dotted forms this way.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["cross", "dots"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Wards off the evil eye or evil spirits.",
+        "sources": ["ozgur-2021", "wikipedia-deq", "kurdistan-chronicle-2026"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["drower-1941", "ozgur-2021", "wikipedia-deq", "kurdistan-chronicle-2026"],
+  "layers": ["arms", "dots"],
+  "primitives": [
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 3,
+      "x2": 12,
+      "y2": 21,
+      "layer": "arms",
+      "when": { "dots": "angles" }
+    },
+    {
+      "type": "line",
+      "x1": 3,
+      "y1": 12,
+      "x2": 21,
+      "y2": 12,
+      "layer": "arms",
+      "when": { "dots": "angles" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 6.5,
+      "x2": 12,
+      "y2": 17.5,
+      "layer": "arms",
+      "when": { "dots": "ends" }
+    },
+    {
+      "type": "line",
+      "x1": 6.5,
+      "y1": 12,
+      "x2": 17.5,
+      "y2": 12,
+      "layer": "arms",
+      "when": { "dots": "ends" }
+    },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 45,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 18.364, "cy": 12 },
+      "layer": "dots",
+      "when": { "dots": "angles" }
+    },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 21, "cy": 12 },
+      "layer": "dots",
+      "when": { "dots": "ends" }
+    }
+  ],
+  "symmetry": "rotational-4",
+  "parameters": {
+    "dots": {
+      "type": "enum",
+      "values": ["angles", "ends"],
+      "default": "angles",
+      "description": "Dots in the four angles, or beyond the four arm ends."
+    }
+  },
+  "construction": [
+    "angles: a full cross (arms of 18) with four dots on the diagonals at distance 6.364 from the centre (4.5, 4.5 off each axis).",
+    "ends: shorter arms (11) with a dot 3.5 beyond each end, at distance 9 from the centre."
+  ],
+  "references": {
+    "images": [
+      "drower-ezidi-tattoo-designs-01",
+      "field-tattoo-drawings-04",
+      "de-morgan-fig-28-kilakan",
+      "de-morgan-fig-29-kilakan-kialhours",
+      "deq-motifs-animation-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [3, 3, 18, 18],
+    "visualBox": [2, 2, 20, 20],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 6
+  }
+}

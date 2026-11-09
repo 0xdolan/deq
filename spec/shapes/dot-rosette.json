@@ -1,0 +1,72 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot-rosette",
+  "version": 2,
+  "category": "dots",
+  "names": {
+    "en": "Dot rosette",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["dots", "rosette", "ring"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["center", "dots"],
+  "primitives": [
+    {
+      "type": "circle",
+      "cx": 12,
+      "cy": 12,
+      "r": 3,
+      "id": "ring",
+      "layer": "center",
+      "when": { "center": "ring" }
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 12,
+      "r": 2,
+      "id": "center-dot",
+      "layer": "center",
+      "when": { "center": "dot" }
+    },
+    {
+      "type": "radial",
+      "count": { "param": "dots" },
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 19, "cy": 12 },
+      "id": "dots",
+      "layer": "dots"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "dots": {
+      "type": "integer",
+      "min": 6,
+      "max": 12,
+      "default": 8,
+      "description": "Small dots round the centre."
+    },
+    "center": {
+      "type": "enum",
+      "values": ["ring", "dot"],
+      "default": "ring",
+      "description": "Ring r 3 (thesis A38) or the large dot (A39)."
+    }
+  },
+  "construction": ["Ring r 3 (or the large dot) with small dots at r 7."],
+  "references": { "images": ["elu-dot-work-ear-neck-01", "deq-motifs-animation-01"], "files": [] },
+  "metrics": {
+    "bbox": [4, 4, 16, 16],
+    "visualBox": [4, 4, 16, 16],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.125,
+    "primitiveCount": 9
+  }
+}

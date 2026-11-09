@@ -1,0 +1,76 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "comb",
+  "version": 2,
+  "category": "geometric",
+  "names": {
+    "en": "Comb",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "misht",
+        "note": "'comb'.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["comb", "rake"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Beauty; strength; the five-line comb as a \"second hand\".",
+        "sources": ["aljazeera-2023", "kurdistan-chronicle-2026", "amargi-2025"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["drower-1941", "aljazeera-2023", "kurdistan-chronicle-2026", "amargi-2025"],
+  "layers": ["bar", "teeth"],
+  "primitives": [
+    { "type": "line", "x1": 2, "y1": 13.5, "x2": 22, "y2": 13.5, "id": "bar", "layer": "bar" },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "step": [3, 0],
+      "element": { "type": "line", "x1": 12, "y1": 13.5, "x2": 12, "y2": 10.5 },
+      "id": "teeth",
+      "layer": "teeth"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "teeth": {
+      "type": "integer",
+      "min": 3,
+      "max": 7,
+      "default": 7,
+      "description": "Teeth, 3 apart."
+    }
+  },
+  "construction": [
+    "Bar 20 long with teeth 3 high every 3 units; the bar runs on past the end teeth (Drower)."
+  ],
+  "references": {
+    "images": [
+      "deq-ttt-temporary-sheet-01",
+      "deq-ttt-gift-voucher-01",
+      "thesis-motif-table-01",
+      "drower-ezidi-tattoo-designs-01",
+      "field-tattoo-drawings-02",
+      "field-tattoo-drawings-03",
+      "field-tattoo-drawings-04"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [2, 10.5, 20, 3],
+    "visualBox": [1, 9.5, 22, 5],
+    "opticalCenter": [12, 12.732],
+    "strokeToSize": 0.091,
+    "primitiveCount": 8
+  }
+}

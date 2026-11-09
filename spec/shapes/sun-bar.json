@@ -1,0 +1,63 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "sun-bar",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Sun with bar",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["sun", "rays", "bar"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["ring", "bar", "rays"],
+  "primitives": [
+    { "type": "circle", "cx": 12, "cy": 12, "r": 5, "id": "ring", "layer": "ring" },
+    { "type": "line", "x1": 2, "y1": 12, "x2": 22, "y2": 12, "id": "bar", "layer": "bar" },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 12],
+      "start": 210,
+      "sweep": 120,
+      "element": { "type": "line", "x1": 19.5, "y1": 12, "x2": 22, "y2": 12 },
+      "id": "rays-upper",
+      "layer": "rays"
+    },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 12],
+      "start": 30,
+      "sweep": 120,
+      "element": { "type": "line", "x1": 19.5, "y1": 12, "x2": 22, "y2": 12 },
+      "id": "rays-lower",
+      "layer": "rays"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 3,
+      "max": 5,
+      "default": 5,
+      "description": "Rays on each half, spread over 120 degrees."
+    }
+  },
+  "construction": [
+    "Sun circle r 5 crossed by a bar from x 2 to 22 (the horizontal rays become the bar).",
+    "Rays r 7.5 to 10 on each half, from 30 to 150 degrees and from 210 to 330 degrees (30 degrees apart with 5)."
+  ],
+  "references": { "images": ["field-tattoo-drawings-04"], "files": [] },
+  "metrics": {
+    "bbox": [2, 2, 20, 20],
+    "visualBox": [1, 1, 22, 22],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 12
+  }
+}

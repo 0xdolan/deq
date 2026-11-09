@@ -1,0 +1,51 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "lozenge",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Lozenge",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["diamond", "lozenge"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Diamonds (lozenges) stand for strength.",
+        "sources": ["wikipedia-deq", "kurdistan-chronicle-2026"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["wikipedia-deq", "kurdistan-chronicle-2026"],
+  "layers": ["outline"],
+  "primitives": [
+    { "type": "polygon", "points": [[12, 3], [20, 12], [12, 21], [4, 12]], "layer": "outline" }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {},
+  "construction": [
+    "A diamond with vertices (12, 3), (20, 12), (12, 21) and (4, 12): 18 high, 16 wide."
+  ],
+  "references": {
+    "images": [
+      "elu-dot-work-abdomen-01",
+      "elu-dot-work-ear-neck-01",
+      "de-morgan-fig-29-kilakan-kialhours",
+      "elu-chin-sun-fingers-01",
+      "elder-deq-painting-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [4, 3, 16, 18],
+    "visualBox": [3, 2, 18, 20],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 1
+  }
+}

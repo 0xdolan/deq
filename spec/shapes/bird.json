@@ -1,0 +1,40 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "bird",
+  "version": 1,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Bird",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["bird", "x", "dots"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["body", "wings", "dots"],
+  "primitives": [
+    { "type": "line", "x1": 7, "y1": 7, "x2": 17, "y2": 17, "id": "stroke-a", "layer": "body" },
+    { "type": "line", "x1": 17, "y1": 7, "x2": 7, "y2": 17, "id": "stroke-b", "layer": "body" },
+    { "type": "line", "x1": 7, "y1": 7, "x2": 4, "y2": 7, "id": "wing-left", "layer": "wings" },
+    { "type": "line", "x1": 17, "y1": 7, "x2": 20, "y2": 7, "id": "wing-right", "layer": "wings" },
+    { "type": "line", "x1": 7, "y1": 17, "x2": 4, "y2": 17, "id": "foot-left", "layer": "wings" },
+    { "type": "line", "x1": 17, "y1": 17, "x2": 20, "y2": 17, "id": "foot-right", "layer": "wings" },
+    { "type": "dot", "cx": 12, "cy": 8, "id": "dot-top", "layer": "dots" },
+    { "type": "dot", "cx": 12, "cy": 16, "id": "dot-bottom", "layer": "dots" }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {},
+  "construction": [
+    "An X of half-size 5. Each tip turns 3 out horizontally; a small dot sits in the upper and lower V, 4 from the crossing."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [4, 7, 16, 10],
+    "visualBox": [3, 6, 18, 12],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.111,
+    "primitiveCount": 8
+  }
+}

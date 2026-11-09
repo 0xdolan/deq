@@ -1,0 +1,60 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "star-dense",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Double asterisk",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["star", "asterisk"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["arms"],
+  "primitives": [
+    {
+      "type": "radial",
+      "count": { "param": "arms" },
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 16, "y1": 10.5, "x2": 21, "y2": 10.5 },
+      "id": "arms-a",
+      "layer": "arms"
+    },
+    {
+      "type": "radial",
+      "count": { "param": "arms" },
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 16, "y1": 13.5, "x2": 21, "y2": 13.5 },
+      "id": "arms-b",
+      "layer": "arms"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "arms": {
+      "type": "integer",
+      "min": 4,
+      "max": 8,
+      "default": 6,
+      "description": "Number of doubled arms."
+    }
+  },
+  "construction": [
+    "Each arm is two parallel strokes 3 apart (1 unit clear), from r 4 to r 9 along the arm."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [3, 3.456, 18, 17.088],
+    "visualBox": [2, 2.456, 20, 19.088],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 12
+  }
+}

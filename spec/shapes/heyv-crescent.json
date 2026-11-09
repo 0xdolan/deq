@@ -1,0 +1,103 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "heyv-crescent",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Crescent moon",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": {
+      "text": "heyv",
+      "status": "needs-native-review",
+      "sources": ["natakallam-2024"],
+      "images": [],
+      "note": "'moon', as given by the source."
+    },
+    "terms": [
+      {
+        "text": "the Moon",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["moon", "heyv", "crescent"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "A moon near the eye marked conversion from Yezidism to Islam.",
+        "sources": ["natgeo-2015", "mee-2022", "wikipedia-deq"],
+        "images": []
+      },
+      {
+        "text": "Sun, moon, star and peacock motifs derive from Yezidi belief.",
+        "sources": ["hilton-tattooed-women", "dailysabah-2016"],
+        "images": []
+      },
+      {
+        "text": "Sun, moon and star are the most requested motifs today.",
+        "sources": ["sbs-2022"],
+        "images": []
+      },
+      { "text": "Sun and moon together: eternal life.", "sources": ["ozgur-2021"], "images": [] }
+    ]
+  },
+  "sources": [
+    "natakallam-2024",
+    "drower-1941",
+    "natgeo-2015",
+    "mee-2022",
+    "wikipedia-deq",
+    "hilton-tattooed-women",
+    "dailysabah-2016",
+    "sbs-2022",
+    "ozgur-2021"
+  ],
+  "layers": ["crescent"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 10,
+      "cy": 12,
+      "r": 9,
+      "start": -123.749,
+      "end": 123.749,
+      "layer": "crescent"
+    },
+    {
+      "type": "arc",
+      "cx": 5.5,
+      "cy": 12,
+      "r": 7.5,
+      "start": -93.823,
+      "end": 93.823,
+      "layer": "crescent"
+    }
+  ],
+  "symmetry": "mirror-y",
+  "parameters": {},
+  "construction": [
+    "Outer edge: a circle of radius 9 about (10, 12). Inner edge: a circle of radius 7.5 about (5.5, 12), offset 4.5 to the left.",
+    "The circles cross at the horns, (5, 12 +/- 7.483). The outer arc runs the long way round through 0 degrees, the inner arc through 0 degrees on the inner circle, so the crescent opens to the left as on Drower's plate.",
+    "Widest at the middle (6 units between centre lines), tapering to the horns.",
+    "Shifted horizontally so the visual box is centred."
+  ],
+  "references": {
+    "images": [
+      "drower-ezidi-tattoo-designs-01",
+      "field-tattoo-drawings-03",
+      "field-tattoo-drawings-04",
+      "natakallam-symbols-of-nature-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [5, 3, 14, 18],
+    "visualBox": [4, 2, 16, 20],
+    "opticalCenter": [12.15, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 2
+  }
+}

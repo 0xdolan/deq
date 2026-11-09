@@ -1,0 +1,65 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "sun-rays",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Sun with long rays",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["sun", "rays", "ring"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["ring", "rays", "center"],
+  "primitives": [
+    { "type": "circle", "cx": 12, "cy": 12, "r": 3, "id": "ring", "layer": "ring" },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 17.5, "y1": 12, "x2": 22, "y2": 12 },
+      "id": "rays",
+      "layer": "rays"
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 12,
+      "id": "center-dot",
+      "layer": "center",
+      "when": { "centerDot": true }
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 4,
+      "max": 12,
+      "default": 8,
+      "description": "Number of rays, evenly spaced, the first pointing right."
+    },
+    "centerDot": {
+      "type": "boolean",
+      "default": false,
+      "description": "A small dot inside the ring."
+    }
+  },
+  "construction": [
+    "Ring r 3 with rays from r 5.5 (2.5 clear of the ring) to r 10.",
+    "8 rays sit 45 degrees apart, the first pointing right; an optional small dot sits inside."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 2, 20, 20],
+    "visualBox": [1, 1, 22, 22],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 9
+  }
+}

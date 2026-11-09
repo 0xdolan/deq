@@ -1,0 +1,53 @@
+{
+  "$schema": "./schema/grid.schema.json",
+  "canvas": { "width": 24, "height": 24, "origin": "top-left" },
+  "padding": 1,
+  "liveArea": [1, 1, 22, 22],
+  "decimals": 3,
+  "defaults": {
+    "strokeWidth": 2,
+    "linecap": "round",
+    "linejoin": "round",
+    "fill": "none",
+    "stroke": "currentColor",
+    "dotRadius": 1
+  },
+  "keylines": [
+    {
+      "id": "circle",
+      "description": "Round shapes: a circle of diameter 20 centred on the canvas.",
+      "shape": { "type": "circle", "cx": 12, "cy": 12, "r": 10 }
+    },
+    {
+      "id": "square",
+      "description": "Square shapes: 18 x 18 centred, so they look as heavy as the circle.",
+      "shape": { "type": "rect", "x": 3, "y": 3, "width": 18, "height": 18 }
+    },
+    {
+      "id": "portrait",
+      "description": "Tall shapes (stems, figures): 16 wide x 20 high.",
+      "shape": { "type": "rect", "x": 4, "y": 2, "width": 16, "height": 20 }
+    },
+    {
+      "id": "landscape",
+      "description": "Wide shapes (rows, bands, animals): 20 wide x 16 high.",
+      "shape": { "type": "rect", "x": 2, "y": 4, "width": 20, "height": 16 }
+    },
+    {
+      "id": "live-area",
+      "description": "Nothing drawn, stroke edges included, leaves the 22 x 22 live area.",
+      "shape": { "type": "rect", "x": 1, "y": 1, "width": 22, "height": 22 }
+    }
+  ],
+  "modules": {
+    "description": "Reusable sizes every shape (except brand concepts) is built from, so the same circle, dot and V look identical everywhere. Lint checks circle and dot radii.",
+    "circleRadii": [2, 3, 5],
+    "dotRadii": [1, 2],
+    "rayGap": 2.5,
+    "rayLength": 2.5,
+    "vOffsets": [3, 6],
+    "pitch45": 4.5,
+    "toothLength": 3,
+    "toothPitch": 3
+  }
+}

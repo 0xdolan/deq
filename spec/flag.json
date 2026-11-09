@@ -1,0 +1,255 @@
+{
+  "$schema": "schema/flag.schema.json",
+  "id": "kurdish-flag",
+  "version": 1,
+  "names": {
+    "en": "Flag of Kurdistan",
+    "ckb": {
+      "text": "ئاڵای کوردستان",
+      "status": "needs-native-review",
+      "sources": ["wikipedia-flag-of-kurdistan"]
+    },
+    "kmr": {
+      "text": "Alaya Kurdistanê",
+      "status": "needs-native-review",
+      "sources": ["wikipedia-flag-of-kurdistan"]
+    }
+  },
+  "source": {
+    "file": "spec/reference/Flag_of_Kurdistan.svg",
+    "url": "https://commons.wikimedia.org/wiki/File:Flag_of_Kurdistan.svg",
+    "sha256": "92010569ec725e1308d13adcc134d33f58d78969ef5a3448cde84e3d73320f45",
+    "sha1": "59c52a8444c6f9f33bdad9259222766a0bcc3931",
+    "license": "Public domain",
+    "uploaded": "2023-07-05",
+    "retrieved": "2026-11-08",
+    "sourceId": "wikimedia-flag-svg"
+  },
+  "aspectRatio": { "height": 2, "width": 3 },
+  "viewBox": [900, 600],
+  "colors": [
+    {
+      "id": "red",
+      "name": "Red",
+      "kurdish": { "kmr": "sor", "status": "needs-native-review" },
+      "hex": "#ED2024",
+      "rgb": [237, 32, 36],
+      "hsl": [358.8, 85.1, 52.7],
+      "oklch": [0.605, 0.233, 27.3],
+      "cmyk": [0, 86, 85, 7],
+      "pantone": {
+        "value": null,
+        "status": "needs-verification",
+        "note": "No Pantone reference has been verified from a primary source; do not print one until it is."
+      },
+      "meaning": {
+        "text": "The blood of the martyrs and the continued struggle for freedom and dignity.",
+        "sources": ["wikipedia-flag-of-kurdistan"]
+      }
+    },
+    {
+      "id": "white",
+      "name": "White",
+      "kurdish": { "kmr": "spî", "status": "needs-native-review" },
+      "hex": "#FFFFFF",
+      "rgb": [255, 255, 255],
+      "hsl": [0, 0, 100],
+      "oklch": [1, 0, 0],
+      "cmyk": [0, 0, 0, 0],
+      "pantone": {
+        "value": null,
+        "status": "needs-verification",
+        "note": "No Pantone reference has been verified from a primary source; do not print one until it is."
+      },
+      "meaning": { "text": "Peace and equality.", "sources": ["wikipedia-flag-of-kurdistan"] }
+    },
+    {
+      "id": "green",
+      "name": "Green",
+      "kurdish": { "kmr": "kesk", "status": "needs-native-review" },
+      "hex": "#278E43",
+      "rgb": [39, 142, 67],
+      "hsl": [136.3, 56.9, 35.5],
+      "oklch": [0.571, 0.145, 148.3],
+      "cmyk": [73, 0, 53, 44],
+      "pantone": {
+        "value": null,
+        "status": "needs-verification",
+        "note": "No Pantone reference has been verified from a primary source; do not print one until it is."
+      },
+      "meaning": {
+        "text": "The beauty and landscapes of Kurdistan, life and vitality.",
+        "sources": ["wikipedia-flag-of-kurdistan"]
+      }
+    },
+    {
+      "id": "yellow",
+      "name": "Yellow",
+      "kurdish": { "kmr": "zer", "status": "needs-native-review" },
+      "hex": "#FEBD11",
+      "rgb": [254, 189, 17],
+      "hsl": [43.5, 99.2, 53.1],
+      "oklch": [0.836, 0.169, 83.1],
+      "cmyk": [0, 26, 93, 0],
+      "pantone": {
+        "value": null,
+        "status": "needs-verification",
+        "note": "No Pantone reference has been verified from a primary source; do not print one until it is."
+      },
+      "meaning": {
+        "text": "The source of life and light of the people; the 21 rays symbolise the rebirth of the Kurdish nation.",
+        "sources": ["wikipedia-flag-of-kurdistan"]
+      }
+    }
+  ],
+  "bands": [
+    { "color": "red", "y": 0, "height": 200 },
+    { "color": "white", "y": 200, "height": 200 },
+    { "color": "green", "y": 400, "height": 200 }
+  ],
+  "sun": {
+    "color": "yellow",
+    "rays": 21,
+    "rotation": -90,
+    "center": [450, 300.842],
+    "outerRadius": 150.842,
+    "innerRadius": 75.421,
+    "boundingBoxHeight": 299.999,
+    "heightToFlagHeight": 0.5,
+    "outerDiameterToFlagHeight": 0.50281,
+    "innerToOuter": 0.5,
+    "construction": [
+      "A 21-point star polygon, the first outer vertex pointing straight up (rotation -90 degrees).",
+      "Its height (top vertex to the two lowest outer vertices) is R (1 + cos(pi/21)) = 300, half the flag height, so R = 300 / (1 + cos(pi/21)) = 150.842.",
+      "The inner radius is half the outer radius.",
+      "The centre is (450, 300.842): horizontally centred and offset down by 0.842 so that the star spans y = 150 to y = 450, centred on the flag."
+    ]
+  },
+  "contrast": [
+    { "pair": ["red", "white"], "ratio": 4.35 },
+    { "pair": ["red", "green"], "ratio": 1.04 },
+    { "pair": ["red", "yellow"], "ratio": 2.59 },
+    { "pair": ["white", "green"], "ratio": 4.17 },
+    { "pair": ["white", "yellow"], "ratio": 1.68 },
+    { "pair": ["green", "yellow"], "ratio": 2.48 }
+  ],
+  "variants": [
+    {
+      "id": "full-color",
+      "description": "The flag as specified: red, white and green bands with the yellow sun.",
+      "aspectRatio": "3:2",
+      "paint": {
+        "field": "white",
+        "bands": "flag-colors",
+        "dividers": "none",
+        "frame": "none",
+        "sun": "yellow"
+      }
+    },
+    {
+      "id": "mono-black",
+      "description": "One colour on a light background: a black frame and dividers with a black sun.",
+      "aspectRatio": "3:2",
+      "paint": {
+        "field": "none",
+        "bands": "none",
+        "dividers": "black",
+        "frame": "black",
+        "sun": "black",
+        "strokeToHeight": 0.01
+      }
+    },
+    {
+      "id": "mono-white",
+      "description": "One colour on a dark background: the mono-black variant in white.",
+      "aspectRatio": "3:2",
+      "paint": {
+        "field": "none",
+        "bands": "none",
+        "dividers": "white",
+        "frame": "white",
+        "sun": "white",
+        "strokeToHeight": 0.01
+      }
+    },
+    {
+      "id": "outline",
+      "description": "Line art: frame, dividers and the sun's outline, no fills. Matches the kurdish-flag icon.",
+      "aspectRatio": "3:2",
+      "paint": {
+        "field": "none",
+        "bands": "none",
+        "dividers": "currentColor",
+        "frame": "currentColor",
+        "sun": "none",
+        "sunOutline": "currentColor",
+        "strokeToHeight": 0.01
+      }
+    },
+    {
+      "id": "high-contrast",
+      "description": "Full colour with a thin black outline round the sun and the flag, for low-vision and busy backgrounds.",
+      "aspectRatio": "3:2",
+      "paint": {
+        "field": "white",
+        "bands": "flag-colors",
+        "dividers": "none",
+        "frame": "black",
+        "sun": "yellow",
+        "sunOutline": "black",
+        "strokeToHeight": 0.005
+      }
+    },
+    {
+      "id": "square",
+      "description": "A 1:1 crop for avatars and app icons: bands and sun keep their sizes relative to the height, the sides are trimmed.",
+      "aspectRatio": "1:1",
+      "paint": {
+        "field": "white",
+        "bands": "flag-colors",
+        "dividers": "none",
+        "frame": "none",
+        "sun": "yellow"
+      }
+    }
+  ],
+  "sizes": [
+    { "use": "favicon", "width": 48, "height": 32, "unit": "px", "variant": "full-color" },
+    { "use": "avatar", "width": 512, "height": 512, "unit": "px", "variant": "square" },
+    { "use": "social card", "width": 1200, "height": 800, "unit": "px", "variant": "full-color" },
+    {
+      "use": "desk flag",
+      "width": 15,
+      "height": 10,
+      "unit": "cm",
+      "dpi": 300,
+      "pixels": [1772, 1181],
+      "variant": "full-color"
+    },
+    {
+      "use": "A4 landscape print",
+      "width": 297,
+      "height": 198,
+      "unit": "mm",
+      "dpi": 300,
+      "pixels": [3508, 2339],
+      "variant": "full-color"
+    },
+    {
+      "use": "standard outdoor flag",
+      "width": 150,
+      "height": 100,
+      "unit": "cm",
+      "dpi": 150,
+      "pixels": [8858, 5906],
+      "variant": "full-color"
+    }
+  ],
+  "notes": [
+    "Geometry and hex colours come from the pinned Commons SVG; deq-spec lint checks every value here against it.",
+    "Wikipedia's infobox lists RGB triples that do not match its own hex codes. The hex values used in the SVG are authoritative here; rgb, hsl, oklch and cmyk are computed from them.",
+    "Pantone references are not verified from a primary source and are left null.",
+    "CMYK values are a naive conversion for orientation only; print work needs a colour-managed conversion.",
+    "The sun centre is 0.842 units below the flag's middle because the 21-ray star is taller above its centre (R) than below it (R cos(pi/21))."
+  ]
+}

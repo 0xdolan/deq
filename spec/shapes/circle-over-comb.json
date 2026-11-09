@@ -1,0 +1,48 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "circle-over-comb",
+  "version": 2,
+  "category": "compositions",
+  "names": {
+    "en": "Circle over comb",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["circle", "comb", "composition"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["circle", "comb"],
+  "primitives": [
+    {
+      "id": "circle",
+      "type": "use",
+      "shape": "roj-sun-circle",
+      "layer": "circle",
+      "params": { "centerDot": false },
+      "transform": { "translate": [0, -3.5] }
+    },
+    {
+      "id": "comb",
+      "type": "use",
+      "shape": "comb",
+      "layer": "comb",
+      "transform": { "translate": [0, 7] }
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "roj-sun-circle without its dot (the sun circle, r 5) above comb with seven teeth, both at full size.",
+    "The circle's centre is on y 8.5 and the comb's bar on y 20.5, leaving 2 clear between the circle and the tooth tips; the whole sits centred on the grid."
+  ],
+  "references": { "images": ["deq-motifs-animation-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 3.5, 20, 17],
+    "visualBox": [1, 2.5, 22, 19],
+    "opticalCenter": [12, 14.859],
+    "strokeToSize": 0.091,
+    "primitiveCount": 9
+  }
+}

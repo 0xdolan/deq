@@ -1,0 +1,33 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "arrow-down",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Arrow down",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["arrow"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["shaft", "head"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 4, "x2": 12, "y2": 20, "id": "shaft", "layer": "shaft" },
+    { "type": "line", "x1": 12, "y1": 20, "x2": 6, "y2": 14, "id": "head-left", "layer": "head" },
+    { "type": "line", "x1": 12, "y1": 20, "x2": 18, "y2": 14, "id": "head-right", "layer": "head" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": ["Shaft 16 long; the large V (6 across, 6 up) is the head at the bottom."],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [6, 4, 12, 16],
+    "visualBox": [5, 3, 14, 18],
+    "opticalCenter": [12, 14.574],
+    "strokeToSize": 0.111,
+    "primitiveCount": 3
+  }
+}

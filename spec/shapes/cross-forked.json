@@ -1,0 +1,112 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "cross-forked",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Cross with forked ends",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["cross", "fork"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["arms", "forks"],
+  "primitives": [
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 12, "y1": 12, "x2": 19, "y2": 12 },
+      "id": "arms",
+      "layer": "arms"
+    },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 19, "y1": 12, "x2": 22, "y2": 9 },
+      "id": "forks-a",
+      "layer": "forks"
+    },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 19, "y1": 12, "x2": 22, "y2": 15 },
+      "id": "forks-b",
+      "layer": "forks"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 5,
+      "x2": 12,
+      "y2": 2,
+      "id": "prong-top",
+      "layer": "arms",
+      "when": { "prong": ["top", "all"] }
+    },
+    {
+      "type": "line",
+      "x1": 19,
+      "y1": 12,
+      "x2": 22,
+      "y2": 12,
+      "id": "prong-right",
+      "layer": "arms",
+      "when": { "prong": "all" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 19,
+      "x2": 12,
+      "y2": 22,
+      "id": "prong-bottom",
+      "layer": "arms",
+      "when": { "prong": "all" }
+    },
+    {
+      "type": "line",
+      "x1": 5,
+      "y1": 12,
+      "x2": 2,
+      "y2": 12,
+      "id": "prong-left",
+      "layer": "arms",
+      "when": { "prong": "all" }
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "prong": {
+      "type": "enum",
+      "values": ["none", "top", "all"],
+      "default": "none",
+      "description": "A middle prong in the top fork, or in every fork."
+    }
+  },
+  "construction": [
+    "Four arms 7 long, each ending in the small V (3 out, 3 across) opening outward, so the ink reaches r 11."
+  ],
+  "references": {
+    "images": ["drower-ezidi-tattoo-designs-01", "thesis-motif-table-01"],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [2, 2, 20, 20],
+    "visualBox": [1, 1, 22, 22],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 12
+  }
+}

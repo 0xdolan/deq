@@ -11,16 +11,18 @@ package = false
 exclude-newer = "7 days"
 
 [tool.uv.workspace]
-members = ["python/*", "scripts/deq-assets"]
+members = ["python/*", "scripts/deq-assets", "scripts/deq-spec"]
 
 [tool.uv.sources]
 deq-shapes = { workspace = true }
 deq-assets = { workspace = true }
+deq-spec = { workspace = true }
 
 [dependency-groups]
 dev = [
     "deq-shapes",
     "deq-assets",
+    "deq-spec",
     "pytest>=8",
     "pytest-cov>=6",
     "hypothesis>=6",
@@ -49,8 +51,15 @@ files = [
     "python/deq-shapes/tests",
     "scripts/deq-assets/src",
     "scripts/deq-assets/tests",
+    "scripts/deq-spec/src",
+    "scripts/deq-spec/tests",
 ]
 
+[[tool.mypy.overrides]]
+# jsonschema ships no type information; types-jsonschema would add another dependency.
+module = ["jsonschema", "jsonschema.*"]
+ignore_missing_imports = true
+
 [tool.pytest.ini_options]
-addopts = "--strict-markers --cov=deq_shapes --cov=deq_assets --cov-report=term-missing:skip-covered --cov-fail-under=95"
-testpaths = ["python", "scripts/deq-assets/tests"]
+addopts = "--strict-markers --cov=deq_shapes --cov=deq_assets --cov=deq_spec --cov-report=term-missing:skip-covered --cov-fail-under=95"
+testpaths = ["python", "scripts/deq-assets/tests", "scripts/deq-spec/tests"]

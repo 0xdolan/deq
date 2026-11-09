@@ -1,0 +1,82 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "fork",
+  "version": 2,
+  "category": "nature",
+  "names": {
+    "en": "Fork",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "ters çatal",
+        "lang": "tr",
+        "note": "'inverted fork', the forehead form.",
+        "sources": ["indyturk-2020"],
+        "images": []
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["fork", "forehead"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "The person interviewed did not know its meaning.",
+        "sources": ["indyturk-2020"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["indyturk-2020"],
+  "layers": ["prongs", "stem"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 10, "x2": 6, "y2": 4, "id": "prong-left", "layer": "prongs" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 10,
+      "x2": 18,
+      "y2": 4,
+      "id": "prong-right",
+      "layer": "prongs"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 10,
+      "x2": 12,
+      "y2": 4,
+      "id": "prong-middle",
+      "layer": "prongs",
+      "when": { "prongs": 3 }
+    },
+    { "type": "line", "x1": 12, "y1": 10, "x2": 12, "y2": 20, "id": "stem", "layer": "stem" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "prongs": {
+      "type": "integer",
+      "min": 2,
+      "max": 3,
+      "default": 2,
+      "description": "2 for a Y, 3 for a trident (thesis A5)."
+    }
+  },
+  "construction": [
+    "The large V: two strokes from the joint (12, 10), 6 across and 6 up (45 degrees).",
+    "Stem 10 long, so the Y is 16 high; the middle prong of the trident is as long as the arms are high."
+  ],
+  "references": {
+    "images": ["deq-ttt-temporary-sheet-01", "thesis-motif-table-01", "hand-drawn-motif-sheets-01"],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [6, 4, 12, 16],
+    "visualBox": [5, 3, 14, 18],
+    "opticalCenter": [12, 9.966],
+    "strokeToSize": 0.111,
+    "primitiveCount": 3
+  }
+}

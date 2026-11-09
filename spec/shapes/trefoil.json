@@ -1,0 +1,37 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "trefoil",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Trefoil",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["leaf", "dots", "stem"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["lobes", "stem"],
+  "primitives": [
+    { "type": "dot", "cx": 12, "cy": 5.5, "r": 2, "id": "lobe-top", "layer": "lobes" },
+    { "type": "dot", "cx": 9.5, "cy": 9.5, "r": 2, "id": "lobe-left", "layer": "lobes" },
+    { "type": "dot", "cx": 14.5, "cy": 9.5, "r": 2, "id": "lobe-right", "layer": "lobes" },
+    { "type": "line", "x1": 12, "y1": 9.5, "x2": 12, "y2": 20, "id": "stem", "layer": "stem" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Three large dots (r 2): one on top, two 2.5 either side and 4 lower, so they just touch.",
+    "Stem from between the lower lobes, 10.5 long."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [7.5, 3.5, 9, 16.5],
+    "visualBox": [7.5, 3.5, 9, 17.5],
+    "opticalCenter": [12, 10.522],
+    "strokeToSize": 0.114,
+    "primitiveCount": 4
+  }
+}

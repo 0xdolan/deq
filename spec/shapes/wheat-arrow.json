@@ -1,0 +1,66 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "wheat-arrow",
+  "version": 2,
+  "category": "nature",
+  "names": {
+    "en": "Wheat ear",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["wheat", "arrow", "plant"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["top", "bead", "chevrons"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 5, "x2": 9, "y2": 2, "id": "fork-left", "layer": "top" },
+    { "type": "line", "x1": 12, "y1": 5, "x2": 15, "y2": 2, "id": "fork-right", "layer": "top" },
+    { "type": "line", "x1": 12, "y1": 5, "x2": 12, "y2": 2, "id": "prong-middle", "layer": "top" },
+    { "type": "circle", "cx": 12, "cy": 7, "r": 2, "id": "bead", "layer": "bead" },
+    {
+      "type": "repeat",
+      "count": { "param": "chevrons" },
+      "step": [0, 4.25],
+      "align": "start",
+      "element": { "type": "line", "x1": 12, "y1": 13, "x2": 9, "y2": 10 },
+      "id": "chevrons-left",
+      "layer": "chevrons"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "chevrons" },
+      "step": [0, 4.25],
+      "align": "start",
+      "element": { "type": "line", "x1": 12, "y1": 13, "x2": 15, "y2": 10 },
+      "id": "chevrons-right",
+      "layer": "chevrons"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "chevrons": {
+      "type": "integer",
+      "min": 1,
+      "max": 3,
+      "default": 3,
+      "description": "Vs below the bead."
+    }
+  },
+  "construction": [
+    "One stalk from thesis B10: a trident (small V plus a middle prong), the bead ring (r 2) touching its joint, then Vs.",
+    "Each V is the small V (3 across, 3 up). The first apex is 11 below the prong tips so its arms clear the bead by 2; pitch 4.25 keeps the parallel arms 3 apart."
+  ],
+  "references": {
+    "images": ["deq-ttt-temporary-sheet-01", "hand-drawn-motif-sheets-01", "tablo-spike-pendant-01"],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [9, 2, 6, 19.5],
+    "visualBox": [8, 1, 8, 21.5],
+    "opticalCenter": [12, 10.687],
+    "strokeToSize": 0.093,
+    "primitiveCount": 10
+  }
+}

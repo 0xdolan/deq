@@ -1,0 +1,62 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot-quincunx",
+  "version": 2,
+  "category": "dots",
+  "names": {
+    "en": "Five dots",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["dots", "five"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["dots"],
+  "primitives": [
+    { "type": "dot", "cx": 12, "cy": 12, "r": 2, "id": "center", "layer": "dots" },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 17, "cy": 12, "r": 2 },
+      "id": "plus",
+      "layer": "dots",
+      "when": { "layout": "plus" }
+    },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 45,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 17, "cy": 12, "r": 2 },
+      "id": "dice",
+      "layer": "dots",
+      "when": { "layout": "dice" }
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "layout": {
+      "type": "enum",
+      "values": ["plus", "dice"],
+      "default": "plus",
+      "description": "A plus (thesis A42) or the dice five."
+    }
+  },
+  "construction": [
+    "Large dots (r 2): one at the centre and four at r 5, on the axes (plus) or the diagonals (dice)."
+  ],
+  "references": { "images": ["elu-dot-work-abdomen-01"], "files": [] },
+  "metrics": {
+    "bbox": [5, 5, 14, 14],
+    "visualBox": [5, 5, 14, 14],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.143,
+    "primitiveCount": 5
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "chevron-stack",
+  "version": 2,
+  "category": "geometric",
+  "names": {
+    "en": "Stacked chevrons",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "rês daqqa",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["chevron", "stack"],
+  "meaning": { "status": "unknown" },
+  "sources": ["drower-1941"],
+  "layers": ["chevrons"],
+  "primitives": [
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [0, 4.5],
+      "element": { "type": "line", "x1": 12, "y1": 10, "x2": 8, "y2": 14 },
+      "id": "up-left",
+      "layer": "chevrons",
+      "when": { "direction": "up", "layout": "column" }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [0, 4.5],
+      "element": { "type": "line", "x1": 12, "y1": 10, "x2": 16, "y2": 14 },
+      "id": "up-right",
+      "layer": "chevrons",
+      "when": { "direction": "up", "layout": "column" }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [0, 4.5],
+      "element": { "type": "line", "x1": 12, "y1": 14, "x2": 8, "y2": 10 },
+      "id": "down-left",
+      "layer": "chevrons",
+      "when": { "direction": "down", "layout": "column" }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [0, 4.5],
+      "element": { "type": "line", "x1": 12, "y1": 14, "x2": 16, "y2": 10 },
+      "id": "down-right",
+      "layer": "chevrons",
+      "when": { "direction": "down", "layout": "column" }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [-1, 5.25],
+      "element": { "type": "line", "x1": 12, "y1": 10, "x2": 8, "y2": 14 },
+      "id": "diagonal-left",
+      "layer": "chevrons",
+      "when": { "direction": "up", "layout": "diagonal" }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [-1, 5.25],
+      "element": { "type": "line", "x1": 12, "y1": 10, "x2": 16, "y2": 14 },
+      "id": "diagonal-right",
+      "layer": "chevrons",
+      "when": { "direction": "up", "layout": "diagonal" }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [1, 5.25],
+      "element": { "type": "line", "x1": 12, "y1": 14, "x2": 8, "y2": 10 },
+      "id": "diagonal-down-left",
+      "layer": "chevrons",
+      "when": { "direction": "down", "layout": "diagonal" }
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [1, 5.25],
+      "element": { "type": "line", "x1": 12, "y1": 14, "x2": 16, "y2": 10 },
+      "id": "diagonal-down-right",
+      "layer": "chevrons",
+      "when": { "direction": "down", "layout": "diagonal" }
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "count": {
+      "type": "integer",
+      "min": 2,
+      "max": 4,
+      "default": 3,
+      "description": "Number of chevrons."
+    },
+    "direction": {
+      "type": "enum",
+      "values": ["up", "down"],
+      "default": "up",
+      "description": "Point up (thesis A32) or down (thesis A33)."
+    },
+    "layout": {
+      "type": "enum",
+      "values": ["column", "diagonal"],
+      "default": "column",
+      "description": "A straight column, or stepping sideways (Drower's res daqqa)."
+    }
+  },
+  "construction": [
+    "Chevrons 4 by 4 at 45 degrees, 4.5 apart in a column so the parallel arms stay 3 apart.",
+    "The diagonal layout steps 1 sideways and 5.25 down, which keeps the arms 3 apart square to the stroke."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [8, 5.5, 8, 13],
+    "visualBox": [7, 4.5, 10, 15],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.133,
+    "primitiveCount": 6
+  }
+}

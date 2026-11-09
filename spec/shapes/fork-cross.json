@@ -1,0 +1,96 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "fork-cross",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Double fork",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["fork", "y"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["prongs-top", "prongs-bottom", "stem"],
+  "primitives": [
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 10,
+      "x2": 6,
+      "y2": 4,
+      "id": "top-left",
+      "layer": "prongs-top"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 10,
+      "x2": 18,
+      "y2": 4,
+      "id": "top-right",
+      "layer": "prongs-top"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 14,
+      "x2": 6,
+      "y2": 20,
+      "id": "bottom-left",
+      "layer": "prongs-bottom"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 14,
+      "x2": 18,
+      "y2": 20,
+      "id": "bottom-right",
+      "layer": "prongs-bottom"
+    },
+    { "type": "line", "x1": 12, "y1": 10, "x2": 12, "y2": 14, "id": "stem", "layer": "stem" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 10,
+      "x2": 12,
+      "y2": 4,
+      "id": "prong-top",
+      "layer": "stem",
+      "when": { "prong": ["top", "both"] }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 14,
+      "x2": 12,
+      "y2": 20,
+      "id": "prong-bottom",
+      "layer": "stem",
+      "when": { "prong": "both" }
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "prong": {
+      "type": "enum",
+      "values": ["top", "both", "none"],
+      "default": "top",
+      "description": "Middle prong at the top (thesis A6), at both ends, or none."
+    }
+  },
+  "construction": [
+    "A large V opening up from (12, 10) over a large V opening down from (12, 14), joined by a 4-unit stem."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [6, 4, 12, 16],
+    "visualBox": [5, 3, 14, 18],
+    "opticalCenter": [12, 11.317],
+    "strokeToSize": 0.111,
+    "primitiveCount": 6
+  }
+}

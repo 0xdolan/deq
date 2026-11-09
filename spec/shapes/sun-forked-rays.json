@@ -1,0 +1,73 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "sun-forked-rays",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Sun with forked rays",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["sun", "rays", "fork"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["ring", "center", "rays"],
+  "primitives": [
+    { "type": "circle", "cx": 12, "cy": 12, "r": 3, "id": "ring", "layer": "ring" },
+    { "type": "dot", "cx": 12, "cy": 12, "id": "center-dot", "layer": "center" },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 17.5, "y1": 12, "x2": 19.5, "y2": 12 },
+      "id": "ray-stems",
+      "layer": "rays"
+    },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 19.5, "y1": 12, "x2": 21.5, "y2": 10 },
+      "id": "ray-forks-left",
+      "layer": "rays"
+    },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 19.5, "y1": 12, "x2": 21.5, "y2": 14 },
+      "id": "ray-forks-right",
+      "layer": "rays"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 3,
+      "max": 8,
+      "default": 6,
+      "description": "Number of forked rays, the first pointing up."
+    }
+  },
+  "construction": [
+    "Ring r 3 with a small centre dot.",
+    "Each ray: a stem from r 5.5 to r 7.5, then a fork of two strokes at 45 degrees, 2 out and 2 across, ending at r 9.7 so the ink stays inside r 11."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2.773, 2.5, 18.454, 19],
+    "visualBox": [1.773, 1.5, 20.454, 21],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.095,
+    "primitiveCount": 20
+  }
+}

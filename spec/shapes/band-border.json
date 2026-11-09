@@ -1,0 +1,47 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "band-border",
+  "version": 2,
+  "category": "lines-and-borders",
+  "names": {
+    "en": "Band border",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["band", "border", "bracelet"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["cups", "marks"],
+  "primitives": [
+    {
+      "type": "repeat",
+      "count": 2,
+      "step": [13, 0],
+      "align": "start",
+      "element": { "type": "arc", "cx": 5.5, "cy": 11, "r": 2, "start": 0, "end": 180 },
+      "id": "cups",
+      "layer": "cups"
+    },
+    { "type": "line", "x1": 10, "y1": 10, "x2": 14, "y2": 14, "id": "x-a", "layer": "marks" },
+    { "type": "line", "x1": 14, "y1": 10, "x2": 10, "y2": 14, "id": "x-b", "layer": "marks" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Field's arm band: two small cups (lower half of the bead circle, r 2) and an X (4 by 4) between them, 6.5 apart.",
+    "Repeat the shape side by side for a longer band."
+  ],
+  "references": {
+    "images": ["field-tattoo-drawings-04", "de-morgan-fig-29-kilakan-kialhours"],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [3.5, 10, 17, 4],
+    "visualBox": [2.5, 9, 19, 6],
+    "opticalCenter": [12, 12.144],
+    "strokeToSize": 0.105,
+    "primitiveCount": 4
+  }
+}

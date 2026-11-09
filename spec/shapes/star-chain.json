@@ -1,0 +1,65 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "star-chain",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Star chain",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["star", "line", "border"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["line", "marks"],
+  "primitives": [
+    { "type": "line", "x1": 2, "y1": 12, "x2": 22, "y2": 12, "id": "line", "layer": "line" },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [7, 0],
+      "element": { "type": "line", "x1": 12, "y1": 9, "x2": 12, "y2": 15 },
+      "id": "marks-vertical",
+      "layer": "marks"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [7, 0],
+      "element": { "type": "line", "x1": 9.879, "y1": 9.879, "x2": 14.121, "y2": 14.121 },
+      "id": "marks-diagonal-a",
+      "layer": "marks"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "count" },
+      "step": [7, 0],
+      "element": { "type": "line", "x1": 14.121, "y1": 9.879, "x2": 9.879, "y2": 14.121 },
+      "id": "marks-diagonal-b",
+      "layer": "marks"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "count": {
+      "type": "integer",
+      "min": 1,
+      "max": 3,
+      "default": 3,
+      "description": "Stars on the line, 7 apart."
+    }
+  },
+  "construction": [
+    "Line 20 long with asterisks of radius 3 (the line is their horizontal arm) every 7 units."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 9, 20, 6],
+    "visualBox": [1, 8, 22, 8],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 10
+  }
+}

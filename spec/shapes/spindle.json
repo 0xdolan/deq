@@ -1,0 +1,44 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "spindle",
+  "version": 2,
+  "category": "geometric",
+  "names": {
+    "en": "Spindle",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "dulab katân",
+        "note": "'spindle, or spool'.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["spindle", "spool"],
+  "meaning": { "status": "unknown" },
+  "sources": ["drower-1941"],
+  "layers": ["bar", "posts", "dots"],
+  "primitives": [
+    { "type": "line", "x1": 5, "y1": 12, "x2": 19, "y2": 12, "id": "bar", "layer": "bar" },
+    { "type": "line", "x1": 5, "y1": 8, "x2": 5, "y2": 16, "id": "post-left", "layer": "posts" },
+    { "type": "line", "x1": 19, "y1": 8, "x2": 19, "y2": 16, "id": "post-right", "layer": "posts" },
+    { "type": "dot", "cx": 12, "cy": 7.5, "r": 2, "id": "dot-top", "layer": "dots" },
+    { "type": "dot", "cx": 12, "cy": 16.5, "r": 2, "id": "dot-bottom", "layer": "dots" }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {},
+  "construction": [
+    "Bar 14 long with posts 8 high at its ends; a large dot 4.5 above and below the centre."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [5, 5.5, 14, 13],
+    "visualBox": [4, 5.5, 16, 13],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.125,
+    "primitiveCount": 5
+  }
+}

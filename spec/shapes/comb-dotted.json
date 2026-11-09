@@ -1,0 +1,57 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "comb-dotted",
+  "version": 1,
+  "category": "lines-and-borders",
+  "names": {
+    "en": "Comb with dots",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["comb", "dots"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["bar", "teeth", "dots"],
+  "primitives": [
+    { "type": "line", "x1": 4, "y1": 11.5, "x2": 20, "y2": 11.5, "id": "bar", "layer": "bar" },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "step": [4, 0],
+      "element": { "type": "line", "x1": 12, "y1": 11.5, "x2": 12, "y2": 8.5 },
+      "id": "teeth",
+      "layer": "teeth"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "step": [4, 0],
+      "element": { "type": "dot", "cx": 12, "cy": 15.5 },
+      "id": "dots",
+      "layer": "dots"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "teeth": {
+      "type": "integer",
+      "min": 3,
+      "max": 5,
+      "default": 5,
+      "description": "Teeth, with one dot under each."
+    }
+  },
+  "construction": [
+    "Bar 16 long with teeth 3 high every 4 units, the outer teeth on the ends; a small dot 4 under each tooth."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [3, 8.5, 18, 8],
+    "visualBox": [3, 7.5, 18, 9],
+    "opticalCenter": [12, 11.729],
+    "strokeToSize": 0.111,
+    "primitiveCount": 11
+  }
+}

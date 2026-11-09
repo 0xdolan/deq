@@ -1,0 +1,64 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "ring",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Ring",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["ring", "circle"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["ring"],
+  "primitives": [
+    {
+      "type": "circle",
+      "cx": 12,
+      "cy": 12,
+      "r": 5,
+      "id": "ring",
+      "layer": "ring",
+      "when": { "size": "large" }
+    },
+    {
+      "type": "circle",
+      "cx": 12,
+      "cy": 12,
+      "r": 3,
+      "id": "ring-medium",
+      "layer": "ring",
+      "when": { "size": "medium" }
+    },
+    {
+      "type": "circle",
+      "cx": 12,
+      "cy": 12,
+      "r": 2,
+      "id": "ring-small",
+      "layer": "ring",
+      "when": { "size": "small" }
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "size": {
+      "type": "enum",
+      "values": ["large", "medium", "small"],
+      "default": "large",
+      "description": "The sun circle (r 5), the ring (r 3) or the bead (r 2)."
+    }
+  },
+  "construction": ["One of the three circle modules."],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [7, 7, 10, 10],
+    "visualBox": [6, 6, 12, 12],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.167,
+    "primitiveCount": 1
+  }
+}

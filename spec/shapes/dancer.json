@@ -1,0 +1,38 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dancer",
+  "version": 1,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Dancer",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["figure", "x", "dot"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["head", "body", "hands"],
+  "primitives": [
+    { "type": "dot", "cx": 12, "cy": 6.5, "r": 2, "id": "head", "layer": "head" },
+    { "type": "line", "x1": 7, "y1": 9, "x2": 17, "y2": 19, "id": "stroke-a", "layer": "body" },
+    { "type": "line", "x1": 17, "y1": 9, "x2": 7, "y2": 19, "id": "stroke-b", "layer": "body" },
+    { "type": "line", "x1": 7, "y1": 9, "x2": 5, "y2": 11, "id": "hand-left", "layer": "hands" },
+    { "type": "line", "x1": 17, "y1": 9, "x2": 19, "y2": 11, "id": "hand-right", "layer": "hands" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "An X of half-size 5 centred at (12, 13): the upper arms are raised arms, the lower are legs.",
+    "Hands turn down and out (2 by 2); the head is the large dot 7.5 above the crossing."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [5, 4.5, 14, 14.5],
+    "visualBox": [4, 4.5, 16, 15.5],
+    "opticalCenter": [12, 12.266],
+    "strokeToSize": 0.125,
+    "primitiveCount": 5
+  }
+}

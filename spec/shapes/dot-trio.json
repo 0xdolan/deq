@@ -1,0 +1,62 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot-trio",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Three dots",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      { "text": "sâsi", "sources": ["drower-1941"], "images": ["drower-ezidi-tattoo-designs-01"] }
+    ]
+  },
+  "aliases": [],
+  "tags": ["dots", "three"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      { "text": "Loyalty.", "sources": ["aljazeera-2023"], "images": [] },
+      {
+        "text": "On the left palm: breaking ties; on the right palm: loyalty.",
+        "sources": ["amargi-2025"],
+        "images": []
+      },
+      {
+        "text": "On the web between thumb and index finger (boys): keeps death away.",
+        "sources": ["ozgur-2021"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["drower-1941", "aljazeera-2023", "amargi-2025", "ozgur-2021"],
+  "layers": ["dots"],
+  "primitives": [
+    { "type": "dot", "cx": 12, "cy": 8.969, "layer": "dots" },
+    { "type": "dot", "cx": 8.5, "cy": 15.031, "layer": "dots" },
+    { "type": "dot", "cx": 15.5, "cy": 15.031, "layer": "dots" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Three dots on an equilateral triangle of side 7, one on top, centred vertically on the grid."
+  ],
+  "references": {
+    "images": [
+      "deq-ttt-temporary-sheet-01",
+      "elu-dot-trio-temple-01",
+      "drower-ezidi-tattoo-designs-01",
+      "rozerin-soysal-first-deq-01",
+      "studio-wall-symbol-photos-01",
+      "elu-thigh-pattern-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [7.5, 7.969, 9, 8.062],
+    "visualBox": [7.5, 7.969, 9, 8.062],
+    "opticalCenter": [12, 13.01],
+    "strokeToSize": 0.222,
+    "primitiveCount": 3
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "lozenge-nested",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Nested lozenges",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["diamond", "lozenge", "nested"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Diamonds (lozenges) stand for strength.",
+        "sources": ["wikipedia-deq", "kurdistan-chronicle-2026"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["wikipedia-deq", "kurdistan-chronicle-2026"],
+  "layers": ["outline", "center"],
+  "primitives": [
+    {
+      "type": "concentric",
+      "count": { "param": "depth" },
+      "center": [12, 12],
+      "scaleStep": 0.5,
+      "element": { "type": "polygon", "points": [[12, 3], [20, 12], [12, 21], [4, 12]] },
+      "layer": "outline"
+    },
+    { "type": "dot", "cx": 12, "cy": 12, "layer": "center", "when": { "centerDot": true } }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {
+    "depth": {
+      "type": "integer",
+      "min": 1,
+      "max": 2,
+      "default": 2,
+      "description": "Number of nested diamonds."
+    },
+    "centerDot": { "type": "boolean", "default": true, "description": "Draws a centre dot." }
+  },
+  "construction": [
+    "The lozenge, copied about the centre at scales 1 and 0.5.",
+    "The edges sit 5.98 units from the centre, so the copies are 2.99 apart measured square to the edges: about 1 unit of clear space between strokes. A third copy would not fit."
+  ],
+  "references": { "images": ["elu-thigh-pattern-01"], "files": [] },
+  "metrics": {
+    "bbox": [4, 3, 16, 18],
+    "visualBox": [3, 2, 18, 20],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 3
+  }
+}

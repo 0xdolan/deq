@@ -1,0 +1,34 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "x-mark",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Diagonal cross",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["x", "cross", "diagonal"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["arms"],
+  "primitives": [
+    { "type": "line", "x1": 5, "y1": 5, "x2": 19, "y2": 19, "layer": "arms" },
+    { "type": "line", "x1": 19, "y1": 5, "x2": 5, "y2": 19, "layer": "arms" }
+  ],
+  "symmetry": "rotational-4",
+  "parameters": {},
+  "construction": [
+    "Two diagonals of the square from (5, 5) to (19, 19), so the visual box matches the square keyline."
+  ],
+  "references": { "images": ["field-tattoo-drawings-04"], "files": [] },
+  "metrics": {
+    "bbox": [5, 5, 14, 14],
+    "visualBox": [4, 4, 16, 16],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.125,
+    "primitiveCount": 2
+  }
+}

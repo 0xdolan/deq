@@ -1,0 +1,47 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "zigzag",
+  "version": 1,
+  "category": "lines-and-borders",
+  "names": {
+    "en": "Zigzag",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["zigzag", "water", "line"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["line"],
+  "primitives": [
+    {
+      "type": "repeat",
+      "count": { "param": "peaks" },
+      "step": [5, 0],
+      "element": { "type": "polyline", "points": [[9.5, 15], [12, 9], [14.5, 15]] },
+      "layer": "line"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "peaks": {
+      "type": "integer",
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "description": "Number of peaks."
+    }
+  },
+  "construction": [
+    "Peaks 5 wide and 6 high, joined end to end and centred; four peaks span x = 2 to 22."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 9, 20, 6],
+    "visualBox": [1, 8, 22, 8],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 4
+  }
+}

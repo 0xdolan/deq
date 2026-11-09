@@ -1,0 +1,85 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "star-flower",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Flower star",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["star", "flower", "dots"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["center", "spokes", "petals"],
+  "primitives": [
+    {
+      "type": "circle",
+      "cx": 12,
+      "cy": 12,
+      "r": 3,
+      "id": "ring",
+      "layer": "center",
+      "when": { "center": "open" }
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 12,
+      "r": 2,
+      "id": "center-dot",
+      "layer": "center",
+      "when": { "center": "closed" }
+    },
+    {
+      "type": "radial",
+      "count": { "param": "petals" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 15, "y1": 12, "x2": 18.5, "y2": 12 },
+      "id": "spokes",
+      "layer": "spokes"
+    },
+    {
+      "type": "radial",
+      "count": { "param": "petals" },
+      "center": [12, 12],
+      "start": -90,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 20, "cy": 12, "r": 2 },
+      "id": "petals",
+      "layer": "petals"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "petals": {
+      "type": "integer",
+      "min": 5,
+      "max": 8,
+      "default": 6,
+      "description": "Number of petals, the first pointing up."
+    },
+    "center": {
+      "type": "enum",
+      "values": ["open", "closed"],
+      "default": "open",
+      "description": "An open ring (r 3) or the large dot at the centre."
+    }
+  },
+  "construction": [
+    "Centre: ring r 3 (or the large dot).",
+    "Spokes from r 3 (touching the ring) to r 6.5, each ending in a large dot (r 2) at r 8."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [3.072, 2, 17.856, 20],
+    "visualBox": [3.072, 2, 17.856, 20],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.1,
+    "primitiveCount": 13
+  }
+}

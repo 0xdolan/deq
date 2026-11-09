@@ -1,0 +1,74 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "chevron",
+  "version": 2,
+  "category": "geometric",
+  "names": {
+    "en": "Chevron",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["chevron", "chin", "v"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "On the chin: a tribal identifier, sized to the family group; it \"lets the sweetness out\" when speaking.",
+        "sources": ["natgeo-2015", "mee-2022"],
+        "images": []
+      },
+      {
+        "text": "Some wearers did not know its meaning.",
+        "sources": ["indyturk-2020"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["natgeo-2015", "mee-2022", "indyturk-2020"],
+  "layers": ["chevron"],
+  "primitives": [
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 8.5,
+      "x2": 5,
+      "y2": 15.5,
+      "id": "arm-left",
+      "layer": "chevron"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 8.5,
+      "x2": 19,
+      "y2": 15.5,
+      "id": "arm-right",
+      "layer": "chevron"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": ["Two strokes from the apex (12, 9), 7 across and 7 down (45 degrees)."],
+  "references": {
+    "images": [
+      "deq-ttt-temporary-sheet-01",
+      "thesis-motif-table-01",
+      "hand-drawn-motif-sheets-01",
+      "field-tattoo-drawings-03",
+      "de-morgan-fig-28-kilakan",
+      "elu-thigh-pattern-01",
+      "elu-chin-sun-fingers-01",
+      "deq-portraits-slideshow-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [5, 8.5, 14, 7],
+    "visualBox": [4, 7.5, 16, 9],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.125,
+    "primitiveCount": 2
+  }
+}

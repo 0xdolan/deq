@@ -1,0 +1,79 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "chin-composition",
+  "version": 2,
+  "category": "compositions",
+  "names": {
+    "en": "Chin composition",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["chin", "composition"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["chevron", "stem", "dots"],
+  "primitives": [
+    {
+      "id": "chevron-left",
+      "type": "line",
+      "x1": 12,
+      "y1": 3.5,
+      "x2": 9,
+      "y2": 6.5,
+      "layer": "chevron"
+    },
+    {
+      "id": "chevron-right",
+      "type": "line",
+      "x1": 12,
+      "y1": 3.5,
+      "x2": 15,
+      "y2": 6.5,
+      "layer": "chevron"
+    },
+    {
+      "id": "stem",
+      "type": "repeat",
+      "count": 4,
+      "step": [0, 3.5],
+      "align": "start",
+      "layer": "stem",
+      "element": { "type": "dot", "cx": 12, "cy": 10 }
+    },
+    { "id": "dot-left", "type": "dot", "cx": 6.5, "cy": 13.5, "layer": "dots" },
+    { "id": "dot-right", "type": "dot", "cx": 17.5, "cy": 13.5, "layer": "dots" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A traditional chin layout: the small V (3 by 3) pointing up at the top, a column of four small dots 3.5 apart below it, and a small dot each side level with the second dot.",
+    "Everything is drawn at module size (no scaling), centred on the grid."
+  ],
+  "references": {
+    "images": [
+      "de-morgan-fig-27-tchomaklou",
+      "de-morgan-fig-28-kilakan",
+      "fate-temel-portrait-01",
+      "saliha-ozsavli-portrait-01",
+      "elder-forehead-chin-deq-01",
+      "viransehir-elders-group-01",
+      "elder-forehead-chin-deq-02",
+      "elu-chin-sun-fingers-01",
+      "elder-deq-painting-01",
+      "elder-forehead-chin-deq-03",
+      "roj-sun-collage-01",
+      "kobani-woman-portrait-01",
+      "deq-portraits-slideshow-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [5.5, 3.5, 13, 18],
+    "visualBox": [5.5, 2.5, 13, 19],
+    "opticalCenter": [12, 10.087],
+    "strokeToSize": 0.105,
+    "primitiveCount": 8
+  }
+}

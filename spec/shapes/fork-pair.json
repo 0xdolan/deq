@@ -1,0 +1,149 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "fork-pair",
+  "version": 1,
+  "category": "lines-and-borders",
+  "names": {
+    "en": "Fork pair",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["fork", "line"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["shaft", "ends", "marks"],
+  "primitives": [
+    { "type": "line", "x1": 5, "y1": 12, "x2": 19, "y2": 12, "id": "shaft", "layer": "shaft" },
+    { "type": "line", "x1": 5, "y1": 12, "x2": 2, "y2": 9, "id": "end-left-upper", "layer": "ends" },
+    {
+      "type": "line",
+      "x1": 5,
+      "y1": 12,
+      "x2": 2,
+      "y2": 15,
+      "id": "end-left-lower",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 19,
+      "y1": 12,
+      "x2": 22,
+      "y2": 9,
+      "id": "end-right-upper",
+      "layer": "ends"
+    },
+    {
+      "type": "line",
+      "x1": 19,
+      "y1": 12,
+      "x2": 22,
+      "y2": 15,
+      "id": "end-right-lower",
+      "layer": "ends"
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 9,
+      "id": "dot-top",
+      "layer": "marks",
+      "when": { "marks": "dots" }
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 15,
+      "id": "dot-bottom",
+      "layer": "marks",
+      "when": { "marks": "dots" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 9,
+      "x2": 12,
+      "y2": 15,
+      "id": "tick",
+      "layer": "marks",
+      "when": { "marks": "tick" }
+    },
+    {
+      "type": "repeat",
+      "count": 3,
+      "step": [3, 0],
+      "element": { "type": "dot", "cx": 12, "cy": 9 },
+      "id": "pendant-dots-top",
+      "layer": "marks",
+      "when": { "marks": "pendant" }
+    },
+    {
+      "type": "dot",
+      "cx": 8,
+      "cy": 15,
+      "id": "pendant-dot-left",
+      "layer": "marks",
+      "when": { "marks": "pendant" }
+    },
+    {
+      "type": "dot",
+      "cx": 16,
+      "cy": 15,
+      "id": "pendant-dot-right",
+      "layer": "marks",
+      "when": { "marks": "pendant" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 12,
+      "x2": 12,
+      "y2": 15,
+      "id": "pendant-stem",
+      "layer": "marks",
+      "when": { "marks": "pendant" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 15,
+      "x2": 9,
+      "y2": 18,
+      "id": "pendant-legs-left",
+      "layer": "marks",
+      "when": { "marks": "pendant" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 15,
+      "x2": 15,
+      "y2": 18,
+      "id": "pendant-legs-right",
+      "layer": "marks",
+      "when": { "marks": "pendant" }
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "marks": {
+      "type": "enum",
+      "values": ["dots", "tick", "pendant"],
+      "default": "dots",
+      "description": "Dots above and below (thesis A48, tablo's third fish), a crossing tick (A49), or dots with a hanging fork (A62)."
+    }
+  },
+  "construction": [
+    "Shaft 14 long with the small V opening outward at each end; marks in the middle, 3 from the shaft."
+  ],
+  "references": { "images": ["thesis-motif-table-01", "tablo-fish-pendant-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 8, 20, 8],
+    "visualBox": [1, 8, 22, 8],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.091,
+    "primitiveCount": 7
+  }
+}

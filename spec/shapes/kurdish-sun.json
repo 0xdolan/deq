@@ -1,0 +1,98 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "kurdish-sun",
+  "version": 1,
+  "category": "kurdish-symbols",
+  "names": {
+    "en": "Kurdish Sun",
+    "ckb": {
+      "text": "ڕۆژ",
+      "status": "needs-native-review",
+      "sources": ["wikipedia-kurdish-sun"],
+      "images": []
+    },
+    "kmr": {
+      "text": "Roj",
+      "status": "needs-native-review",
+      "sources": ["wikipedia-kurdish-sun"],
+      "images": []
+    },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["sun", "roj", "kurdistan", "emblem", "21"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Roj is the national emblem of the Kurds. The 21-ray form was designed by Mehrdad Izady; 21 is an important number in Yazidism, Yarsanism and Alevism, and the rays symbolise rebirth.",
+        "sources": ["wikipedia-kurdish-sun"],
+        "images": []
+      },
+      {
+        "text": "On the flag the yellow sun represents the source of life and light of the people; its 21 rays symbolise the rebirth of the Kurdish nation, identity and dignity.",
+        "sources": ["wikipedia-flag-of-kurdistan"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["wikipedia-kurdish-sun", "wikipedia-flag-of-kurdistan"],
+  "layers": ["sun"],
+  "primitives": [
+    {
+      "type": "star",
+      "cx": 12,
+      "cy": 12.056,
+      "points": { "param": "rays" },
+      "outerRadius": 10.056,
+      "innerRadius": 5.028,
+      "rotation": -90,
+      "paint": "fill",
+      "layer": "sun",
+      "when": { "variant": "filled" }
+    },
+    {
+      "type": "star",
+      "cx": 12,
+      "cy": 12.056,
+      "points": { "param": "rays" },
+      "outerRadius": 9.056,
+      "innerRadius": 4.528,
+      "rotation": -90,
+      "layer": "sun",
+      "when": { "variant": "outline" }
+    }
+  ],
+  "symmetry": "rotational-21",
+  "symmetryCenter": [12, 12.056],
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 5,
+      "max": 24,
+      "default": 21,
+      "description": "Number of rays. The national emblem has 21; other counts are for design use only."
+    },
+    "variant": {
+      "type": "enum",
+      "values": ["filled", "outline"],
+      "default": "filled",
+      "description": "A filled star, or its outline (stroked 1 unit inside the filled edge)."
+    }
+  },
+  "construction": [
+    "A star polygon with 21 outer and 21 inner vertices, the first outer vertex pointing straight up (rotation -90 degrees).",
+    "Inner radius = outer radius / 2, as in the reference flag (spec/flag.json, innerToOuter).",
+    "The star's height is R (1 + cos(pi/21)) because the lowest points are the two outer vertices either side of the bottom. Setting the height to the 20-unit live keyline gives R = 20 / (1 + cos(pi/21)) = 10.0562, centre (12, 12.056).",
+    "The centre sits 0.056 units below the grid centre, so the visual box (2 to 22) is centred; the same offset appears in the flag, where the sun's centre is at y = 300.842 of 600.",
+    "outline: the same star with R reduced by 1, stroked, so the outer stroke edge matches the filled star. At small sizes use stroke width 0.5 to 1."
+  ],
+  "references": { "images": [], "files": ["spec/flag.json"] },
+  "metrics": {
+    "bbox": [1.972, 2, 20.056, 20],
+    "visualBox": [1.972, 2, 20.056, 20],
+    "opticalCenter": [12, 12.056],
+    "strokeToSize": 0.1,
+    "primitiveCount": 1
+  }
+}

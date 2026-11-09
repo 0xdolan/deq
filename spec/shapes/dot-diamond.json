@@ -1,0 +1,40 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dot-diamond",
+  "version": 1,
+  "category": "dots",
+  "names": {
+    "en": "Four dots",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["dots"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["dots"],
+  "primitives": [
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 17, "cy": 12, "r": 2 },
+      "id": "dots",
+      "layer": "dots"
+    }
+  ],
+  "symmetry": "mirror-xy",
+  "parameters": {},
+  "construction": ["Four large dots (r 2) at r 5 on the axes."],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [5, 5, 14, 14],
+    "visualBox": [5, 5, 14, 14],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.143,
+    "primitiveCount": 4
+  }
+}

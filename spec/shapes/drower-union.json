@@ -1,0 +1,53 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "drower-union",
+  "version": 2,
+  "category": "compositions",
+  "names": {
+    "en": "Union of symbols",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "a common union of symbols",
+        "note": "Drower's caption, numbering the parts: moon, comb, daqqayeh, cross.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["drower", "composition", "union"],
+  "meaning": { "status": "unknown" },
+  "sources": ["drower-1941"],
+  "layers": ["ring", "line", "teeth", "post", "dot"],
+  "primitives": [
+    { "type": "circle", "cx": 4, "cy": 11, "r": 2, "id": "ring", "layer": "ring" },
+    { "type": "line", "x1": 6, "y1": 11, "x2": 22, "y2": 11, "id": "line", "layer": "line" },
+    {
+      "type": "repeat",
+      "count": 5,
+      "step": [3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 8.5, "y1": 11, "x2": 8.5, "y2": 8 },
+      "id": "teeth",
+      "layer": "teeth"
+    },
+    { "type": "line", "x1": 20.5, "y1": 8, "x2": 20.5, "y2": 14, "id": "post", "layer": "post" },
+    { "type": "dot", "cx": 13, "cy": 15, "r": 2, "id": "dot", "layer": "dot" }
+  ],
+  "symmetry": "none",
+  "parameters": {},
+  "construction": [
+    "Drower's common union, built from its four numbered parts: (1) a bead ring (r 2) at the left end of a line,",
+    "(2) five teeth 3 high every 3 units, (3) a large dot 4 under the line, (4) a post 6 high near the right end."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 8, 20, 9],
+    "visualBox": [1, 7, 22, 10],
+    "opticalCenter": [12.47, 11.047],
+    "strokeToSize": 0.091,
+    "primitiveCount": 9
+  }
+}

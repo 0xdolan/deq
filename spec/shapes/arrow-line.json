@@ -1,0 +1,51 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "arrow-line",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Arrow",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["arrow", "fork"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["shaft", "head"],
+  "primitives": [
+    { "type": "line", "x1": 2.5, "y1": 12, "x2": 21.5, "y2": 12, "id": "shaft", "layer": "shaft" },
+    {
+      "type": "line",
+      "x1": 17.5,
+      "y1": 12,
+      "x2": 20.5,
+      "y2": 9,
+      "id": "head-upper",
+      "layer": "head"
+    },
+    {
+      "type": "line",
+      "x1": 17.5,
+      "y1": 12,
+      "x2": 20.5,
+      "y2": 15,
+      "id": "head-lower",
+      "layer": "head"
+    }
+  ],
+  "symmetry": "mirror-y",
+  "parameters": {},
+  "construction": [
+    "Horizontal shaft with the small V opening right at 4 from its end, so the shaft runs on as the middle prong."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2.5, 9, 19, 6],
+    "visualBox": [1.5, 8, 21, 8],
+    "opticalCenter": [14.161, 12],
+    "strokeToSize": 0.095,
+    "primitiveCount": 3
+  }
+}

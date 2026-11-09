@@ -1,0 +1,69 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "root",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Root",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["root", "stem"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["stem", "roots"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 4.5, "x2": 12, "y2": 19.5, "id": "stem", "layer": "stem" },
+    {
+      "type": "line",
+      "x1": 9,
+      "y1": 19.5,
+      "x2": 6,
+      "y2": 16.5,
+      "id": "root-left-left",
+      "layer": "roots"
+    },
+    {
+      "type": "line",
+      "x1": 9,
+      "y1": 19.5,
+      "x2": 12,
+      "y2": 16.5,
+      "id": "root-left-right",
+      "layer": "roots"
+    },
+    {
+      "type": "line",
+      "x1": 15,
+      "y1": 19.5,
+      "x2": 12,
+      "y2": 16.5,
+      "id": "root-right-left",
+      "layer": "roots"
+    },
+    {
+      "type": "line",
+      "x1": 15,
+      "y1": 19.5,
+      "x2": 18,
+      "y2": 16.5,
+      "id": "root-right-right",
+      "layer": "roots"
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Stem from y 4 to 19. Two small Vs (3 across, 3 up) hang from the joint at (12, 16), apexes at (9, 19) and (15, 19), making a W."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [6, 4.5, 12, 15],
+    "visualBox": [5, 3.5, 14, 17],
+    "opticalCenter": [12, 15.185],
+    "strokeToSize": 0.118,
+    "primitiveCount": 5
+  }
+}

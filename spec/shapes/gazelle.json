@@ -1,0 +1,108 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "gazelle",
+  "version": 2,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Gazelle",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": {
+      "text": "xezal",
+      "status": "needs-native-review",
+      "sources": ["natakallam-2024"],
+      "images": [],
+      "note": "'gazelle', as given by the source."
+    },
+    "terms": [
+      {
+        "text": "ghazâl",
+        "note": "Drower's caption: the 'gazelle' (ghazâl).",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["gazelle", "animal"],
+  "meaning": {
+    "status": "sourced",
+    "statements": [
+      {
+        "text": "Luck; beauty and grace; grace and feminine wisdom.",
+        "sources": ["dailysabah-2016", "wikipedia-deq", "amargi-2025"],
+        "images": []
+      }
+    ]
+  },
+  "sources": ["natakallam-2024", "drower-1941", "dailysabah-2016", "wikipedia-deq", "amargi-2025"],
+  "layers": ["body", "legs", "head", "dot"],
+  "primitives": [
+    { "type": "line", "x1": 4, "y1": 13, "x2": 17, "y2": 13, "id": "body", "layer": "body" },
+    { "type": "line", "x1": 4, "y1": 9, "x2": 4, "y2": 19, "id": "tail-leg", "layer": "legs" },
+    { "type": "line", "x1": 7, "y1": 13, "x2": 7, "y2": 19, "id": "leg-2", "layer": "legs" },
+    { "type": "line", "x1": 14, "y1": 13, "x2": 14, "y2": 19, "id": "leg-3", "layer": "legs" },
+    { "type": "line", "x1": 17, "y1": 7, "x2": 17, "y2": 19, "id": "neck-leg", "layer": "legs" },
+    {
+      "type": "line",
+      "x1": 17,
+      "y1": 7,
+      "x2": 17,
+      "y2": 4.5,
+      "id": "head-top",
+      "layer": "head",
+      "when": { "head": "muzzle" }
+    },
+    {
+      "type": "line",
+      "x1": 17,
+      "y1": 4.5,
+      "x2": 20,
+      "y2": 4.5,
+      "id": "muzzle",
+      "layer": "head",
+      "when": { "head": "muzzle" }
+    },
+    {
+      "type": "line",
+      "x1": 17,
+      "y1": 7,
+      "x2": 14,
+      "y2": 4,
+      "id": "horns-left",
+      "layer": "head",
+      "when": { "head": "fork" }
+    },
+    {
+      "type": "line",
+      "x1": 17,
+      "y1": 7,
+      "x2": 20,
+      "y2": 4,
+      "id": "horns-right",
+      "layer": "head",
+      "when": { "head": "fork" }
+    },
+    { "type": "dot", "cx": 10.5, "cy": 8.5, "r": 2, "id": "dot", "layer": "dot" }
+  ],
+  "symmetry": "none",
+  "parameters": {
+    "head": {
+      "type": "enum",
+      "values": ["muzzle", "fork"],
+      "default": "muzzle",
+      "description": "Drower's head turned right, or the forked head of thesis A63."
+    }
+  },
+  "construction": [
+    "Body 13 long. Four legs 6 long: the back one rises 4 above the body as the tail, the front one runs up as the neck.",
+    "Head: a muzzle 3 long at the top of the neck, or the small V. The large dot floats 4.5 above the back."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [4, 4.5, 16, 14.5],
+    "visualBox": [3, 3.5, 18, 16.5],
+    "opticalCenter": [11.406, 12.559],
+    "strokeToSize": 0.111,
+    "primitiveCount": 8
+  }
+}

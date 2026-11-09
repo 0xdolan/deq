@@ -1,0 +1,56 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "cup",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Cup",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["cup", "stem"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["cup", "stem"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 11.5,
+      "r": 5,
+      "start": 0,
+      "end": 180,
+      "id": "bowl",
+      "layer": "cup"
+    },
+    { "type": "line", "x1": 7, "y1": 11.5, "x2": 4, "y2": 11.5, "id": "rim-left", "layer": "cup" },
+    {
+      "type": "line",
+      "x1": 17,
+      "y1": 11.5,
+      "x2": 20,
+      "y2": 11.5,
+      "id": "rim-right",
+      "layer": "cup"
+    },
+    { "type": "line", "x1": 4, "y1": 11.5, "x2": 2, "y2": 9.5, "id": "tip-left", "layer": "cup" },
+    { "type": "line", "x1": 20, "y1": 11.5, "x2": 22, "y2": 9.5, "id": "tip-right", "layer": "cup" },
+    { "type": "line", "x1": 12, "y1": 16.5, "x2": 12, "y2": 7.5, "id": "stem", "layer": "stem" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Bowl: lower half of the sun circle (r 5). Rims run 3 out from the bowl and turn up at 45 degrees.",
+    "A stem rises from the bottom of the bowl to 4 above the rim."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 7.5, 20, 9],
+    "visualBox": [1, 6.5, 22, 11],
+    "opticalCenter": [12, 12.843],
+    "strokeToSize": 0.091,
+    "primitiveCount": 6
+  }
+}

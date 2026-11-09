@@ -1,0 +1,133 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "ring-stem",
+  "version": 2,
+  "category": "nature",
+  "names": {
+    "en": "Ring on a stem",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["ring", "stem", "circle"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["stem", "ring", "top", "bottom", "dots"],
+  "primitives": [
+    { "type": "line", "x1": 12, "y1": 7.5, "x2": 12, "y2": 16.5, "id": "stem", "layer": "stem" },
+    { "type": "circle", "cx": 12, "cy": 12, "r": 3, "id": "ring", "layer": "ring" },
+    { "type": "line", "x1": 12, "y1": 7.5, "x2": 9, "y2": 4.5, "id": "fork-left", "layer": "top" },
+    { "type": "line", "x1": 12, "y1": 7.5, "x2": 15, "y2": 4.5, "id": "fork-right", "layer": "top" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 7.5,
+      "x2": 12,
+      "y2": 4.5,
+      "id": "prong",
+      "layer": "top",
+      "when": { "top": "trident" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 16.5,
+      "x2": 9,
+      "y2": 19.5,
+      "id": "legs-left",
+      "layer": "bottom",
+      "when": { "bottom": ["fork", "crow-foot"] }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 16.5,
+      "x2": 15,
+      "y2": 19.5,
+      "id": "legs-right",
+      "layer": "bottom",
+      "when": { "bottom": ["fork", "crow-foot"] }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 16.5,
+      "x2": 12,
+      "y2": 19.5,
+      "id": "foot",
+      "layer": "bottom",
+      "when": { "bottom": ["crow-foot", "none"] }
+    },
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 19.5,
+      "r": 3,
+      "start": 180,
+      "end": 360,
+      "id": "arch",
+      "layer": "bottom",
+      "when": { "bottom": "arch" }
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 2,
+      "id": "dot-top",
+      "layer": "dots",
+      "when": { "dots": ["top", "both"] }
+    },
+    {
+      "type": "dot",
+      "cx": 12,
+      "cy": 22,
+      "id": "dot-bottom",
+      "layer": "dots",
+      "when": { "dots": ["bottom", "both"] }
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "top": {
+      "type": "enum",
+      "values": ["fork", "trident"],
+      "default": "fork",
+      "description": "A small V (thesis A44) or a trident (A47) on top."
+    },
+    "bottom": {
+      "type": "enum",
+      "values": ["fork", "crow-foot", "arch", "none"],
+      "default": "fork",
+      "description": "Inverted V, inverted V with the stem through it, an arch (Field), or the plain stem."
+    },
+    "dots": {
+      "type": "enum",
+      "values": ["none", "top", "bottom", "both"],
+      "default": "none",
+      "description": "Small dots above and below (thesis A45 has both)."
+    }
+  },
+  "construction": [
+    "Ring r 3 threaded on a stem; the stem runs 1.5 beyond the ring each way to the joints at y 7.5 and 16.5.",
+    "Top: the small V (3 by 3), or a trident. Bottom: the small inverted V, the same with the stem through it, an arch of r 3, or the plain stem.",
+    "Dots 2.5 beyond the tips, at y 2 and 22."
+  ],
+  "references": {
+    "images": [
+      "field-tattoo-drawings-01",
+      "field-tattoo-drawings-03",
+      "field-tattoo-drawings-04",
+      "zozane-vertical-motif-print-01",
+      "vertical-motif-stack-01"
+    ],
+    "files": []
+  },
+  "metrics": {
+    "bbox": [9, 4.5, 6, 15],
+    "visualBox": [8, 3.5, 8, 17],
+    "opticalCenter": [12, 12],
+    "strokeToSize": 0.118,
+    "primitiveCount": 6
+  }
+}

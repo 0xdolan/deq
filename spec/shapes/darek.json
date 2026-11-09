@@ -1,0 +1,70 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "darek",
+  "version": 2,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Darek",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": [
+      {
+        "text": "Darek",
+        "note": "Drower's caption on the plate reads 'the Darek'. Phase 1 listed this motif as 'darwish'; the owner chose 'darek' in Phase 2.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": ["darwish"],
+  "tags": ["darwish", "darek", "figure"],
+  "meaning": { "status": "unknown" },
+  "sources": ["drower-1941"],
+  "layers": ["bar", "dome", "teeth", "post"],
+  "primitives": [
+    { "type": "line", "x1": 2, "y1": 12, "x2": 21.5, "y2": 12, "id": "bar", "layer": "bar" },
+    {
+      "type": "arc",
+      "cx": 5,
+      "cy": 12,
+      "r": 3,
+      "start": 180,
+      "end": 360,
+      "id": "dome",
+      "layer": "dome"
+    },
+    {
+      "type": "repeat",
+      "count": { "param": "teeth" },
+      "step": [3, 0],
+      "align": "start",
+      "element": { "type": "line", "x1": 9.5, "y1": 12, "x2": 9.5, "y2": 15 },
+      "id": "teeth",
+      "layer": "teeth"
+    },
+    { "type": "line", "x1": 21.5, "y1": 9, "x2": 21.5, "y2": 15, "id": "post", "layer": "post" }
+  ],
+  "symmetry": "none",
+  "parameters": {
+    "teeth": {
+      "type": "integer",
+      "min": 2,
+      "max": 4,
+      "default": 4,
+      "description": "Teeth hanging from the bar, 3 apart."
+    }
+  },
+  "construction": [
+    "Drower's darek (top part only): a bar with a dome (half of the ring circle, r 3) on its left end.",
+    "Teeth 3 long hang every 3 units, and a post 6 high crosses the bar at its right end.",
+    "The column of small arches with dots below it in Drower's plate is a separate shape: arch-dot-column."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 9, 19.5, 6],
+    "visualBox": [1, 8, 21.5, 8],
+    "opticalCenter": [12.216, 12],
+    "strokeToSize": 0.093,
+    "primitiveCount": 7
+  }
+}

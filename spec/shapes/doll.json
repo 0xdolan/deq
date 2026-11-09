@@ -1,0 +1,97 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "doll",
+  "version": 2,
+  "category": "human-and-animal",
+  "names": {
+    "en": "Doll",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": {
+      "text": "bûkoke",
+      "status": "needs-native-review",
+      "sources": ["natakallam-2024"],
+      "images": [],
+      "note": "'dolls', as given by the source."
+    },
+    "terms": [
+      {
+        "text": "lâ'ibi",
+        "note": "'doll'.",
+        "sources": ["drower-1941"],
+        "images": ["drower-ezidi-tattoo-designs-01"]
+      }
+    ]
+  },
+  "aliases": [],
+  "tags": ["doll", "human", "figure"],
+  "meaning": { "status": "unknown" },
+  "sources": ["natakallam-2024", "drower-1941"],
+  "layers": ["head", "body", "arms", "legs"],
+  "primitives": [
+    { "type": "dot", "cx": 12, "cy": 5, "r": 2, "id": "head", "layer": "head" },
+    { "type": "line", "x1": 12, "y1": 5, "x2": 12, "y2": 14, "id": "body", "layer": "body" },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 9,
+      "x2": 5,
+      "y2": 9,
+      "id": "arm-left",
+      "layer": "arms",
+      "when": { "arms": "straight" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 9,
+      "x2": 19,
+      "y2": 9,
+      "id": "arm-right",
+      "layer": "arms",
+      "when": { "arms": "straight" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 9,
+      "x2": 7,
+      "y2": 4,
+      "id": "arms-raised-left",
+      "layer": "arms",
+      "when": { "arms": "raised" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 9,
+      "x2": 17,
+      "y2": 4,
+      "id": "arms-raised-right",
+      "layer": "arms",
+      "when": { "arms": "raised" }
+    },
+    { "type": "line", "x1": 12, "y1": 14, "x2": 8, "y2": 20, "id": "leg-left", "layer": "legs" },
+    { "type": "line", "x1": 12, "y1": 14, "x2": 16, "y2": 20, "id": "leg-right", "layer": "legs" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "arms": {
+      "type": "enum",
+      "values": ["straight", "raised"],
+      "default": "straight",
+      "description": "Arms straight out (Drower) or raised."
+    }
+  },
+  "construction": [
+    "Head: the large dot (r 2). The body starts at the head's centre, so the two always join.",
+    "Arms 7 long each from the shoulder at y 9; legs from y 14 spread 4 out over 6 down."
+  ],
+  "references": { "images": ["drower-ezidi-tattoo-designs-01"], "files": [] },
+  "metrics": {
+    "bbox": [5, 3, 14, 17],
+    "visualBox": [4, 3, 16, 18],
+    "opticalCenter": [12, 11.168],
+    "strokeToSize": 0.111,
+    "primitiveCount": 6
+  }
+}

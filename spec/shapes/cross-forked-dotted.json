@@ -1,0 +1,137 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "cross-forked-dotted",
+  "version": 1,
+  "category": "geometric",
+  "names": {
+    "en": "Forked cross with dots",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["cross", "fork", "dots"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["arms", "forks", "marks"],
+  "primitives": [
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 12, "y1": 12, "x2": 19, "y2": 12 },
+      "id": "arms",
+      "layer": "arms"
+    },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 19, "y1": 12, "x2": 22, "y2": 9 },
+      "id": "forks-a",
+      "layer": "forks"
+    },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 19, "y1": 12, "x2": 22, "y2": 15 },
+      "id": "forks-b",
+      "layer": "forks"
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 5,
+      "x2": 12,
+      "y2": 2,
+      "id": "prong-top",
+      "layer": "arms",
+      "when": { "prong": ["top", "all"] }
+    },
+    {
+      "type": "line",
+      "x1": 19,
+      "y1": 12,
+      "x2": 22,
+      "y2": 12,
+      "id": "prong-right",
+      "layer": "arms",
+      "when": { "prong": "all" }
+    },
+    {
+      "type": "line",
+      "x1": 12,
+      "y1": 19,
+      "x2": 12,
+      "y2": 22,
+      "id": "prong-bottom",
+      "layer": "arms",
+      "when": { "prong": "all" }
+    },
+    {
+      "type": "line",
+      "x1": 5,
+      "y1": 12,
+      "x2": 2,
+      "y2": 12,
+      "id": "prong-left",
+      "layer": "arms",
+      "when": { "prong": "all" }
+    },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 45,
+      "sweep": 360,
+      "element": { "type": "dot", "cx": 18.364, "cy": 12 },
+      "id": "dots",
+      "layer": "marks",
+      "when": { "marks": "dots" }
+    },
+    {
+      "type": "radial",
+      "count": 4,
+      "center": [12, 12],
+      "start": 45,
+      "sweep": 360,
+      "element": { "type": "circle", "cx": 18.364, "cy": 12, "r": 2 },
+      "id": "rings",
+      "layer": "marks",
+      "when": { "marks": "rings" }
+    }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {
+    "prong": {
+      "type": "enum",
+      "values": ["none", "top", "all"],
+      "default": "top",
+      "description": "A middle prong in the top fork, or in every fork."
+    },
+    "marks": {
+      "type": "enum",
+      "values": ["dots", "rings"],
+      "default": "dots",
+      "description": "Small dots (thesis A58) or bead rings (Field) in the quarters."
+    }
+  },
+  "construction": [
+    "The forked cross with a mark in each quarter at r 6.364 on the diagonals (4.5, 4.5 from the centre)."
+  ],
+  "references": { "images": ["thesis-motif-table-01", "field-tattoo-drawings-04"], "files": [] },
+  "metrics": {
+    "bbox": [2, 2, 20, 20],
+    "visualBox": [1, 1, 22, 22],
+    "opticalCenter": [12, 11.642],
+    "strokeToSize": 0.091,
+    "primitiveCount": 17
+  }
+}

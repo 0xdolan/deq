@@ -1,0 +1,53 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "dome-stem",
+  "version": 1,
+  "category": "nature",
+  "names": {
+    "en": "Arch with stem",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["arch", "stem"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["arch", "stem"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 9.5,
+      "r": 5,
+      "start": 180,
+      "end": 360,
+      "id": "arch",
+      "layer": "arch"
+    },
+    { "type": "line", "x1": 7, "y1": 9.5, "x2": 7, "y2": 19.5, "id": "leg-left", "layer": "arch" },
+    {
+      "type": "line",
+      "x1": 17,
+      "y1": 9.5,
+      "x2": 17,
+      "y2": 19.5,
+      "id": "leg-right",
+      "layer": "arch"
+    },
+    { "type": "line", "x1": 12, "y1": 4.5, "x2": 12, "y2": 19.5, "id": "stem", "layer": "stem" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "Upper half of the sun circle (r 5) on two legs 10 long; a stem from the top of the arch to the foot line, 5 from each leg."
+  ],
+  "references": { "images": ["thesis-motif-table-01"], "files": [] },
+  "metrics": {
+    "bbox": [7, 4.5, 10, 15],
+    "visualBox": [6, 3.5, 12, 17],
+    "opticalCenter": [12, 11.226],
+    "strokeToSize": 0.118,
+    "primitiveCount": 4
+  }
+}

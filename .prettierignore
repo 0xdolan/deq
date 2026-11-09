@@ -12,3 +12,9 @@ Cargo.lock
 CHANGELOG.md
 # Written by scripts/deq-assets
 assets/source-manifest.json
+# Formatted by `uv run deq-spec fmt` (canonical layout checked by `deq-spec lint`)
+spec/shapes/
+spec/catalog.json
+spec/grid.json
+spec/flag.json
+assets/brand/concepts/

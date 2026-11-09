@@ -1,0 +1,44 @@
+{
+  "$schema": "../../../spec/schema/shape.schema.json",
+  "id": "logo-concept-b",
+  "version": 1,
+  "category": "brand",
+  "names": {
+    "en": "Rising sun",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["logo", "concept", "sun", "chevron"],
+  "meaning": { "status": "unknown", "note": "A Deq brand mark proposal, not a traditional motif." },
+  "sources": [],
+  "layers": ["sun", "rays", "mark"],
+  "primitives": [
+    { "type": "arc", "cx": 12, "cy": 13, "r": 4, "start": 180, "end": 360, "layer": "sun" },
+    {
+      "type": "radial",
+      "count": 5,
+      "center": [12, 13],
+      "start": 198,
+      "sweep": 144,
+      "element": { "type": "line", "x1": 18.5, "y1": 13, "x2": 21, "y2": 13 },
+      "layer": "rays"
+    },
+    { "type": "polyline", "points": [[6, 21], [12, 17], [18, 21]], "layer": "mark" }
+  ],
+  "symmetry": "mirror-x",
+  "parameters": {},
+  "construction": [
+    "A half sun (roj) of radius 4 with five rays rising over a shallow chin chevron.",
+    "Sun and chevron join the two most cited deq themes: the sun's protection and the chin mark of identity."
+  ],
+  "references": { "images": [], "files": [] },
+  "metrics": {
+    "bbox": [3.44, 4, 17.119, 17],
+    "visualBox": [2.44, 3, 19.119, 19],
+    "opticalCenter": [12, 12.793],
+    "strokeToSize": 0.105,
+    "primitiveCount": 7
+  }
+}

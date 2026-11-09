@@ -1,0 +1,82 @@
+{
+  "$schema": "../schema/shape.schema.json",
+  "id": "sun-spiral",
+  "version": 1,
+  "category": "celestial",
+  "names": {
+    "en": "Spiral sun",
+    "ckb": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "kmr": { "text": null, "status": "needs-native-review", "sources": [], "images": [] },
+    "terms": []
+  },
+  "aliases": [],
+  "tags": ["sun", "rays", "spiral", "modern"],
+  "meaning": { "status": "unknown" },
+  "sources": [],
+  "layers": ["spiral", "rays"],
+  "primitives": [
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 12,
+      "r": 1.5,
+      "start": 180,
+      "end": 360,
+      "id": "spiral-inner",
+      "layer": "spiral"
+    },
+    {
+      "type": "arc",
+      "cx": 10.5,
+      "cy": 12,
+      "r": 3,
+      "start": 0,
+      "end": 180,
+      "id": "spiral-middle",
+      "layer": "spiral"
+    },
+    {
+      "type": "arc",
+      "cx": 12,
+      "cy": 12,
+      "r": 4.5,
+      "start": 180,
+      "end": 360,
+      "id": "spiral-outer",
+      "layer": "spiral"
+    },
+    {
+      "type": "radial",
+      "count": { "param": "rays" },
+      "center": [12, 12],
+      "start": 0,
+      "sweep": 360,
+      "element": { "type": "line", "x1": 19, "y1": 12, "x2": 22, "y2": 12 },
+      "id": "rays",
+      "layer": "rays"
+    }
+  ],
+  "symmetry": "none",
+  "parameters": {
+    "rays": {
+      "type": "integer",
+      "min": 6,
+      "max": 10,
+      "default": 8,
+      "description": "Number of rays, the first pointing right."
+    }
+  },
+  "construction": [
+    "A spiral of three half circles with radii 1.5, 3 and 4.5, so the turns sit 3 apart (1 unit clear between strokes).",
+    "Half circle 1 (r 1.5) and 3 (r 4.5) share the centre (12, 12); half circle 2 (r 3) is centred on (10.5, 12) so the ends meet.",
+    "Rays r 7 to 10, 2.5 clear of the outer turn, 45 degrees apart with 8."
+  ],
+  "references": { "images": ["zozane-vertical-motif-print-01"], "files": [] },
+  "metrics": {
+    "bbox": [2, 2, 20, 20],
+    "visualBox": [1, 1, 22, 22],
+    "opticalCenter": [11.73, 11.484],
+    "strokeToSize": 0.091,
+    "primitiveCount": 11
+  }
+}
