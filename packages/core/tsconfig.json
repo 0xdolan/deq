@@ -3,7 +3,9 @@
   "compilerOptions": {
     "noEmit": true,
     "allowImportingTsExtensions": true,
+    "allowJs": true,
+    "checkJs": true,
     "types": ["node"]
   },
-  "include": ["src", "vitest.config.ts"]
+  "include": ["src", "test", "scripts", "vitest.config.ts"]
 }

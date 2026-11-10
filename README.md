@@ -42,11 +42,12 @@ Deq (Kurdish: دەق, also called _xal_) is the traditional tattoo art of the Ku
 
 ## Packages
 
-| Registry  | Package                                                                                                     | Status      |
-| --------- | ----------------------------------------------------------------------------------------------------------- | ----------- |
-| npm       | `@0xdolan/deq-core`, `-icons`, `-react`, `-vue`, `-svelte`, `-elements`, `-exporters`, `-generator`, `-cli` | Placeholder |
-| PyPI      | `deq-shapes`                                                                                                | Placeholder |
-| crates.io | `deq-shapes`, `deq-cli` (binary: `deq`)                                                                     | Placeholder |
+| Registry  | Package                                                                                            | Status      |
+| --------- | -------------------------------------------------------------------------------------------------- | ----------- |
+| npm       | `@0xdolan/deq-core`                                                                                | Unreleased  |
+| npm       | `@0xdolan/deq-icons`, `-react`, `-vue`, `-svelte`, `-elements`, `-exporters`, `-generator`, `-cli` | Placeholder |
+| PyPI      | `deq-shapes`                                                                                       | Placeholder |
+| crates.io | `deq-shapes`, `deq-cli` (binary: `deq`)                                                            | Placeholder |
 
 ## Repository layout
 

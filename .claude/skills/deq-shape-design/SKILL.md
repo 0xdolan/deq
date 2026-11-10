@@ -26,6 +26,7 @@ The format reference is `docs/design/shape-spec.md`, and the decision record is 
 4. Run `uv run deq-spec fmt`, then `uv run deq-spec sheet --set shapes --force` (and `--set concepts` for brand concepts).
 5. Run `uv run deq-spec lint`; it must pass. Render the sheet to PNG (`inkscape … -o x.png`) and look at it, especially the small variants.
 6. List a new id in `spec/catalog.json`. Ids never change; bump `version` when the geometry changes.
+7. Run `pnpm --filter @0xdolan/deq-core generate` and then `fixtures`, and review the changed SVGs in `spec/fixtures/`. The core tests fail if either step is skipped. A change to the output itself (not only a shape) follows ADR 0008: write a new ADR and regenerate every fixture.
 
 ## Content rules
 

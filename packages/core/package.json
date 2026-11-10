@@ -28,10 +28,19 @@
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run --coverage"
+    "test": "vitest run --coverage",
+    "generate": "node scripts/generate-shapes.ts",
+    "fixtures": "tsc -p tsconfig.build.json && node scripts/fixtures.ts",
+    "docs": "node scripts/api-docs.ts"
   },
   "publishConfig": {
     "access": "public",
     "provenance": true
+  },
+  "dependencies": {
+    "valibot": "1.5.0"
+  },
+  "devDependencies": {
+    "fast-check": "4.10.2"
   }
 }
