@@ -4,7 +4,7 @@
  *   node scripts/generate-shapes.ts           write the file
  *   node scripts/generate-shapes.ts --check   fail if the file is out of date
  */
-import { lstatSync, readFileSync, writeFileSync } from "node:fs";
+import { closeSync, constants, fstatSync, openSync, readFileSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -25,13 +25,36 @@ interface Catalog {
 /** A spec shape file: everything in {@link ShapeData} plus documentation fields. */
 type SpecShape = ShapeData & Record<string, unknown>;
 
+/** `O_NOFOLLOW` where the platform has it (not on Windows). */
+const NOFOLLOW: number = (constants as Partial<typeof constants>).O_NOFOLLOW ?? 0;
+
+/**
+ * Read a regular file as UTF-8, refusing symlinks and files over `maxBytes`. The file is
+ * opened once and checked through its descriptor, so it cannot be swapped between the
+ * check and the read.
+ */
+export function readText(path: string, maxBytes: number = MAX_FILE_BYTES): string {
+  let fd: number;
+  try {
+    fd = openSync(path, constants.O_RDONLY | NOFOLLOW);
+  } catch (err) {
+    if ((err as NodeJS.ErrnoException).code === "ELOOP")
+      throw new Error(`${path}: refusing symlink`, { cause: err });
+    throw err;
+  }
+  try {
+    const st = fstatSync(fd);
+    if (!st.isFile()) throw new Error(`${path}: not a regular file`);
+    if (st.size > maxBytes) throw new Error(`${path}: larger than ${String(maxBytes)} bytes`);
+    return readFileSync(fd, "utf8");
+  } finally {
+    closeSync(fd);
+  }
+}
+
 /** Read a JSON file, refusing symlinks and oversized files. */
 export function readJson(path: string): unknown {
-  const st = lstatSync(path);
-  if (st.isSymbolicLink()) throw new Error(`${path}: refusing symlink`);
-  if (st.size > MAX_FILE_BYTES)
-    throw new Error(`${path}: larger than ${String(MAX_FILE_BYTES)} bytes`);
-  return JSON.parse(readFileSync(path, "utf8"));
+  return JSON.parse(readText(path));
 }
 
 /** The render-relevant fields of one spec shape, in a fixed key order. */
@@ -87,7 +110,7 @@ export function generateShapes(specDir: string = SPEC_DIR): string {
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const text = generateShapes();
   if (process.argv.includes("--check")) {
-    if (readFileSync(OUT_FILE, "utf8") !== text) {
+    if (readText(OUT_FILE, 1024 * 1024) !== text) {
       console.error(`${OUT_FILE} is out of date: run \`pnpm --filter @0xdolan/deq-core generate\``);
       process.exit(1);
     }

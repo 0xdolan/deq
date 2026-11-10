@@ -1,15 +1,38 @@
-import { readFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync, symlinkSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 import { describe, expect, it } from "vitest";
 
 import { API_DOC, generateApiDocs } from "../scripts/api-docs.ts";
 import { fixtureCases, manifest, renderCase } from "../scripts/fixture-cases.ts";
-import { OUT_FILE, SPEC_DIR, generateShapes } from "../scripts/generate-shapes.ts";
+import { OUT_FILE, SPEC_DIR, generateShapes, readText } from "../scripts/generate-shapes.ts";
 import { compose, listShapes, render } from "../src/index.js";
 
 const FIXTURES = join(SPEC_DIR, "fixtures");
 const cases = fixtureCases(listShapes());
+
+describe("readText", () => {
+  const dir = mkdtempSync(join(tmpdir(), "deq-core-"));
+  const file = join(dir, "a.json");
+  writeFileSync(file, "[1]");
+
+  it("reads a regular file", () => {
+    expect(readText(file)).toBe("[1]");
+  });
+  it("refuses files over the limit", () => {
+    expect(() => readText(file, 2)).toThrow(/larger than 2 bytes/);
+  });
+  it("refuses directories", () => {
+    expect(() => readText(dir)).toThrow();
+  });
+  it.skipIf(process.platform === "win32")("refuses symlinks", () => {
+    const link = join(dir, "link.json");
+    symlinkSync(file, link);
+    expect(() => readText(link)).toThrow(/refusing symlink/);
+    rmSync(dir, { recursive: true, force: true });
+  });
+});
 
 describe("generated data", () => {
   it("src/generated/shapes.ts matches spec/ (run `pnpm --filter @0xdolan/deq-core generate`)", () => {

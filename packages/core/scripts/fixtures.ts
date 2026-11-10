@@ -1,15 +1,21 @@
 /**
- * Writes the golden fixtures to `spec/fixtures/` from the built library (`dist/`).
+ * Writes the golden fixtures to `spec/fixtures/` from the built library (`dist/`, so run
+ * `tsc -p tsconfig.build.json` first; the `fixtures` package script does).
  *
  *   node scripts/fixtures.ts           write (and remove stale SVGs)
  *   node scripts/fixtures.ts --check   fail if any fixture is missing, stale or extra
  */
-import { lstatSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { compose, listShapes, render } from "../dist/index.js";
+import type * as Core from "../src/index.ts";
 import { fixtureCases, manifest, renderCase } from "./fixture-cases.ts";
+import { readText } from "./generate-shapes.ts";
+
+/** The built library; a computed specifier so typechecking does not need `dist/`. */
+const DIST: string = new URL("../dist/index.js", import.meta.url).href;
+const { compose, listShapes, render } = (await import(DIST)) as typeof Core;
 
 const here = dirname(fileURLToPath(import.meta.url));
 const OUT = join(here, "..", "..", "..", "spec", "fixtures");
@@ -36,8 +42,7 @@ function existing(): string[] {
 
 function read(path: string): string | undefined {
   try {
-    if (lstatSync(path).isSymbolicLink()) throw new Error(`${path}: refusing symlink`);
-    return readFileSync(path, "utf8");
+    return readText(path, 1024 * 1024);
   } catch (err) {
     if ((err as NodeJS.ErrnoException).code === "ENOENT") return undefined;
     throw err;
