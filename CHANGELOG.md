@@ -25,6 +25,14 @@ The format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/), and
 - `scripts/deq-spec`: a private tool to lint, format, render and draw contact sheets; `deq-spec lint` runs in `just test` and CI.
 - Shape spec guide (`docs/design/shape-spec.md`), shapes contact sheet and ADR 0007: shape spec format.
 - Three sources: Wikipedia's articles on the flag and the Kurdish Sun, and the Commons flag SVG.
+- Phase 3 `@0xdolan/deq-core`, the reference renderer:
+  - `render`, `compose`, `getShape`, `listShapes`, `listCategories`, `hasShape`, `expand` and `resolveOptions`;
+  - every render option with a documented default in `DEFAULT_OPTIONS`;
+  - layer colours, and accessible `role="img"`, `<title>` and `aria-label` (or decorative `aria-hidden`);
+  - runtime validation with valibot 1.5.0, and typed `DeqError` codes with "did you mean" suggestions for unknown shapes.
+- Deterministic SVG output contract (rounding half to even to 3 decimals, fixed attribute order, exact right angles) and 278 golden fixtures in `spec/fixtures/` for the Python and Rust renderers to match (ADR 0008).
+- Property tests with fast-check 4.10.2; core coverage is 100% of lines.
+- Generated API reference `docs/api/core.md`, built with the TypeScript compiler API. TypeDoc was not added, because it needs a minimatch version affected by GHSA-g3hv-75wg-m249.
 
 ### Changed
 

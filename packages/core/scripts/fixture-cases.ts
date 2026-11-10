@@ -1,0 +1,141 @@
+/**
+ * The golden fixture cases in `spec/fixtures/`. Every renderer (TS, Python, Rust) must
+ * reproduce each case byte for byte (ADR 0008).
+ */
+import type { CompositionPart, ParamValue, RenderOptions, ShapeData } from "../src/index.ts";
+
+export interface FixtureCase {
+  /** Unique, file-safe name. */
+  readonly name: string;
+  /** Catalog shape id; absent for compositions. */
+  readonly shape?: string;
+  /** Parts, for composition cases. */
+  readonly compose?: readonly CompositionPart[];
+  readonly options: RenderOptions;
+  /** Path of the expected SVG, relative to `spec/fixtures/`. */
+  readonly file: string;
+}
+
+/** The functions a renderer must provide to produce fixtures. */
+export interface Renderer {
+  render(id: string, options?: RenderOptions): string;
+  compose(parts: readonly CompositionPart[], options?: RenderOptions): string;
+}
+
+/** One value per parameter variant to test: integer min and max, the other booleans, every enum value. */
+function variants(shape: ShapeData): [string, ParamValue][] {
+  const out: [string, ParamValue][] = [];
+  for (const [name, decl] of Object.entries(shape.parameters)) {
+    const values: ParamValue[] =
+      decl.type === "integer"
+        ? [decl.min, decl.max]
+        : decl.type === "boolean"
+          ? [!decl.default]
+          : [...decl.values];
+    for (const value of values) if (value !== decl.default) out.push([name, value]);
+  }
+  return out;
+}
+
+/** Render options exercised on a few representative shapes. */
+const OPTION_CASES: readonly (readonly [string, RenderOptions])[] = [
+  ["size-48", { size: 48 }],
+  ["size-16", { size: 16 }],
+  ["stroke-1.5", { strokeWidth: 1.5 }],
+  ["absolute-stroke", { size: 96, strokeWidth: 2, absoluteStrokeWidth: true }],
+  ["color", { color: "#ED2024" }],
+  ["fill", { fill: "#FEBD11", fillOpacity: 0.5 }],
+  ["stroke-opacity", { strokeOpacity: 0.25 }],
+  ["caps-joins", { linecap: "butt", linejoin: "miter" }],
+  ["dot-scale", { dotScale: 1.5 }],
+  ["rotation", { rotation: 30 }],
+  ["flip-x", { flipX: true }],
+  ["flip-y", { flipY: true }],
+  ["rotate-flip", { rotation: -90, flipX: true, flipY: true }],
+  ["padding", { padding: 2 }],
+  ["background", { background: "#ffffff", padding: 1 }],
+  ["title", { title: "Sun & <moon>", ariaLabel: 'A "quoted" label' }],
+  ["decorative", { title: "", ariaLabel: "" }],
+];
+
+const OPTION_SHAPES = ["roj-half-sun", "kurdish-sun", "kurdish-flag", "comb"] as const;
+
+const LAYER_CASES: readonly (readonly [string, RenderOptions])[] = [
+  ["roj-half-sun--layer-colors", { layerColors: { rays: "#FEBD11", center: "#278E43" } }],
+  [
+    "kurdish-flag--bands-colors",
+    {
+      params: { style: "bands" },
+      layerColors: { top: "#ED2024", bottom: "#278E43", sun: "#FEBD11", frame: "#000000" },
+    },
+  ],
+];
+
+const COMPOSE_CASES: readonly (readonly [string, readonly CompositionPart[], RenderOptions])[] = [
+  [
+    "compose--sun-over-comb",
+    [
+      { shape: "roj-half-sun", params: { rays: 5 }, transform: { translate: [0, -4] } },
+      { shape: "comb", transform: { translate: [0, 7] } },
+    ],
+    {},
+  ],
+  [
+    "compose--scaled-rotated",
+    [
+      { shape: "kurdish-sun", transform: { scale: 0.5, origin: [12, 12], translate: [-5, -5] } },
+      {
+        shape: "roj-half-sun",
+        layer: "half",
+        transform: { rotate: 180, scale: 0.5, translate: [5, 5] },
+      },
+    ],
+    { layerColors: { half: "#ED2024" } },
+  ],
+];
+
+/** Every fixture case, for the given shape list (in catalog order). */
+export function fixtureCases(shapes: readonly ShapeData[]): FixtureCase[] {
+  const cases: FixtureCase[] = [];
+  for (const shape of shapes) {
+    cases.push({ name: shape.id, shape: shape.id, options: {}, file: `shapes/${shape.id}.svg` });
+    for (const [param, value] of variants(shape)) {
+      const name = `${shape.id}--${param}-${String(value)}`;
+      cases.push({
+        name,
+        shape: shape.id,
+        options: { params: { [param]: value } },
+        file: `params/${name}.svg`,
+      });
+    }
+  }
+  for (const id of OPTION_SHAPES) {
+    for (const [suffix, options] of OPTION_CASES) {
+      const name = `${id}--${suffix}`;
+      cases.push({ name, shape: id, options, file: `options/${name}.svg` });
+    }
+  }
+  for (const [name, options] of LAYER_CASES) {
+    cases.push({ name, shape: name.split("--")[0] ?? "", options, file: `options/${name}.svg` });
+  }
+  for (const [name, parts, options] of COMPOSE_CASES) {
+    cases.push({ name, compose: parts, options, file: `compose/${name}.svg` });
+  }
+  return cases;
+}
+
+/** Render one case. */
+export function renderCase(c: FixtureCase, r: Renderer): string {
+  return c.compose ? r.compose(c.compose, c.options) : r.render(c.shape ?? "", c.options);
+}
+
+/** The manifest written next to the fixtures. */
+export function manifest(cases: readonly FixtureCase[]): string {
+  const doc = {
+    $comment:
+      "Generated by packages/core/scripts/fixtures.ts; do not edit. Each case renders to the SVG in `file` byte for byte (ADR 0008).",
+    version: 1,
+    cases,
+  };
+  return `${JSON.stringify(doc, null, 2)}\n`;
+}
